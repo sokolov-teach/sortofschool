@@ -4,7 +4,7 @@ document.write('\
         <ul class="social">\
             <li class="social">\
                 <a class="social" href="https://www.youtube.com/@sortofschool">\
-                <img class="social" src="img/yt_logo.png">\
+                <img class="social" src="img/youtube_logo.png">\
                 Youtube\
             </a></li>\
             <li class="social">\
