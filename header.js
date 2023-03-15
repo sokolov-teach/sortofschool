@@ -1,8 +1,8 @@
 document.write('\
 \
     <nav class="header">\
-            <a class="header" href="index.html">Sort of School</a>\
-            <a class="header" href="donate.html">Donate</a>\
+            <a class="header" href="/">Sort of School</a>\
+            <a class="header" href="/donate">Donate</a>\
         </nav>\
         <ul class="social">\
             <li class="social">\
