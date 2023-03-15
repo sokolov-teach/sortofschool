@@ -72,7 +72,7 @@ img.social {
   margin: auto;
   padding-left: 1em;
   padding-right: 1em;
-  padding-bottom: 4em;
+  padding-bottom: 3em;
 }
 
 
@@ -110,7 +110,7 @@ p {
   text-align: justify;
 }
 
-div.equation{
+.equation{
   font-size: 1.2em;
   text-align: center;
 }
@@ -156,3 +156,6 @@ div.polaroid {
   font-size: 1.2em;
 }
 
+#latex-input {
+  font-family: monospace;
+}
