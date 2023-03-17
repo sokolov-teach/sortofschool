@@ -6,6 +6,8 @@ const latexToSvg = function (formula) {
   });
 };
 
+
+
 const svgToPng = async function (svg, width, height, scaleFactor = 15) {
   const svgBlob = new Blob([svg], { type: "image/svg+xml;charset=utf-8" });
   const url = URL.createObjectURL(svgBlob);
@@ -28,22 +30,28 @@ document.addEventListener("DOMContentLoaded", function () {
   const svgOutput = document.getElementById("svg-output");
   const downloadLink = document.getElementById("download-link");
   const downloadPngLink = document.getElementById("download-png-link");
+  const whiteCheckbox = document.getElementById("white-checkbox");
+
 
   convertBtn.addEventListener("click", async function () {
     const formula = latexInput.value;
     if (formula) {
       try {
-        const svg = await latexToSvg(formula);
+        const coloredFormula = whiteCheckbox.checked ? `\\color{white}{${formula}}` : formula;
+        const svg = await latexToSvg(coloredFormula);
+
         svgOutput.innerHTML = svg;
+
+        // Set the background color for the svg-output element
+        svgOutput.style.backgroundColor = whiteCheckbox.checked ? "black" : "transparent";
 
         const svgData = encodeURIComponent(svg);
         downloadLink.setAttribute("href", "data:image/svg+xml," + svgData);
         downloadLink.style.display = "block";
 
-        const pngDataUrl = await svgToPng(svg);
+        const pngDataUrl = await svgToPng(svg, null, null, 15);
         downloadPngLink.setAttribute("href", pngDataUrl);
         downloadPngLink.style.display = "block";
-
       } catch (error) {
         console.error("Failed to convert LaTeX to SVG", error);
         svgOutput.innerHTML = "<p>Error generating SVG.</p>";
@@ -56,4 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
       downloadPngLink.style.display = "none";
     }
   });
+
+
+
 });

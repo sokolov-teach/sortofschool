@@ -12,24 +12,61 @@
 
 	<link href="../style.css" rel="stylesheet" />
 	<style>
-		.download {padding-top: 1em; justify-content: space-evenly;  display: flex;}
+		.download {
+			padding-top: 1em; justify-content: space-evenly;  display: flex;
+		}
+
+		div.equation {
+			padding-top: 1em;
+			padding-bottom: 1em;
+			margin-top: 1em;
+		}
+
+		table {
+		  width: 100%;
+		  border-collapse: collapse;
+		}
+
+		th,
+		td {
+		  text-align: left;
+		  border-bottom: 1px solid #ddd;
+		}
+
+		tr:nth-child(odd){
+			background-color: #f2f2f2;
+		}
+
+		tr:hover {
+		  background-color: #ddd;
+		}
+
+		code {
+		  font-family: "Courier New", Courier, monospace;
+		}
+
 	</style>
 
 	<script>
-	MathJax = {
-		loader: {
-				load: ['input/tex-base', 'output/svg']
-			},
-        tex: {
-            tags: 'none', // should be 'ams', 'none', or 'all'
-            tagSide: 'right',
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        options: {
-            enableMenu: false
-        }
-    };
+	  MathJax = {
+	    loader: {
+	      load: ["input/tex-full", "output/svg"],
+	    },
+	    tex: {
+	      tags: "none", // should be 'ams', 'none', or 'all'
+	      tagSide: "right",
+	      inlineMath: [
+	        ["$", "$"],
+	        ["\\(", "\\)"],
+	      ],
+	    },
+	    options: {
+	      enableMenu: false,
+	    },
+	  };
 	</script>
+
+
 	<script id="MathJax-script" async
 	  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 	</script>
@@ -48,10 +85,13 @@
 	<div class="page">
 
 		<h1>TeX Equation renderer</h1>
+
+		<p>This is a tool I frequently use to create visually appealing equations for presentations, videos, and animations. It converts TeX input into SVG and PNG formats, allowing you to easily incorporate mathematical equations into various digital formats. The tool offers two color options: black and white, making the equations suitable for different backgrounds and visual contexts. Please note that the equations are rendered with transparent backgrounds; therefore, the white version may not be visible on a white background, and the black version may not be visible on a black background. </p>
 		
         <h2>Enter TeX equation:</h2>
-        <textarea id="latex-input" rows="4" cols="45">\left(\frac{5 - \frac{1}{x}}{4}\right)</textarea>
+        <textarea id="latex-input" rows="4" cols="45">f(x) = \frac{1}{\sigma \sqrt{2\pi} } e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}</textarea>
         <br>
+        <label><input type="checkbox" id="white-checkbox"> Create white version</label>
         <button id="convert-btn">Convert to SVG</button>
 
         <div class = "equation" id="svg-output"></div>
@@ -60,6 +100,545 @@
         <a id="download-link" download="equation.svg" style="display:none;">Download SVG</a>
         <a id="download-png-link" download="equation.png" style="display:none;">Download PNG</a>
         </div>
+
+		<h2>Showcase</h2>
+		<table>
+		  <tr>
+		    <td>\(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\)</td>
+		    <td><code>x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}</code></td>
+		  </tr>
+		  <tr>
+		    <td>\(a^2 + b^2 = c^2\)</td>
+		    <td><code>a^2 + b^2 = c^2</code></td>
+		  </tr>
+		  <tr>
+		    <td>\(e^{i\pi} + 1 = 0\)</td>
+		    <td><code>e^{i\pi} + 1 = 0</code></td>
+		  </tr>
+		  <tr>
+		    <td>\(S_n = \frac{n(a_1 + a_n)}{2}\)</td>
+		    <td><code>S_n = \frac{n(a_1 + a_n)}{2}</code></td>
+		  </tr>
+		  <tr>
+		    <td>\(\int\limits_a^b f(x) dx\)</td>
+		    <td><code>\int\limits_a^b f(x) dx</code></td>
+		  </tr>
+		  <tr>
+		    <td>\(\sum\limits_{n=1}^{\infty} \frac{1}{n^2}\)</td>
+		    <td><code>\sum\limits_{n=1}^{\infty} \frac{1}{n^2}</code></td>
+		  </tr>
+		  <tr>
+		    <td>\(\lim\limits_{x \to 0} \frac{\sin x}{x}\)</td>
+		    <td><code>\lim\limits_{x \to 0} \frac{\sin x}{x}</code></td>
+		  </tr>
+		  <tr>
+		    <td>\(\begin{cases} x + y = 1 \\ x - y = 3 \end{cases}\)</td>
+		    <td><code>\begin{cases} x + y = 1 \\ x - y = 3 \end{cases}</code></td>
+		  </tr>
+
+		</table>
+
+		<h2>Lowercase Greek</h2>
+		<table>
+		  <tr>
+		    <td>\( \alpha \)</td>
+		    <td><code>\alpha</code></td>
+		    <td>\( \beta \)</td>
+		    <td><code>\beta</code></td>
+		    <td>\( \gamma \)</td>
+		    <td><code>\gamma</code></td>
+		    <td>\( \delta \)</td>
+		    <td><code>\delta</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \epsilon \)</td>
+		    <td><code>\epsilon</code></td>
+		    <td>\( \zeta \)</td>
+		    <td><code>\zeta</code></td>
+		    <td>\( \eta \)</td>
+		    <td><code>\eta</code></td>
+		    <td>\( \theta \)</td>
+		    <td><code>\theta</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \iota \)</td>
+		    <td><code>\iota</code></td>
+		    <td>\( \kappa \)</td>
+		    <td><code>\kappa</code></td>
+		    <td>\( \lambda \)</td>
+		    <td><code>\lambda</code></td>
+		    <td>\( \mu \)</td>
+		    <td><code>\mu</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \nu \)</td>
+		    <td><code>\nu</code></td>
+		    <td>\( \xi \)</td>
+		    <td><code>\xi</code></td>
+		    <td>\( o \)</td>
+		    <td><code>o</code></td>
+		    <td>\( \pi \)</td>
+		    <td><code>\pi</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \rho \)</td>
+		    <td><code>\rho</code></td>
+		    <td>\( \sigma \)</td>
+		    <td><code>\sigma</code></td>
+		    <td>\( \tau \)</td>
+		    <td><code>\tau</code></td>
+		    <td>\( \upsilon \)</td>
+		    <td><code>\upsilon</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \phi \)</td>
+		    <td><code>\phi</code></td>
+		    <td>\( \chi \)</td>
+		    <td><code>\chi</code></td>
+		    <td>\( \psi \)</td>
+		    <td><code>\psi</code></td>
+		    <td>\( \omega \)</td>
+		    <td><code>\omega</code></td>
+		  </tr>
+		</table>
+
+
+		<h2>Uppercase Greek</h2>
+		<table>
+		  <tr>
+		    <td>\( \Gamma \)</td>
+		    <td><code>\Gamma</code></td>
+		    <td>\( \Delta \)</td>
+		    <td><code>\Delta</code></td>
+		    <td>\( \Theta \)</td>
+		    <td><code>\Theta</code></td>
+		    <td>\( \Lambda \)</td>
+		    <td><code>\Lambda</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \Xi \)</td>
+		    <td><code>\Xi</code></td>
+		    <td>\( \Pi \)</td>
+		    <td><code>\Pi</code></td>
+		    <td>\( \Sigma \)</td>
+		    <td><code>\Sigma</code></td>
+		    <td>\( \Upsilon \)</td>
+		    <td><code>\Upsilon</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \Phi \)</td>
+		    <td><code>\Phi</code></td>
+		    <td>\( \Psi \)</td>
+		    <td><code>\Psi</code></td>
+		    <td>\( \Omega \)</td>
+		    <td><code>\Omega</code></td>
+		    <td></td>
+		    <td></td>
+		  </tr>
+		</table>
+
+
+		<h2>Delimiters</h2>
+		<table>
+		  <tr>
+		    <td>\( ( a + b ) \)</td>
+		    <td><code>( ... )</code></td>
+		    <td>\( [ a + b ] \)</td>
+		    <td><code>[ ... ]</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \{ a + b \} \)</td>
+		    <td><code>\{ ... \}</code></td>
+		    <td>\( | a + b | \)</td>
+		    <td><code>| ... |</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \lceil a + b \rceil \)</td>
+		    <td><code>\lceil ... \rceil</code></td>
+		    <td>\( \lfloor a + b \rfloor \)</td>
+		    <td><code>\lfloor ... \rfloor</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \langle a + b \rangle \)</td>
+		    <td><code>\langle ... \rangle</code></td>
+		    <td>\( \lvert a + b \rvert \)</td>
+		    <td><code>\lvert ... \rvert</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \lVert a + b \rVert \)</td>
+		    <td><code>\lVert ... \rVert</code></td>
+		    <td></td>
+		    <td></td>
+		  </tr>
+		</table>
+
+
+		<h2>Big Symbols</h2>
+		<table>
+		  <tr>
+		    <td>\( \int \)</td>
+		    <td><code>\int</code></td>
+		    <td>\( \oint \)</td>
+		    <td><code>\oint</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \sum \)</td>
+		    <td><code>\sum</code></td>
+		    <td>\( \prod \)</td>
+		    <td><code>\prod</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \bigcup \)</td>
+		    <td><code>\bigcup</code></td>
+		    <td>\( \bigcap \)</td>
+		    <td><code>\bigcap</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \bigoplus \)</td>
+		    <td><code>\bigoplus</code></td>
+		    <td>\( \bigotimes \)</td>
+		    <td><code>\bigotimes</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \bigvee \)</td>
+		    <td><code>\bigvee</code></td>
+		    <td>\( \bigwedge \)</td>
+		    <td><code>\bigwedge</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \coprod \)</td>
+		    <td><code>\coprod</code></td>
+		    <td></td>
+		    <td></td>
+		  </tr>
+		</table>
+
+		<h2>Standard Function Names</h2>
+		<table>
+		  <tr>
+		    <td>\( \sin \)</td>
+		    <td><code>\sin</code></td>
+		    <td>\( \cos \)</td>
+		    <td><code>\cos</code></td>
+		    <td>\( \tan \)</td>
+		    <td><code>\tan</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \csc \)</td>
+		    <td><code>\csc</code></td>
+		    <td>\( \sec \)</td>
+		    <td><code>\sec</code></td>
+		    <td>\( \cot \)</td>
+		    <td><code>\cot</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \arcsin \)</td>
+		    <td><code>\arcsin</code></td>
+		    <td>\( \arccos \)</td>
+		    <td><code>\arccos</code></td>
+		    <td>\( \arctan \)</td>
+		    <td><code>\arctan</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \sinh \)</td>
+		    <td><code>\sinh</code></td>
+		    <td>\( \cosh \)</td>
+		    <td><code>\cosh</code></td>
+		    <td>\( \tanh \)</td>
+		    <td><code>\tanh</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \exp \)</td>
+		    <td><code>\exp</code></td>
+		    <td>\( \log \)</td>
+		    <td><code>\log</code></td>
+		    <td>\( \ln \)</td>
+		    <td><code>\ln</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \max \)</td>
+		    <td><code>\max</code></td>
+		    <td>\( \min \)</td>
+		    <td><code>\min</code></td>
+		    <td>\( \lim \)</td>
+		    <td><code>\lim</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \gcd \)</td>
+		    <td><code>\gcd</code></td>
+		    <td>\( \dim \)</td>
+		    <td><code>\dim</code></td>
+		    <td>\( \det \)</td>
+		    <td><code>\det</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \Pr \)</td>
+		    <td><code>\Pr</code></td>
+		    <td>\( \arg \)</td>
+		    <td><code>\arg</code></td>
+		    <td>\( \Re \)</td>
+		    <td><code>\Re</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \Im \)</td>
+		    <td><code>\Im</code></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		    <td></td>
+		  </tr>
+		</table>
+
+
+		<h2>Accents Cheat Sheet</h2>
+		<table>
+		  <tr>
+		    <td>\( \hat{a} \)</td>
+		    <td><code>\hat{a}</code></td>
+		    <td>\( \tilde{a} \)</td>
+		    <td><code>\tilde{a}</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \bar{a} \)</td>
+		    <td><code>\bar{a}</code></td>
+		    <td>\( \vec{a} \)</td>
+		    <td><code>\vec{a}</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \dot{a} \)</td>
+		    <td><code>\dot{a}</code></td>
+		    <td>\( \ddot{a} \)</td>
+		    <td><code>\ddot{a}</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \overrightarrow{AB} \)</td>
+		    <td><code>\overrightarrow{AB}</code></td>
+		    <td>\( \overleftarrow{AB} \)</td>
+		    <td><code>\overleftarrow{AB}</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \overline{abc} \)</td>
+		    <td><code>\overline{abc}</code></td>
+		    <td>\( \underline{abc} \)</td>
+		    <td><code>\underline{abc}</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \overbrace{abc} \)</td>
+		    <td><code>\overbrace{abc}</code></td>
+		    <td>\( \underbrace{abc} \)</td>
+		    <td><code>\underbrace{abc}</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \widetilde{abc} \)</td>
+		    <td><code>\widetilde{abc}</code></td>
+		    <td>\( \widehat{abc} \)</td>
+		    <td><code>\widehat{abc}</code></td>
+		  </tr>
+		</table>
+
+		<h2>Binary Operation Symbols</h2>
+		<table>
+		  <tr>
+		    <td>\( + \)</td>
+		    <td><code>+</code></td>
+		    <td>\( - \)</td>
+		    <td><code>-</code></td>
+		    <td>\( \pm \)</td>
+		    <td><code>\pm</code></td>
+		    <td>\( \mp \)</td>
+		    <td><code>\mp</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \cdot \)</td>
+		    <td><code>\cdot</code></td>
+		    <td>\( \times \)</td>
+		    <td><code>\times</code></td>
+		    <td>\( \div \)</td>
+		    <td><code>\div</code></td>
+		    <td>\( \ast \)</td>
+		    <td><code>\ast</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \cup \)</td>
+		    <td><code>\cup</code></td>
+		    <td>\( \cap \)</td>
+		    <td><code>\cap</code></td>
+		    <td>\( \sqcup \)</td>
+		    <td><code>\sqcup</code></td>
+		    <td>\( \sqcap \)</td>
+		    <td><code>\sqcap</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \vee \)</td>
+		    <td><code>\vee</code></td>
+		    <td>\( \wedge \)</td>
+		    <td><code>\wedge</code></td>
+		    <td>\( \oplus \)</td>
+		    <td><code>\oplus</code></td>
+		    <td>\( \otimes \)</td>
+		    <td><code>\otimes</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \odot \)</td>
+		    <td><code>\odot</code></td>
+		    <td>\( \bigcirc \)</td>
+		    <td><code>\bigcirc</code></td>
+		    <td>\( \diamond \)</td>
+		    <td><code>\diamond</code></td>
+		    <td>\( \bullet \)</td>
+		    <td><code>\bullet</code></td>
+		  </tr>
+		</table>
+
+		<h2>Relation Symbols Cheat Sheet</h2>
+		<table>
+		  <tr>
+		    <td>\( = \)</td>
+		    <td><code>=</code></td>
+		    <td>\( \neq \)</td>
+		    <td><code>\neq</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \approx \)</td>
+		    <td><code>\approx</code></td>
+		    <td>\( \sim \)</td>
+		    <td><code>\sim</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( < \)</td>
+		    <td><code>&lt;</code></td>
+		    <td>\( > \)</td>
+		    <td><code>&gt;</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \leq \)</td>
+		    <td><code>\leq</code></td>
+		    <td>\( \geq \)</td>
+		    <td><code>\geq</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \in \)</td>
+		    <td><code>\in</code></td>
+		    <td>\( \notin \)</td>
+		    <td><code>\notin</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \subset \)</td>
+		    <td><code>\subset</code></td>
+		    <td>\( \subseteq \)</td>
+		    <td><code>\subseteq</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \supset \)</td>
+		    <td><code>\supset</code></td>
+		    <td>\( \supseteq \)</td>
+		    <td><code>\supseteq</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \equiv \)</td>
+		    <td><code>\equiv</code></td>
+		    <td>\( \propto \)</td>
+		    <td><code>\propto</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \leftrightarrow \)</td>
+		    <td><code>\leftrightarrow</code></td>
+		    <td>\( \leftarrow \)</td>
+		    <td><code>\leftarrow</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \rightarrow \)</td>
+		    <td><code>\rightarrow</code></td>
+		    <td>\( \Rightarrow \)</td>
+		    <td><code>\Rightarrow</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \Leftrightarrow \)</td>
+		    <td><code>\Leftrightarrow</code></td>
+		    <td>\( \Leftarrow \)</td>
+		    <td><code>\Leftarrow</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \Longrightarrow \)</td>
+		    <td><code>\Longrightarrow</code></td>
+		    <td>\( \Longleftarrow \)</td>
+		    <td><code>\Longleftarrow</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \Longleftrightarrow \)</td>
+		    <td><code>\Longleftrightarrow</code></td>
+		    <td>\( \mapsto \)</td>
+		    <td><code>\mapsto</code></td>
+		  </tr>
+		</table>
+
+
+		<h2>Miscellaneous Symbols</h2>
+		<table>
+		  <tr>
+		    <td>\( \infty \)</td>
+		    <td><code>\infty</code></td>
+		    <td>\( \nabla \)</td>
+		    <td><code>\nabla</code></td>
+		    <td>\( \partial \)</td>
+		    <td><code>\partial</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \forall \)</td>
+		    <td><code>\forall</code></td>
+		    <td>\( \exists \)</td>
+		    <td><code>\exists</code></td>
+		    <td>\( \nexists \)</td>
+		    <td><code>\nexists</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \emptyset \)</td>
+		    <td><code>\emptyset</code></td>
+		    <td>\( \varnothing \)</td>
+		    <td><code>\varnothing</code></td>
+		    <td>\( \aleph \)</td>
+		    <td><code>\aleph</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \top \)</td>
+		    <td><code>\top</code></td>
+		    <td>\( \bot \)</td>
+		    <td><code>\bot</code></td>
+		    <td>\( \ell \)</td>
+		    <td><code>\ell</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \angle \)</td>
+		    <td><code>\angle</code></td>
+		    <td>\( \triangle \)</td>
+		    <td><code>\triangle</code></td>
+		    <td>\( \square \)</td>
+		    <td><code>\square</code></td>
+		  </tr>
+		  <tr>
+		    <td>\( \dagger \)</td>
+		    <td><code>\dagger</code></td>
+		    <td>\( \ddagger \)</td>
+		    <td><code>\ddagger</code></td>
+		    <td>\( \hbar \)</td>
+		    <td><code>\hbar</code></td>
+		  </tr>
+		</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     	
 	</div>
