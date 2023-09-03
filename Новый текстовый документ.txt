@@ -1,0 +1,42 @@
+QR_first_version
+Finder_patterns
+Timing_Patterns
+Additional_Information
+Modes_of_Encoding
+Message_Length
+
+Byte_Mode_Encoding
+- Encoding_Letters_in_QR_Codes
+- Why_Not_Always_Use_Byte_Mode?
+
+Numeric_Mode
+- Numeric_vs_Byte Mode
+- Numeric_Mode_4bit
+- Numeric_Mode_10bit
+
+Alphanumeric_Mode
+- Alphanumeric_Efficiency_6-bit
+- Alphanumeric_Efficiency_11-bit
+
+Kanji_Mode
+Error_Correction_Level
+Error_Correction_Bits
+Pad_Blocks
+
+Reed-Solomon_Error_Correction
+Reed-Solomon_Verification_and_Restoration
+Galois_Fields
+
+Error_Correction_Modules_Placement
+
+Mask_Problem
+Types_of_Masks
+Mask_Application
+Mask_Evaluation
+Mask_Bits_Allocation
+
+EC_and_Mask_for_Additional_Information
+Redundancy_in_Additional_Information
+Importance_of_Additional_Information
+
+Additional_links
