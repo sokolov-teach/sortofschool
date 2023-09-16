@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="/img/favicon.svg" type="image/svg+xml" sizes="any">
+	<link rel="shortcut icon" type="image/png" href="/img/favicon.png">
+	<link rel="shortcut icon" sizes="192x192" href="/img/favicon.png">
+	<link rel="apple-touch-icon" href="/img/favicon.png">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<title>Sort of School</title>
+	<link href="../style.css" rel="stylesheet" />
+	<script>
+		MathJax = {
+		    loader: {
+		            load: ['input/tex-base', 'output/svg']
+		        },
+		    tex: {
+		        tags: 'ams', // should be 'ams', 'none', or 'all'
+		        tagSide: 'right',
+		        inlineMath: [['$$', '$$'], ['\\(', '\\)']],
+		        displayMath: [['\\[', '\\]']]
+		    },
+		    options: {
+		        enableMenu: false
+		    }
+		};
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		    let toc = document.getElementById('toc');
+
+		    // Extracted logic into a function for reusability
+		    function checkTocPosition() {
+		        if (toc.scrollTop === 0) {
+		            toc.parentElement.classList.add('at-top');
+		        } else {
+		            toc.parentElement.classList.remove('at-top');
+		        }
+
+		        if (Math.ceil(toc.scrollTop) + toc.clientHeight >= toc.scrollHeight) {
+		            toc.parentElement.classList.add('at-bottom');
+		        } else {
+		            toc.parentElement.classList.remove('at-bottom');
+		        }
+		    }
+
+		    // Attach event listener for scroll
+		    toc.addEventListener('scroll', checkTocPosition);
+
+		    // Check the position initially
+		    checkTocPosition();
+		});
+	</script>
+	<script id="MathJax-script" async
+	  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+	</script>
+</head>
+
+
+<body>
+	<header>
+		<script src="../header.js"></script>
+		<a id="top"></a>
+	</header>
+
+	<figure>
+		<img src="$image_path$" alt="test" />
+		<figcaption aria-hidden="true">$image_caption$</figcaption>
+	</figure>
+
+	<div class="content-container">
+
+		<div class="toc-wrapper">
+		    <div id="toc">
+		    	<h2>Table of Contents</h2>
+		    	$toc$
+		    </div>
+	    </div>
+
+		<div class="page">
+			<h1>$title$</h1>
+			$body$
+		</div>
+	</div>
+	<footer>
+		<script src="../footer.js"></script>
+	</footer>
+</body>
+
+</html>

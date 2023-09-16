@@ -1,5 +1,16 @@
+/* Import Merriweather font from Google Fonts */
+@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css");
+@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/sans.css");
+@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/bright.css");
 * {
-  font-family: "Times New Roman", Times, serif;
+/*  font-family: "Computer Modern Serif", serif;  */
+/*  font-family: "Computer Modern Sans", sans-serif;*/
+  font-family: "Computer Modern Bright", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 1.2em;
 }
 
 body {
@@ -32,7 +43,7 @@ nav.header {
 }
 
 a.header, a.header:visited, a.header:active{
-  font-size: 2em;
+  font-size: 1.8em;
   padding-right: 0.3em;
 }
 
@@ -43,6 +54,7 @@ ul.social {
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 0;
+  font-size: 0.8em;
 }
 
 li.social {
@@ -74,20 +86,73 @@ img.social {
     position: relative;
 }
 
-#toc {
+/* 
+Table of Contents (ToC) Styling
+- Uses sticky positioning to keep ToC visible during scroll.
+- Gradient fading effect at the top and bottom when ToC content is scrollable.
+- Custom styling for scrollbar to be hidden.
+*/
+
+.toc-wrapper {
     margin-top: 5em;
-    padding-right: 1em;
-    padding-left: 1em;
-    position: -webkit-sticky; /* for Safari */
+    margin-right: 1em;
+    position: -webkit-sticky;
     position: sticky;
-    top: 10%;
-    left: 0;
-    background-color: #f8f8f8;
-    font-family: "Times New Roman", Times, serif; /* Classic book style font */
-    border: 1px solid #aaa; /* Add a border */
-    border-radius: 4px; /* Add rounded corners */
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
+    top: 1em;
+    height: 100%;
+    border-radius: 4px;
+    border: 1px solid #aaa;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
+
+.toc-wrapper::before,
+.toc-wrapper::after {
+    content: "";
+    position: absolute;
+    left: 1em;
+    right: 1em;
+    z-index: 2;
+    height: 100px; 
+    pointer-events: none;
+}
+
+.toc-wrapper::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(248, 248, 248, 1), rgba(248, 248, 248, 0));
+}
+
+.toc-wrapper::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(248, 248, 248, 1), rgba(248, 248, 248, 0));
+}
+
+.toc-wrapper.at-top::before {
+    display: none;
+}
+
+.toc-wrapper.at-bottom::after {
+    display: none;
+}
+
+/* for Chrome, Safari, and newer versions of Opera */
+#toc::-webkit-scrollbar {
+    display: none; 
+}
+
+#toc {
+    padding-left: 1em;
+    padding-right: 1em;
+    position: relative;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    list-style-type: none;
+    max-height: 90vh;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
 
 #toc h2 {
     text-align: center; 
@@ -95,13 +160,17 @@ img.social {
     padding-bottom: 0.5em;
 }
 
-#toc ol {
-    list-style-type: decimal; /* Uses numbers to list items */
-    padding-left: 1.5em; /* Adjusts padding to align the numbers */
+#toc ul {
+    list-style-type: none; /* Removes default bullets */
 }
 
-#toc li {
-    margin-bottom: 0.5em;
+#toc>ul>li {
+    padding-top: 0.5em;
+    font-weight: bold;
+}
+
+#toc>ul>li>ul>li {
+    font-weight: normal;
 }
 
 .page {
@@ -113,85 +182,90 @@ img.social {
     flex-grow: 1;
 }
 
-@media (max-width: 1150px) {
+@media (max-width: 100em) {
     .content-container {
         flex-direction: column;
     }
 
-    #toc {
+    .toc-wrapper {
+        width: 100%; /* Ensure it takes up 100% width */
+        max-width: 55em; /* Remove the restriction on max-width */
+        position: static; /* Reset sticky positioning */
+        height: auto; /* Reset height */
         margin-top: 1em;
         margin-bottom: 1em;
         margin-left: auto;
         margin-right: auto;
-        padding-left: 0.5em;
-        padding-right: 0.5em;
+    }
+
+    /* Remove the top and bottom gradient in mobile view */
+    .toc-wrapper::before,
+    .toc-wrapper::after {
+        display: none;
+    }
+
+    #toc {
         padding-bottom: 1em;
-        padding-left: 1em;
-
-        width: 100%;   /* Ensure both take up 100% width */
-        max-width: 55em; /* Remove the restriction on max-width */
-
+        width: 100%; /* Ensure it takes up 100% width */
+        max-width: none; /* Remove the restriction on max-width */
         box-sizing: border-box; /* Include padding and border in the width */
-
         flex-grow: 1;
-        order: -1;
+        order: -1; /* Make it appear at the top */
         position: static;
         top: auto;
         overflow-y: auto;
+        max-height: none;
+        background-color: #f8f8f8;
+        border-radius: 4px; /* If you still want rounded corners */
+    }
 
+    .page {
+        padding-left: 0em;
+        padding-right: 0em;
     }
 }
 
 
-
-
-h1 {
-  font-weight: normal;
-  font-style: normal;
-  text-align: center;
-}
-
-h2 {
-  font-weight: normal;
-  font-style: normal;
-  text-align: left;
-}
-
 /*Main page*/
+ul.main_page {
+    text-align: left;
+}
+
 li.a {
-    font-size: 1.5em;
+    font-size: 1.2em;
     padding-bottom: 1em;
 }
 
 li.b {
-    font-size: 0.9em;
+    font-size: 0.8em;
     padding-top: 0.2em;
 }
 
-/*Additional information in the end of articles*/
-li.additional {
-  text-align: justify;
-  font-size: 1.2em;
-  padding-bottom: 1em;
-}
-
-/* Just enumeration of somethingin the text */
-.enum {
-  text-align: justify;
-  font-size: 1.2em;
-}
-
-
-
 p {
   text-indent: 40px;
-  font-size: 1.2em;
   text-align: justify;
 }
 
-.equation{
-  font-size: 1.2em;
-  text-align: center;
+
+.math.display{
+    overflow-x: auto;
+    display: block;
+    text-indent: 0px;
+}
+
+.MathJax svg {
+    max-width: 200%;
+}
+
+/*Fixes the margin error for anchors*/
+[id^="mjx-eqn\:eq\:"]
+{
+    scroll-margin-top: 5em;
+}
+
+a[href^="#mjx-eqn:"] {
+    font-weight: bold;
+    text-decoration-skip-ink: none;
 }
 
 a.chapter {
@@ -203,27 +277,23 @@ a.chapter:hover {
   border-bottom: none;
 }
 
-
-div.image {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  font-style: italic;
-  font-size: 0.8em; 
+/* Reset margins and padding for the figure and its children */
+figure, figure video, figure img, p video, p img, figure figcaption {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack the video and description vertically */
+    justify-content: space-between;
+    font-style: italic;
+    font-size: 0.8em;
 }
 
-img.image {
-  width: 100%;
-  object-fit: scale-down;
+/* Style the figcaption */
+figure figcaption {
+    text-align: right; /* Center the description text */
 }
 
-div.video{
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  font-style: italic;
-  font-size: 0.8em; 
-}
 
 iframe { 
   width: 100%;
@@ -239,20 +309,21 @@ div.polaroid {
   font-family: monospace;
 }
 
-.stylish-quote {
-    border-left: 4px solid #333; /* Adds a left border to the quote */
-    padding: 20px;          /* Creates some space between the border and the text */
-    font-style: italic;          /* Makes the text italic */
-    color: #555;                 /* Darker gray color for the text */
-    background-color: #f5f5f5;  /* Light gray background color for the quote */
-    text-align: justify;
+blockquote {
+  margin: 0;
+  text-indent: 0px;
+  font-size: 0.8em;
+  border-left: 4px solid #333; /* Adds a left border to the quote */
+  padding: 0.1em;
+  padding-right: 2em;
+  padding-left: 2em;
+  font-style: italic;          /* Makes the text italic */
+  color: #555;                 /* Darker gray color for the text */
+  background-color: #f5f5f5;  /* Light gray background color for the quote */
+  text-align: left;
 }
 
-/*.stylish-quote p {
-    margin: 0;                   /* Removes default margin from the paragraph inside the blockquote */
-}*/
-
-.stylish-quote strong {
+blockquote strong {
     font-style: normal;          /* Makes the bold text inside the quote non-italic */
     color: #333;                 /* Makes the bold text a bit darker than the surrounding text */
 }
@@ -264,7 +335,7 @@ code {
 .takeaway {
     font-weight: bold;         /* Bold text for emphasis */
     text-align: center;        /* Centers the text within the element */
-    font-size: 1.2em;          /* Makes the text slightly larger than regular content */
+    font-size: 1em;          /* Makes the text slightly larger than regular content */
     margin-top: 20px;          /* Space above the takeaway element */
     margin-bottom: 20px;       /* Space below the takeaway element */
     padding: 10px;             /* Space inside the element around the text */
@@ -273,4 +344,85 @@ code {
     background-color: #f9f9f9;     /* A very light gray background for the takeaway */
 }
 
+.note p, .definition p {
+    text-indent: 0;
+    position: relative; /* Allows for positioning of the icon */
+    padding-left: 3em; /* Space for the icon on the left */
+    padding-top: 1em; 
+    padding-bottom: 1em;
+    padding-right: 1.2em; 
+}
 
+.note p::before, .definition p::before {
+    position: absolute; /* Absolute positioning for the icon */
+    top: 0.3em; /* Center vertically */
+    left: 0.5em; /* Closer position from the left border */
+    font-family: 'Material Icons';
+    font-weight: normal; /* Font weight for solid icons */
+    font-style: normal;
+    font-size: 1.5em; 
+    text-align: left; /* Align the icons to the left */
+}
+
+.note p {
+    background-color: #fff9c4; /* Light yellow background */
+    border: 1px solid #f0db70; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 1em; /* Space below the note element */
+    text-align: left;
+}
+
+.note p::before {
+    content: 'warning'; /* Exclamation Circle icon from Font Awesome */
+    color: #d1a655; /* Color of the exclamation mark */
+}
+
+.definition p {
+    background-color: #e0f0ff; /* Light blue background */
+    border: 1px solid #a8c4e0; /* Subtle border */
+    border-radius: 5px; /* Rounded corners */
+    margin-bottom: 1em; /* Space below the definition element */
+}
+
+.definition p::before {
+    content: 'stars'; /* Info icon from Font Awesome */
+    color: #6a8db3; /* Color of the info icon */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 1em; /* Space above the header */
+    margin-bottom: 0.5em; /* Space below the header */
+    color: #333; /* Dark color for the text */
+    text-align: left;
+}
+
+h1 {
+    font-size: 2.5em; /* Size of the main headers */
+    font-weight: 700; /* Bold font weight for more emphasis */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-bottom: 3px solid #ddd; /* A thicker line below the main header */
+    padding-bottom: 0.2em; /* Space between the text and the line */
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em; /* Size of the secondary headers */
+    border-bottom: 1px solid #ddd; /* A subtle line below the secondary header */
+    padding-bottom: 0.2em; /* Space between the text and the line */
+}
+
+h3 {
+    font-size: 1.75em; /* Size of the tertiary headers */
+}
+
+h4 {
+    font-size: 1.5em; /* And so on... */
+}
+
+h5 {
+    font-size: 1.25em;
+}
+
+h6 {
+    font-size: 1em;
+}

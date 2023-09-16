@@ -8,6 +8,7 @@
 	<link rel="shortcut icon" type="image/png" href="/img/favicon.png">
 	<link rel="shortcut icon" sizes="192x192" href="/img/favicon.png">
 	<link rel="apple-touch-icon" href="/img/favicon.png">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<title>Sort of School</title>
 
 	<link href="../style.css" rel="stylesheet" />
@@ -22,9 +23,22 @@
 			margin-top: 1em;
 		}
 
+		.equation{
+		  font-family: sans-serif;
+		  font-size: 1.2em;
+		  text-align: center;
+		}
+
+		.scroll-container {
+		  overflow-x: auto; /* This will provide horizontal scroll when necessary */
+		  width: 100%;      /* It will take full width of its parent container */
+		}
+
 		table {
-		  width: 100%;
-		  border-collapse: collapse;
+			min-width: 40em; /* or any other value that fits your content best */
+			width: 100%;
+			border-collapse: collapse;
+			font-size: 1em;
 		}
 
 		th,
@@ -40,6 +54,7 @@
 		tr:hover {
 		  background-color: #ddd;
 		}
+
 
 	</style>
 
@@ -79,10 +94,13 @@
 		<script src="../header.js"></script>
 	</header>
 	<div class="page">
-
 		<h1>TeX Equation renderer</h1>
 
-		<p>This is a tool I frequently use to create visually appealing equations for presentations, videos, and animations. It converts TeX input into SVG and PNG formats, allowing you to easily incorporate mathematical equations into various digital formats. The tool offers two color options: black and white, making the equations suitable for different backgrounds and visual contexts. Please note that the equations are rendered with transparent backgrounds; therefore, the white version may not be visible on a white background, and the black version may not be visible on a black background. </p>
+		<p>This is a tool I frequently use to create visually appealing equations for presentations, videos, and animations. It converts TeX input into SVG and PNG formats, allowing you to easily incorporate mathematical equations into various digital formats. The tool offers two color options: black and white, making the equations suitable for different backgrounds and visual contexts. </p>
+
+		<div class="note"><p>
+		Please note that the equations are rendered with transparent backgrounds; therefore, the white version may not be visible on a white background, and the black version may not be visible on a black background. </p>
+		</div>
 		
         <h2>Enter TeX equation:</h2>
         <textarea id="latex-input" rows="4" cols="45">f(x) = \frac{1}{\sigma \sqrt{2\pi} } e^{-\frac{1}{2}\left(\frac{x-\mu}{\sigma}\right)^2}</textarea>
@@ -98,6 +116,7 @@
         </div>
 
 		<h2>Showcase</h2>
+		<div class="scroll-container">
 		<table>
 		  <tr>
 		    <td>\(x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}\)</td>
@@ -133,8 +152,11 @@
 		  </tr>
 
 		</table>
+		</div>
 
 		<h2>Lowercase Greek</h2>
+
+		<div class="scroll-container">
 		<table>
 		  <tr>
 		    <td>\( \alpha \)</td>
@@ -197,9 +219,10 @@
 		    <td><code>\omega</code></td>
 		  </tr>
 		</table>
-
+		</div>
 
 		<h2>Uppercase Greek</h2>
+		<div class="scroll-container">
 		<table>
 		  <tr>
 		    <td>\( \Gamma \)</td>
@@ -232,9 +255,10 @@
 		    <td></td>
 		  </tr>
 		</table>
-
+		</div>
 
 		<h2>Delimiters</h2>
+		<div class="scroll-container">
 		<table>
 		  <tr>
 		    <td>\( ( a + b ) \)</td>
@@ -267,9 +291,11 @@
 		    <td></td>
 		  </tr>
 		</table>
-
+		</div>
 
 		<h2>Big Symbols</h2>
+
+		<div class="scroll-container">
 		<table>
 		  <tr>
 		    <td>\( \int \)</td>
@@ -308,8 +334,10 @@
 		    <td></td>
 		  </tr>
 		</table>
+		</div>
 
 		<h2>Standard Function Names</h2>
+		<div class="scroll-container">
 		<table>
 		  <tr>
 		    <td>\( \sin \)</td>
@@ -384,9 +412,10 @@
 		    <td></td>
 		  </tr>
 		</table>
-
+		</div>
 
 		<h2>Accents Cheat Sheet</h2>
+		<div class="scroll-container">
 		<table>
 		  <tr>
 		    <td>\( \hat{a} \)</td>
@@ -431,8 +460,10 @@
 		    <td><code>\widehat{abc}</code></td>
 		  </tr>
 		</table>
+		</div>
 
 		<h2>Binary Operation Symbols</h2>
+		<div class="scroll-container">
 		<table>
 		  <tr>
 		    <td>\( + \)</td>
@@ -485,8 +516,10 @@
 		    <td><code>\bullet</code></td>
 		  </tr>
 		</table>
+		</div>
 
 		<h2>Relation Symbols Cheat Sheet</h2>
+		<div class="scroll-container">
 		<table>
 		  <tr>
 		    <td>\( = \)</td>
@@ -567,9 +600,11 @@
 		    <td><code>\mapsto</code></td>
 		  </tr>
 		</table>
+		</div>
 
 
 		<h2>Miscellaneous Symbols</h2>
+		<div class="scroll-container">
 		<table>
 		  <tr>
 		    <td>\( \infty \)</td>
@@ -620,22 +655,7 @@
 		    <td><code>\hbar</code></td>
 		  </tr>
 		</table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		</div>
     	
 	</div>
 	<footer>

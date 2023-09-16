@@ -7,22 +7,50 @@
 	<link rel="shortcut icon" type="image/png" href="/img/favicon.png">
 	<link rel="shortcut icon" sizes="192x192" href="/img/favicon.png">
 	<link rel="apple-touch-icon" href="/img/favicon.png">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<title>Sort of School</title>
 	<link href="../style.css" rel="stylesheet" />
 	<script>
-	MathJax = {
-		loader: {
-				load: ['input/tex-base', 'output/svg']
-			},
-        tex: {
-            tags: 'none', // should be 'ams', 'none', or 'all'
-            tagSide: 'right',
-            inlineMath: [['$', '$'], ['\\(', '\\)']]
-        },
-        options: {
-            enableMenu: false
-        }
-    };
+		MathJax = {
+		    loader: {
+		            load: ['input/tex-base', 'output/svg']
+		        },
+		    tex: {
+		        tags: 'ams', // should be 'ams', 'none', or 'all'
+		        tagSide: 'right',
+		        inlineMath: [['$', '$'], ['\\(', '\\)']],
+		        displayMath: [['\\[', '\\]']]
+		    },
+		    options: {
+		        enableMenu: false
+		    }
+		};
+	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+		    let toc = document.getElementById('toc');
+
+		    // Extracted logic into a function for reusability
+		    function checkTocPosition() {
+		        if (toc.scrollTop === 0) {
+		            toc.parentElement.classList.add('at-top');
+		        } else {
+		            toc.parentElement.classList.remove('at-top');
+		        }
+
+		        if (Math.ceil(toc.scrollTop) + toc.clientHeight >= toc.scrollHeight) {
+		            toc.parentElement.classList.add('at-bottom');
+		        } else {
+		            toc.parentElement.classList.remove('at-bottom');
+		        }
+		    }
+
+		    // Attach event listener for scroll
+		    toc.addEventListener('scroll', checkTocPosition);
+
+		    // Check the position initially
+		    checkTocPosition();
+		});
 	</script>
 	<script id="MathJax-script" async
 	  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
@@ -31,310 +59,226 @@
 
 
 <body>
-	<a id="top"></a>
 	<header>
 		<script src="../header.js"></script>
+		<a id="top"></a>
 	</header>
 
-	<div class="image"><img class="image" src="spirograph/spirograph_drawings.png">
-		<div>&nbsp</div>
-		<div>Daniel Elis Axelrod</div>
-	</div>
+	<figure>
+		<img src="spirograph/spirograph_drawings.png" alt="test" />
+		<figcaption aria-hidden="true">Daniel Elis Axelrod</figcaption>
+	</figure>
 
 	<div class="content-container">
 
-	    <div id="toc">
-	    	<h2>Table of Contents</h2>
-	        <ol>
-	        	<li><a href="#top"><b>Spirograph</b></a></li>
-	            <li><a href="#Cycloid">Cycloid</a></li>
-	            <li><a href="#Hypocycloid">Hypocycloid</a></li>
-	            <li><a href="#Hypotrochoid">Hypotrochoid</a></li>
-	            <li><a href="#Ratios">Ratios</a></li>
-	            <li><a href="#Epitrochoids">Epitrochoids</a></li>
-	            <li><a href="#Epi-epitrochoid">Epi-epitrochoid</a></li>
-	            <li><a href="#Additional"><b>Additional Links</b></a></li>
-	        </ol>
+		<div class="toc-wrapper">
+		    <div id="toc">
+		    	<h2>Table of Contents</h2>
+		    	<ul>
+    <li><a href="#cycloid" id="toc-cycloid"><span
+    class="toc-section-number">1</span> Cycloid</a></li>
+    <li><a href="#hypocycloid" id="toc-hypocycloid"><span
+    class="toc-section-number">2</span> Hypocycloid</a></li>
+    <li><a href="#hypotrochoid" id="toc-hypotrochoid"><span
+    class="toc-section-number">3</span> Hypotrochoid</a>
+    <ul>
+    <li><a href="#hypotrochoid-ratios"
+    id="toc-hypotrochoid-ratios"><span
+    class="toc-section-number">3.1</span> Hypotrochoid Ratios</a></li>
+    </ul></li>
+    <li><a href="#epitrochoids" id="toc-epitrochoids"><span
+    class="toc-section-number">4</span> Epitrochoids</a></li>
+    <li><a href="#epi-epitrochoid" id="toc-epi-epitrochoid"><span
+    class="toc-section-number">5</span> Epi-epitrochoid</a></li>
+    <li><a href="#additional-links" id="toc-additional-links"><span
+    class="toc-section-number">6</span> Additional links</a></li>
+    </ul>
+		    </div>
 	    </div>
 
 		<div class="page">
 			<h1>Spirograph</h1>
-			<!-- <h2>Video</h2> -->
-			<iframe src="https://www.youtube.com/embed/n-e9C8g5x68" title="YouTube video player" frameborder="0" controls="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-
-			<section id="Cycloid">
-			<!-- <h2>Cycloid</h2> -->
-			<div class="video">
-				<video width="100%" controls>
-					<source src="spirograph/1_Cycloid.mp4" type="video/mp4">
-					Your browser does not support the video tag.
-				</video> 
-				<div></div>
-				<div></div>
-			</div>
-
-			<p>The trajectory of a point on the surface of the wheel that rolls on a straight surface without sliding.</p>
-
-			<p>
-			Cycloid parametric equation:
-			$$
-				\begin{cases}
-				 x = r(t-\sin{t}) \\
-				 y = r(1-\cos{t})
-				\end{cases}
-			$$
-			</p>
-
-			<p>where $r$ — radius of the circle, $t$ — parameter.</p>
-			</section>
-			<section id="Hypocycloid">
-			<!-- <h2>Hypocycloid</h2> -->
-			<video width="100%" controls>
-			<source src="spirograph/2_Hypocycloid.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-
-			<p>The trajectory of a point on the surface of the wheel that rolls inside of another circle without sliding. </p>
-			<p>
-			Hypocycloid parametric equation:
-			$$
-				\begin{cases}
-				x = (R - r) \cos t + r \cos(t - \frac{Rt}{r}) \\
-				y = (R - r) \sin t + r \sin(t - \frac{Rt}{r})
-				\end{cases}
-			$$
-			</p>
-			<p>where $R$ — radius of the big circle, $r$ — radius of the small circle, $t$ — parameter.</p>
-
-			</section>
-			<section id="Hypotrochoid">
-			<!-- <h2>Hypotrochoid</h2> -->
-			<video width="100%" controls>
-			<source src="spirograph/3_Hypotrochoid.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video>
-
-			<p>The drawing point of the hypotrochoid is located at some distance from the center of the second wheel.</p>
-
-			<p>
-			Hypotrochoid parametric equation:
-			$$
-				\begin{cases}
-				x = (R - r) \cos t + h \cos(t - \frac{Rt}{r}) \\
-				y = (R - r) \sin t + h \sin(t - \frac{Rt}{r})
-				\end{cases}
-			$$
-			</p>
-			<p>where $h$ — distance to the drawing point, $R$ — radius of the big circle, $r$ — radius of the small circle, $t$ — parameter.</p>
-
-			</section>
-			<section id="Ratios">
-			<h1>Ratios</h1>
-			<div class="video">
-			<video width="100%" controls>
-			<source src="spirograph/4_Same_ratio.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-			<div></div>
-			<div></div>
-			</div>
-			<p>
-			The shape of the spiral depends on the ratio of the radii of the outer and inner wheels. This relation determines the shape of the hypotrochoid:
-			$$ k = \frac{R}{r} $$
-			</p>
-
-			<!-- <h2>Hypocycloid integer ratio</h2> -->
-			<video width="100%" controls>
-			<source src="spirograph/5_Natural_ratio.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-
-			<p>
-				If $ k \in \mathbb{N}$, the image resembles a star with the corresponding number of rays.
-			</p>
-
-			<!-- <h2>Hypotrochoid rational ratio</h2> -->
-			<video width="100%" controls>
-			<source src="spirograph/6_Rational_ratio.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-
-			<p>
-				If $ k \in \mathbb{Q}$, meaning it can be represented as a fraction of integer numbers, then the image looks like a flower. And the numerator of the fraction determines the number of petals on this flower..
-			</p>
-
-
-			<!-- <h2>Hypotrochoid irrational ratio</h2> -->
-			<video width="100%" controls>
-			<source src="spirograph/7_Irrational_ratio.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-
-			<p>
-				If the number $ k \in \mathbb{I}$, meaning that it cannot be represented as a fraction, then the curve is not closed, and a flower has an infinite number of petals.
-			</p>
-
-			</section>
-			<section id="Epitrochoids">
-			<h1>Epitrochoids</h1>
-			<!-- <h2>Epicycloid and epitrochoid</h2> -->
-			<video width="100%" controls>
-			<source src="spirograph/8_Epicycloid and epitrochoid.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-
-			<p>
-				The curves that the point draws on the surface of the outer wheel are called epicycloids, and at some distance from the center, epitrochoids.
-			</p>
-
-			<p>
-			Epicycloid parametric equation:
-			$$
-				\begin{cases}
-				x = (R + r) \cos t + r \cos(t + \frac{Rt}{r}) \\
-				y = (R + r) \sin t + r \sin(t + \frac{Rt}{r})
-				\end{cases}
-			$$
-			</p>
-
-			<p>
-			Epitrochoid parametric equation:
-			$$
-				\begin{cases}
-				x = (R + r) \cos t + h \cos(t + \frac{Rt}{r}) \\
-				y = (R + r) \sin t + h \sin(t + \frac{Rt}{r})
-				\end{cases}
-			$$
-
-			Derivation of the parametric equation of the epitrochoid:
-			</p>
-
-			<video width="100%" controls>
-			<source src="spirograph/14_Epitrochoid_derivation.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-
-			<p>
-			If both circles are the same, the epitrochoid is called Pascal's snail. Not after triangle-pressure-Pascal, but after his father
-			</p>
-
-			<!-- <h2>Limaçon of Pascal</h2> -->
-			<video width="100%" controls>
-			<source src="spirograph/9_Limacon.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-
-			<p>
-			Pascal's snail parametric equation:
-			$$
-				\begin{cases}
-				x = 2r \cos t + r \cos(2t) \\
-				y = 2r \sin t + r \sin(2t)
-				\end{cases}
-			$$
-			</p>
-
-			</section>
-			<section id="Epi-epitrochoid">
-			<h1>Epi-epitrochoid</h1>
-
-			<!-- <h2>Coeffitients</h2> -->
-			<p>
-			We can add the third circle and get really beautiful spirals.
-			</p>
-
-			<!-- <h2>Abstract</h2> -->
-			<video width="100%" controls>
-			<source src="spirograph/12_Abstract.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-
-			<p>Epi-epitrochoid parametric equation:</p>
-			<div class = "equation">
-			$$
-			\begin{aligned}
-			x & = (r_1 + r_2) \cos t + \\
-			  & + (r_2 + r_3) \cos(t + \frac{r_1}{r_2}t - \frac{r_1}{p r_2}t) + \\
-			  & + h \cos(t + \frac{r_1}{r_2}t - \frac{r_1}{p r_2}t - \frac{r_1}{p r_3}t); 
-			\end{aligned}
-			$$
-
-			$$
-			\begin{aligned}
-			y & = (r_1 + r_2) \sin t + \\
-			& + (r_2 + r_3) \sin(t + \frac{r_1}{r_2}t - \frac{r_1}{p r_2}t) + \\
-			& + h \sin(t + \frac{r_1}{r_2}t - \frac{r_1}{p r_2}t - \frac{r_1}{p r_3}t);
-			\end{aligned}
-			$$
-			<a href="spirograph/spiral_proof.png">See proof</a>
-			</div>
-			<p>Where $r_1, r_2, r_3$ — are radii of the circles and $p$ is the ratio of the path that the second circle traveled along with the first to the path that the third circle traveled along with the second one.</p>
-			
-
-			<video width="100%" controls>
-			<source src="spirograph/13_Сoefficients.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-
-			<p>
-			Overall, there are four parameters on which the final curve depends: the ratio of the radius of the first circle to the second $k$, the ratio of the radius of the first circle to the third $k_2$, the ratio of the paths $p$, and the distance to the drawing point $h$.
-			</p>
-			<!-- <h2>Parker fish</h2> -->
-			<video width="100%" controls>
-			<source src="spirograph/11_Parker_fish.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-
-			<!-- <h2>Bagel</h2> -->
-			<video width="100%" controls>
-			<source src="spirograph/10_Bagel.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-
-			<p> By changing parameters in real-time, we can observe how changing each parameter affects the final image.</p>
-
-			<video width="100%" controls>
-			<source src="spirograph/15_Demo.mp4" type="video/mp4">
-			Your browser does not support the video tag.
-			</video> 
-
-			<p>4K 60fps rendering of this video took almost 6 hours. Consider subscribing to my <a href="https://patreon.com/sortofschool">Patreon</a> to support this project and get this and other videos from this page in full quality.</p>
-
-
-			</section>
-			<section id="Additional">
-			<h2>Additional links, acknowledgements, and attributions</h2>
-
-			<ul>
-				<li class="additional"><a href="https://mitchellwarr.github.io/spirographer/">
-					Interactive simulation by Mitchell War
-					</a>
-				</li>
-				<li class="additional"><a href="https://www.matharticles.com/ma/ma064.pdf">
-					"A Rose is a Rose..." by Maurer, Peter M.
-					</a>
-				</li>
-				<li class="additional">
-					Joe Freedman's Amazing Cycloid Drawing Machine
-					<ul>
-						<li>
-							<a href="https://youtu.be/ygcGfnVM6Ho">
-								Gear Driven Wooden Machine
-							</a>
-						</li>
-						<li>
-							<a href="https://wheelof.com/sketch/">
-								KrazyDad interactive simulation
-							</a>
-						</li>
-					</ul>
-				<li class="additional">
-					<a href = "https://github.com/sokolov-teach/spirograph">Github code</a>
-				</li>
-				</li>
-			</ul>
-
-			</section>
+			<iframe src="https://www.youtube.com/embed/n-e9C8g5x68" title="YouTube video player" frameborder="0" controls="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+</iframe>
+<section id="cycloid" class="level2" data-number="1">
+<h2 data-number="1"><span class="header-section-number">1</span>
+Cycloid</h2>
+<p><video src="spirograph/1_Cycloid.mp4" controls=""><a
+href="spirograph/1_Cycloid.mp4">Video</a></video></p>
+<p>The trajectory of a point on the surface of the wheel that rolls on a
+straight surface without sliding.</p>
+<p>Cycloid parametric equation: <span class="math display">\[
+\begin{cases}
+x = r(t-\sin{t}) \\
+y = r(1-\cos{t})
+\end{cases}
+\]</span></p>
+<p>where <span class="math inline">\(r\)</span> — radius of the circle,
+<span class="math inline">\(t\)</span> — parameter.</p>
+</section>
+<section id="hypocycloid" class="level2" data-number="2">
+<h2 data-number="2"><span class="header-section-number">2</span>
+Hypocycloid</h2>
+<p><video src="spirograph/2_Hypocycloid.mp4" controls=""><a
+href="spirograph/2_Hypocycloid.mp4">Video</a></video></p>
+<p>The trajectory of a point on the surface of the wheel that rolls
+inside of another circle without sliding.</p>
+<p>Hypocycloid parametric equation: <span class="math display">\[
+\begin{cases}
+x = (R - r) \cos t + r \cos(t - \frac{Rt}{r}) \\
+y = (R - r) \sin t + r \sin(t - \frac{Rt}{r})
+\end{cases}
+\]</span></p>
+<p>where <span class="math inline">\(R\)</span> — radius of the big
+circle, <span class="math inline">\(r\)</span> — radius of the small
+circle, <span class="math inline">\(t\)</span> — parameter.</p>
+</section>
+<section id="hypotrochoid" class="level2" data-number="3">
+<h2 data-number="3"><span class="header-section-number">3</span>
+Hypotrochoid</h2>
+<p><video src="spirograph/3_Hypotrochoid.mp4" controls=""><a
+href="spirograph/3_Hypotrochoid.mp4">Video</a></video></p>
+<p>The drawing point of the hypotrochoid is located at some distance
+from the center of the second wheel.</p>
+<p>Hypotrochoid parametric equation: <span class="math display">\[
+\begin{cases}
+x = (R - r) \cos t + h \cos(t - \frac{Rt}{r}) \\
+y = (R - r) \sin t + h \sin(t - \frac{Rt}{r})
+\end{cases}
+\]</span></p>
+<p>where <span class="math inline">\(h\)</span> — distance to the
+drawing point, <span class="math inline">\(R\)</span> — radius of the
+big circle, <span class="math inline">\(r\)</span> — radius of the small
+circle, <span class="math inline">\(t\)</span> — parameter.</p>
+<section id="hypotrochoid-ratios" class="level3" data-number="3.1">
+<h3 data-number="3.1"><span class="header-section-number">3.1</span>
+Hypotrochoid Ratios</h3>
+<p><video src="spirograph/4_Same_ratio.mp4" controls=""><a
+href="spirograph/4_Same_ratio.mp4">Video</a></video></p>
+<p>The shape of the spiral depends on the ratio of the radii of the
+outer and inner wheels. This relation determines the shape of the
+hypotrochoid: <span class="math inline">\(k = \frac{R}{r}\)</span></p>
+<p><video src="spirograph/5_Natural_ratio.mp4" controls=""><a
+href="spirograph/5_Natural_ratio.mp4">Video</a></video></p>
+<p>If <span class="math inline">\(k \in \mathbb{N}\)</span>, the image
+resembles a star with the corresponding number of rays.</p>
+<p><video src="spirograph/6_Rational_ratio.mp4" controls=""><a
+href="spirograph/6_Rational_ratio.mp4">Video</a></video></p>
+<p>If <span class="math inline">\(k \in \mathbb{Q}\)</span>, meaning it
+can be represented as a fraction of integer numbers, then the image
+looks like a flower. And the numerator of the fraction determines the
+number of petals on this flower.</p>
+<p><video src="spirograph/7_Irrational_ratio.mp4" controls=""><a
+href="spirograph/7_Irrational_ratio.mp4">Video</a></video></p>
+<p>If the number <span class="math inline">\(k \in \mathbb{I}\)</span>,
+meaning that it cannot be represented as a fraction, then the curve is
+not closed, and a flower has an infinite number of petals.</p>
+</section>
+</section>
+<section id="epitrochoids" class="level2" data-number="4">
+<h2 data-number="4"><span class="header-section-number">4</span>
+Epitrochoids</h2>
+<p><video src="spirograph/8_Epicycloid%20and%20epitrochoid.mp4"
+controls=""><a
+href="spirograph/8_Epicycloid%20and%20epitrochoid.mp4">Video</a></video></p>
+<p>The curves that the point draws on the surface of the outer wheel are
+called epicycloids, and at some distance from the center,
+epitrochoids.</p>
+<p>Epicycloid parametric equation: <span class="math display">\[
+\begin{cases}
+x = (R + r) \cos t + r \cos(t + \frac{Rt}{r}) \\
+y = (R + r) \sin t + r \sin(t + \frac{Rt}{r})
+\end{cases}
+\]</span></p>
+<p>Epitrochoid parametric equation: <span class="math display">\[
+\begin{cases}
+x = (R + r) \cos t + h \cos(t + \frac{Rt}{r}) \\
+y = (R + r) \sin t + h \sin(t + \frac{Rt}{r})
+\end{cases}
+\]</span></p>
+<p>Derivation of the parametric equation of the epitrochoid:</p>
+<p><video src="spirograph/14_Epitrochoid_derivation.mp4" controls=""><a
+href="spirograph/14_Epitrochoid_derivation.mp4">Video</a></video></p>
+<p>If both circles are the same, the epitrochoid is called Pascal’s
+snail. Not after triangle-pressure-Pascal, but after his father.</p>
+<p><video src="spirograph/9_Limacon.mp4" controls=""><a
+href="spirograph/9_Limacon.mp4">Video</a></video></p>
+<p>Pascal’s snail parametric equation: <span class="math display">\[
+\begin{cases}
+x = 2r \cos t + r \cos(2t) \\
+y = 2r \sin t + r \sin(2t)
+\end{cases}
+\]</span></p>
+</section>
+<section id="epi-epitrochoid" class="level2" data-number="5">
+<h2 data-number="5"><span class="header-section-number">5</span>
+Epi-epitrochoid</h2>
+<p>We can add the third circle and get really beautiful spirals.</p>
+<p><video src="spirograph/12_Abstract.mp4" controls=""><a
+href="spirograph/12_Abstract.mp4">Video</a></video></p>
+<p>Epi-epitrochoid parametric equation <a
+href="spirograph/spiral_proof.png">(See proof)</a> : <span
+class="math display">\[
+\begin{aligned}
+x &amp; = (r_1 + r_2) \cos t + \\
+  &amp; + (r_2 + r_3) \cos(t + \frac{r_1}{r_2}t - \frac{r_1}{p r_2}t) +
+\\
+  &amp; + h \cos(t + \frac{r_1}{r_2}t - \frac{r_1}{p r_2}t -
+\frac{r_1}{p r_3}t);
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+y &amp; = (r_1 + r_2) \sin t + \\
+&amp; + (r_2 + r_3) \sin(t + \frac{r_1}{r_2}t - \frac{r_1}{p r_2}t) + \\
+&amp; + h \sin(t + \frac{r_1}{r_2}t - \frac{r_1}{p r_2}t - \frac{r_1}{p
+r_3}t);
+\end{aligned}
+\]</span></p>
+<p>Where <span class="math inline">\(r_1, r_2, r_3\)</span> — are radii
+of the circles and <span class="math inline">\(p\)</span> is the ratio
+of the path that the second circle traveled along with the first to the
+path that the third circle traveled along with the second one.</p>
+<p><video src="spirograph/13_Сoefficients.mp4" controls=""><a
+href="spirograph/13_Сoefficients.mp4">Video</a></video></p>
+<p>Overall, there are four parameters on which the final curve depends:
+the ratio of the radius of the first circle to the second <span
+class="math inline">\(k\)</span>, the ratio of the radius of the first
+circle to the third <span class="math inline">\(k_2\)</span>, the ratio
+of the paths <span class="math inline">\(p\)</span>, and the distance to
+the drawing point <span class="math inline">\(h\)</span>.</p>
+<p><video src="spirograph/11_Parker_fish.mp4" controls=""><a
+href="spirograph/11_Parker_fish.mp4">Video</a></video></p>
+<p><video src="spirograph/10_Bagel.mp4" controls=""><a
+href="spirograph/10_Bagel.mp4">Video</a></video></p>
+<p>By changing parameters in real-time, we can observe how changing each
+parameter affects the final image.</p>
+<p><video src="spirograph/15_Demo.mp4" controls=""><a
+href="spirograph/15_Demo.mp4">Video</a></video></p>
+<p>4K 60fps rendering of this video took almost 6 hours. Consider
+subscribing to my <a href="https://patreon.com/sortofschool">Patreon</a>
+to support this project and get this and other videos from this page in
+full quality.</p>
+</section>
+<section id="additional-links" class="level2" data-number="6">
+<h2 data-number="6"><span class="header-section-number">6</span>
+Additional links</h2>
+<ul>
+<li><a href="https://mitchellwarr.github.io/spirographer/">Interactive
+simulation by Mitchell War</a></li>
+<li><a href="https://www.matharticles.com/ma/ma064.pdf">“A Rose is a
+Rose…” by Maurer, Peter M.</a></li>
+<li>Joe Freedman’s Amazing Cycloid Drawing Machine
+<ul>
+<li><a href="https://youtu.be/ygcGfnVM6Ho">Gear Driven Wooden
+Machine</a></li>
+<li><a href="https://wheelof.com/sketch/">KrazyDad interactive
+simulation</a></li>
+</ul></li>
+<li><a href="https://github.com/sokolov-teach/spirograph">Github
+code</a></li>
+</ul>
+</section>
 		</div>
 	</div>
 	<footer>
