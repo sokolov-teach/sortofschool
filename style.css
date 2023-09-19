@@ -182,7 +182,7 @@ Table of Contents (ToC) Styling
     flex-grow: 1;
 }
 
-@media (max-width: 100em) {
+@media (max-width: 60em) {
     .content-container {
         flex-direction: column;
     }
