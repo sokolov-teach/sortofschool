@@ -146,7 +146,7 @@ Table of Contents (ToC) Styling
     border-radius: 4px;
     background-color: #f8f8f8;
     list-style-type: none;
-    max-height: 90vh;
+    max-height: 80vh;
     -ms-overflow-style: none;
     scrollbar-width: none;
     overflow-y: scroll;
