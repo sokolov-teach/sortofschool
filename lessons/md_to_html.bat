@@ -4,7 +4,7 @@ for %%i in (*.md) do (
         --template=template.html ^
         --number-sections ^
         --section-divs ^
-        --lua-filter=shifted-numbered-headings.lua ^
+        --lua-filter=filter.lua ^
         --toc ^
         --mathjax ^
         -o "%%~ni.html"
