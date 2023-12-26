@@ -8,7 +8,7 @@ function Pandoc (doc)
   -- Walk the blocks to shift the heading levels
   doc.blocks = doc.blocks:walk {
     Header = function (h)
-      h.level = h.level + 1
+      h.level = h.level + 0
       return h
     end
   }

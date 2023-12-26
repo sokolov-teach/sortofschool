@@ -76,106 +76,145 @@
 		    	<h2>Table of Contents</h2>
 		    	<ul>
     <li><a href="#qr-first-version" id="toc-qr-first-version"><span
-    class="toc-section-number">0.1</span> QR first version</a></li>
+    class="toc-section-number">1</span> QR first version</a></li>
     <li><a href="#patterns" id="toc-patterns"><span
-    class="toc-section-number">0.2</span> Patterns</a>
+    class="toc-section-number">2</span> Patterns</a>
     <ul>
     <li><a href="#finder-patterns" id="toc-finder-patterns"><span
-    class="toc-section-number">0.2.1</span> Finder patterns</a></li>
+    class="toc-section-number">2.1</span> Finder patterns</a></li>
     <li><a href="#timing-patterns" id="toc-timing-patterns"><span
-    class="toc-section-number">0.2.2</span> Timing Patterns</a></li>
+    class="toc-section-number">2.2</span> Timing Patterns</a></li>
     <li><a href="#additional-information"
     id="toc-additional-information"><span
-    class="toc-section-number">0.2.3</span> Additional
+    class="toc-section-number">2.3</span> Additional
     Information</a></li>
     </ul></li>
     <li><a href="#modes-of-encoding" id="toc-modes-of-encoding"><span
-    class="toc-section-number">0.3</span> Modes of Encoding</a>
+    class="toc-section-number">3</span> Modes of Encoding</a>
     <ul>
     <li><a href="#message-length" id="toc-message-length"><span
-    class="toc-section-number">0.3.1</span> Message Length</a></li>
+    class="toc-section-number">3.1</span> Message Length</a></li>
     <li><a href="#possible-combinations"
     id="toc-possible-combinations"><span
-    class="toc-section-number">0.3.2</span> Possible
-    Combinations</a></li>
+    class="toc-section-number">3.2</span> Possible Combinations</a></li>
     <li><a href="#byte-mode-encoding" id="toc-byte-mode-encoding"><span
-    class="toc-section-number">0.3.3</span> Byte Mode Encoding</a></li>
+    class="toc-section-number">3.3</span> Byte Mode Encoding</a>
+    <ul>
+    <li><a href="#letter-placement-and-encoding"
+    id="toc-letter-placement-and-encoding"><span
+    class="toc-section-number">3.3.1</span> Letter Placement and
+    Encoding</a></li>
+    <li><a href="#zigzag-order-and-module-assignment"
+    id="toc-zigzag-order-and-module-assignment"><span
+    class="toc-section-number">3.3.2</span> Zigzag Order and Module
+    Assignment</a></li>
+    <li><a href="#encoding-letters-in-qr-codes"
+    id="toc-encoding-letters-in-qr-codes"><span
+    class="toc-section-number">3.3.3</span> Encoding Letters in QR
+    Codes</a></li>
+    <li><a href="#why-not-always-use-byte-mode"
+    id="toc-why-not-always-use-byte-mode"><span
+    class="toc-section-number">3.3.4</span> Why Not Always Use Byte
+    Mode?</a></li>
+    </ul></li>
     <li><a href="#numeric-mode" id="toc-numeric-mode"><span
-    class="toc-section-number">0.3.4</span> Numeric Mode</a></li>
+    class="toc-section-number">3.4</span> Numeric Mode</a>
+    <ul>
+    <li><a href="#numeric-vs.-byte-mode"
+    id="toc-numeric-vs.-byte-mode"><span
+    class="toc-section-number">3.4.1</span> Numeric vs. Byte
+    Mode</a></li>
+    <li><a href="#numeric-mode-4bit" id="toc-numeric-mode-4bit"><span
+    class="toc-section-number">3.4.2</span> Numeric Mode 4bit</a></li>
+    <li><a href="#numeric-mode-10bit" id="toc-numeric-mode-10bit"><span
+    class="toc-section-number">3.4.3</span> Numeric Mode 10bit</a></li>
+    <li><a href="#bit-vs-10-bit-numeric-encoding-efficiency"
+    id="toc-bit-vs-10-bit-numeric-encoding-efficiency"><span
+    class="toc-section-number">3.4.4</span> 4-bit vs 10-bit Numeric
+    Encoding Efficiency</a></li>
+    </ul></li>
     <li><a href="#alphanumeric-mode" id="toc-alphanumeric-mode"><span
-    class="toc-section-number">0.3.5</span> Alphanumeric Mode</a></li>
+    class="toc-section-number">3.5</span> Alphanumeric Mode</a>
+    <ul>
+    <li><a href="#alphanumeric-efficiency-with-6-bit-encoding"
+    id="toc-alphanumeric-efficiency-with-6-bit-encoding"><span
+    class="toc-section-number">3.5.1</span> Alphanumeric Efficiency with
+    6-bit Encoding</a></li>
+    <li><a href="#alphanumeric-efficiency-with-11-bit-encoding"
+    id="toc-alphanumeric-efficiency-with-11-bit-encoding"><span
+    class="toc-section-number">3.5.2</span> Alphanumeric Efficiency with
+    11-bit Encoding</a></li>
+    </ul></li>
     <li><a href="#kanji-mode" id="toc-kanji-mode"><span
-    class="toc-section-number">0.3.6</span> Kanji Mode</a></li>
+    class="toc-section-number">3.6</span> Kanji Mode</a></li>
     </ul></li>
     <li><a href="#error-correction" id="toc-error-correction"><span
-    class="toc-section-number">0.4</span> Error Correction</a>
+    class="toc-section-number">4</span> Error Correction</a>
     <ul>
     <li><a href="#error-correction-level"
     id="toc-error-correction-level"><span
-    class="toc-section-number">0.4.1</span> Error Correction
+    class="toc-section-number">4.1</span> Error Correction
     Level</a></li>
     <li><a href="#error-correction-bits"
     id="toc-error-correction-bits"><span
-    class="toc-section-number">0.4.2</span> Error Correction
-    Bits</a></li>
+    class="toc-section-number">4.2</span> Error Correction Bits</a></li>
     <li><a href="#pad-blocks" id="toc-pad-blocks"><span
-    class="toc-section-number">0.4.3</span> Pad Blocks</a></li>
+    class="toc-section-number">4.3</span> Pad Blocks</a></li>
     <li><a href="#understanding-reed-solomon-error-correction"
     id="toc-understanding-reed-solomon-error-correction"><span
-    class="toc-section-number">0.4.4</span> Understanding Reed-Solomon
+    class="toc-section-number">4.4</span> Understanding Reed-Solomon
     Error Correction</a></li>
     <li><a
     href="#reed-solomon-error-correction-verification-and-restoration"
     id="toc-reed-solomon-error-correction-verification-and-restoration"><span
-    class="toc-section-number">0.4.5</span> Reed-Solomon Error
-    Correction: Verification and Restoration</a></li>
+    class="toc-section-number">4.5</span> Reed-Solomon Error Correction:
+    Verification and Restoration</a></li>
     <li><a href="#galois-fields-in-qr-code-error-correction"
     id="toc-galois-fields-in-qr-code-error-correction"><span
-    class="toc-section-number">0.4.6</span> Galois Fields in QR Code
-    Error Correction</a></li>
+    class="toc-section-number">4.6</span> Galois Fields in QR Code Error
+    Correction</a></li>
     <li><a href="#error-correction-modules-placement-in-qr-code"
     id="toc-error-correction-modules-placement-in-qr-code"><span
-    class="toc-section-number">0.4.7</span> Error Correction Modules
+    class="toc-section-number">4.7</span> Error Correction Modules
     Placement in QR Code</a></li>
     </ul></li>
     <li><a href="#masking" id="toc-masking"><span
-    class="toc-section-number">0.5</span> Masking</a>
+    class="toc-section-number">5</span> Masking</a>
     <ul>
     <li><a href="#mask-problem" id="toc-mask-problem"><span
-    class="toc-section-number">0.5.1</span> Mask Problem</a></li>
+    class="toc-section-number">5.1</span> Mask Problem</a></li>
     <li><a href="#types-of-masks" id="toc-types-of-masks"><span
-    class="toc-section-number">0.5.2</span> Types of Masks</a></li>
+    class="toc-section-number">5.2</span> Types of Masks</a></li>
     <li><a href="#mask-application-process"
     id="toc-mask-application-process"><span
-    class="toc-section-number">0.5.3</span> Mask Application
+    class="toc-section-number">5.3</span> Mask Application
     Process</a></li>
     <li><a href="#mask-evaluation-process"
     id="toc-mask-evaluation-process"><span
-    class="toc-section-number">0.5.4</span> Mask Evaluation
+    class="toc-section-number">5.4</span> Mask Evaluation
     Process</a></li>
     <li><a href="#mask-bits-allocation"
     id="toc-mask-bits-allocation"><span
-    class="toc-section-number">0.5.5</span> Mask Bits
-    Allocation</a></li>
+    class="toc-section-number">5.5</span> Mask Bits Allocation</a></li>
     </ul></li>
     <li><a href="#error-correction-and-mask-for-additional-information"
     id="toc-error-correction-and-mask-for-additional-information"><span
-    class="toc-section-number">0.6</span> Error Correction and Mask for
+    class="toc-section-number">6</span> Error Correction and Mask for
     Additional Information</a>
     <ul>
     <li><a href="#redundancy-in-additional-information"
     id="toc-redundancy-in-additional-information"><span
-    class="toc-section-number">0.6.1</span> Redundancy in Additional
+    class="toc-section-number">6.1</span> Redundancy in Additional
     Information</a></li>
     <li><a
     href="#brute-force-and-the-importance-of-additional-information"
     id="toc-brute-force-and-the-importance-of-additional-information"><span
-    class="toc-section-number">0.6.2</span> Brute Force and the
-    Importance of Additional Information</a></li>
+    class="toc-section-number">6.2</span> Brute Force and the Importance
+    of Additional Information</a></li>
     </ul></li>
     <li><a href="#additional-links-acknowledgements-and-attributions"
     id="toc-additional-links-acknowledgements-and-attributions"><span
-    class="toc-section-number">0.7</span> Additional links,
+    class="toc-section-number">7</span> Additional links,
     acknowledgements, and attributions</a></li>
     </ul>
 		    </div>
@@ -211,9 +250,9 @@
   </style>
 <iframe src="https://www.youtube.com/embed/SZEHDjV07J0" title="YouTube video player" frameborder="0" controls="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
 </iframe>
-<section id="qr-first-version" class="level2" data-number="0.1">
-<h2 data-number="0.1"><span class="header-section-number">0.1</span> QR
-first version</h2>
+<section id="qr-first-version" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> QR
+first version</h1>
 <p><video src="qr_codes/1_QR_first_version.mp4" controls preload="none"><a href="qr_codes/1_QR_first_version.mp4">Video</a></video></p>
 <p>The ISO 18004 Standard is like a guidebook for QR codes. It’s 126
 pages long and tells us how QR codes are made.</p>
@@ -223,12 +262,12 @@ bigger, so it’s harder to show them on a small screen.</p>
 <p>There is also a Micro-QR version, which is really cool, but almost
 none of the QR-code scanner apps could read them.</p>
 </section>
-<section id="patterns" class="level2" data-number="0.2">
-<h2 data-number="0.2"><span class="header-section-number">0.2</span>
-Patterns</h2>
-<section id="finder-patterns" class="level3" data-number="0.2.1">
-<h3 data-number="0.2.1"><span class="header-section-number">0.2.1</span>
-Finder patterns</h3>
+<section id="patterns" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span>
+Patterns</h1>
+<section id="finder-patterns" class="level2" data-number="2.1">
+<h2 data-number="2.1"><span class="header-section-number">2.1</span>
+Finder patterns</h2>
 <p><video src="qr_codes/2_Finder_patterns.mp4" controls preload="none"><a href="qr_codes/2_Finder_patterns.mp4">Video</a></video></p>
 <p>Now, the square doesn’t have any properties that would help
 distinguish the top from the bottom and determine that it is a QR code
@@ -237,9 +276,9 @@ patterns</strong> in three corners. That way we can always orient the
 QR-code the right way, no matter what angle it was shot from. The finder
 patterns always occupy 8 by 8 modules in these corners.</p>
 </section>
-<section id="timing-patterns" class="level3" data-number="0.2.2">
-<h3 data-number="0.2.2"><span class="header-section-number">0.2.2</span>
-Timing Patterns</h3>
+<section id="timing-patterns" class="level2" data-number="2.2">
+<h2 data-number="2.2"><span class="header-section-number">2.2</span>
+Timing Patterns</h2>
 <p><video src="qr_codes/3_Timing_patterns.mp4" controls preload="none"><a href="qr_codes/3_Timing_patterns.mp4">Video</a></video></p>
 <p>The next problem is that there are no grids on real QR codes. Without
 them, it’s hard to tell where each module is. Therefore, to help the
@@ -249,17 +288,17 @@ alternating dark and light modules that connect the finder patterns,
 plus one dark module situated close to the bottom-left finder pattern,
 and they help to distinguish between rows and columns.</p>
 </section>
-<section id="additional-information" class="level3" data-number="0.2.3">
-<h3 data-number="0.2.3"><span class="header-section-number">0.2.3</span>
-Additional Information</h3>
+<section id="additional-information" class="level2" data-number="2.3">
+<h2 data-number="2.3"><span class="header-section-number">2.3</span>
+Additional Information</h2>
 <p><video src="qr_codes/4_Additional_info.mp4" controls preload="none"><a href="qr_codes/4_Additional_info.mp4">Video</a></video></p>
 <p>Finally, strips of modules with a thickness of one are reserved by
 now for <strong>additional information.</strong></p>
 </section>
 </section>
-<section id="modes-of-encoding" class="level2" data-number="0.3">
-<h2 data-number="0.3"><span class="header-section-number">0.3</span>
-Modes of Encoding</h2>
+<section id="modes-of-encoding" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Modes
+of Encoding</h1>
 <p><video src="qr_codes/5_Modes_of_encoding.mp4" controls preload="none"><a href="qr_codes/5_Modes_of_encoding.mp4">Video</a></video></p>
 <p>All these elements, from search patterns to timing patterns, can be
 found in any QR code. A message is written into the rest of the modules
@@ -334,9 +373,9 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 </script>
-<section id="message-length" class="level3" data-number="0.3.1">
-<h3 data-number="0.3.1"><span class="header-section-number">0.3.1</span>
-Message Length</h3>
+<section id="message-length" class="level2" data-number="3.1">
+<h2 data-number="3.1"><span class="header-section-number">3.1</span>
+Message Length</h2>
 <p><video src="qr_codes/6_Message_length.mp4" controls preload="none"><a href="qr_codes/6_Message_length.mp4">Video</a></video></p>
 <p>Let’s see how we can represent some information using it. For
 example, the 10-letter string <strong><code>HELLOWORLD</code></strong>.
@@ -346,9 +385,9 @@ in a specific order. The next step is to paint the corresponding
 modules, so their sum is equal to the length of the message, in our
 case, it is 8 and a 2.</p>
 </section>
-<section id="possible-combinations" class="level3" data-number="0.3.2">
-<h3 data-number="0.3.2"><span class="header-section-number">0.3.2</span>
-Possible Combinations</h3>
+<section id="possible-combinations" class="level2" data-number="3.2">
+<h2 data-number="3.2"><span class="header-section-number">3.2</span>
+Possible Combinations</h2>
 <p><video src="qr_codes/7_Possible_combinations.mp4" controls preload="none"><a href="qr_codes/7_Possible_combinations.mp4">Video</a></video></p>
 <p>Now we are ready to encode characters themselves. How can we use
 modules to do that?</p>
@@ -367,9 +406,9 @@ possible characters equals <span class="math inline">\(2^N\)</span>.</p>
 <p><span class="math display">\[ \text{possible combinations} = 2^N
 \]</span></p>
 </section>
-<section id="byte-mode-encoding" class="level3" data-number="0.3.3">
-<h3 data-number="0.3.3"><span class="header-section-number">0.3.3</span>
-Byte Mode Encoding</h3>
+<section id="byte-mode-encoding" class="level2" data-number="3.3">
+<h2 data-number="3.3"><span class="header-section-number">3.3</span>
+Byte Mode Encoding</h2>
 <p><img src="qr_codes/8_Byte_mode_block.png" /></p>
 <p>To simplify the process of creating a block that corresponds to some
 number, we assign to each module in a block a number that is equal to a
@@ -388,11 +427,10 @@ need 8 modules in a block.</p>
 are colored black, this block represents the 65th character, which is
 ‘A’. - If all the modules in a block are colored black, it represents
 the last character in the set — some strange French umlaut ‘ÿ’.</p>
-<section id="letter-placement-and-encoding" class="level4"
-data-number="0.3.3.1">
-<h4 data-number="0.3.3.1"><span
-class="header-section-number">0.3.3.1</span> Letter Placement and
-Encoding</h4>
+<section id="letter-placement-and-encoding" class="level3"
+data-number="3.3.1">
+<h3 data-number="3.3.1"><span class="header-section-number">3.3.1</span>
+Letter Placement and Encoding</h3>
 <p><video src="qr_codes/9_Letters_placement.mp4" controls preload="none"><a href="qr_codes/9_Letters_placement.mp4">Video</a></video></p>
 <p>That’s why for every character in our message, we are allocating a
 block of 8 modules in this specific order. Then, we change each
@@ -400,11 +438,10 @@ character to its corresponding number on the character sheet. This
 number then tells us which modules to color black in our 8-module
 block.</p>
 </section>
-<section id="zigzag-order-and-module-assignment" class="level4"
-data-number="0.3.3.2">
-<h4 data-number="0.3.3.2"><span
-class="header-section-number">0.3.3.2</span> Zigzag Order and Module
-Assignment</h4>
+<section id="zigzag-order-and-module-assignment" class="level3"
+data-number="3.3.2">
+<h3 data-number="3.3.2"><span class="header-section-number">3.3.2</span>
+Zigzag Order and Module Assignment</h3>
 <p><video src="qr_codes/10_Zigzag_order.mp4" controls preload="none"><a href="qr_codes/10_Zigzag_order.mp4">Video</a></video></p>
 <p>Each module within a block is assigned a value based on powers of
 two, but this assignment follows a specific zig-zag order. Once these
@@ -412,11 +449,10 @@ values are assigned, the next step involves painting the modules. The
 modules are painted such that their combined value matches the number
 representing a specific character.</p>
 </section>
-<section id="encoding-letters-in-qr-codes" class="level4"
-data-number="0.3.3.3">
-<h4 data-number="0.3.3.3"><span
-class="header-section-number">0.3.3.3</span> Encoding Letters in QR
-Codes</h4>
+<section id="encoding-letters-in-qr-codes" class="level3"
+data-number="3.3.3">
+<h3 data-number="3.3.3"><span class="header-section-number">3.3.3</span>
+Encoding Letters in QR Codes</h3>
 <p><video src="qr_codes/11_Encoding_letters.mp4" controls preload="none"><a href="qr_codes/11_Encoding_letters.mp4">Video</a></video></p>
 <p>Let’s take the letter <strong>H</strong> as an example:</p>
 <p>The letter <strong>H</strong> might be the seventy-second character
@@ -432,11 +468,10 @@ way to show that the message is complete. This is done using a
 <strong>terminator</strong>, which is simply four white modules in a
 row.</p>
 </section>
-<section id="why-not-always-use-byte-mode" class="level4"
-data-number="0.3.3.4">
-<h4 data-number="0.3.3.4"><span
-class="header-section-number">0.3.3.4</span> Why Not Always Use Byte
-Mode?</h4>
+<section id="why-not-always-use-byte-mode" class="level3"
+data-number="3.3.4">
+<h3 data-number="3.3.4"><span class="header-section-number">3.3.4</span>
+Why Not Always Use Byte Mode?</h3>
 <p><img src="qr_codes/12_Byte_mode_max_length.png" /></p>
 <p>You might wonder, with byte mode’s ability to represent so many
 characters, why bother with other modes? While byte mode does offer a
@@ -450,9 +485,9 @@ without making it bigger. This means we can convey longer messages
 without needing a larger QR code.</p>
 </section>
 </section>
-<section id="numeric-mode" class="level3" data-number="0.3.4">
-<h3 data-number="0.3.4"><span class="header-section-number">0.3.4</span>
-Numeric Mode</h3>
+<section id="numeric-mode" class="level2" data-number="3.4">
+<h2 data-number="3.4"><span class="header-section-number">3.4</span>
+Numeric Mode</h2>
 <p><video src="qr_codes/13_Numeric_mode.mp4" controls preload="none"><a href="qr_codes/13_Numeric_mode.mp4">Video</a></video></p>
 <p>Numeric mode is designed specifically for encoding numbers. It’s
 perfect for things like prices, phone numbers, book indexes, or tracking
@@ -467,10 +502,9 @@ So, 4 modules can represent all 10 numbers with some combinations to
 spare.</p>
 <p>When we divide our modules into blocks of four, we can fit 34 digits
 using Numeric mode.</p>
-<section id="numeric-vs.-byte-mode" class="level4"
-data-number="0.3.4.1">
-<h4 data-number="0.3.4.1"><span
-class="header-section-number">0.3.4.1</span> Numeric vs. Byte Mode</h4>
+<section id="numeric-vs.-byte-mode" class="level3" data-number="3.4.1">
+<h3 data-number="3.4.1"><span class="header-section-number">3.4.1</span>
+Numeric vs. Byte Mode</h3>
 <p><img src="qr_codes/14_Numeric_Byte_length_comparation.png" /></p>
 <p>Numeric mode has a greater capacity than if we were using the
 256-character alphabet of byte mode. The key takeaway here is
@@ -480,9 +514,9 @@ The fewer characters in our chosen alphabet, the more information we can
 pack into the same QR code space.
 </p>
 </section>
-<section id="numeric-mode-4bit" class="level4" data-number="0.3.4.2">
-<h4 data-number="0.3.4.2"><span
-class="header-section-number">0.3.4.2</span> Numeric Mode 4bit</h4>
+<section id="numeric-mode-4bit" class="level3" data-number="3.4.2">
+<h3 data-number="3.4.2"><span class="header-section-number">3.4.2</span>
+Numeric Mode 4bit</h3>
 <p><video src="qr_codes/15_Numeric_4bit.mp4" controls preload="none"><a href="qr_codes/15_Numeric_4bit.mp4">Video</a></video></p>
 <p>But this approach is not very effective. By choosing to use only 10
 out of all 16 combinations, we actually use only 62.5% of the available
@@ -490,9 +524,9 @@ space!</p>
 <p><span class="math display">\[ \frac{2^4}{10} = \frac{10}{16} = 62.5\%
 \]</span></p>
 </section>
-<section id="numeric-mode-10bit" class="level4" data-number="0.3.4.3">
-<h4 data-number="0.3.4.3"><span
-class="header-section-number">0.3.4.3</span> Numeric Mode 10bit</h4>
+<section id="numeric-mode-10bit" class="level3" data-number="3.4.3">
+<h3 data-number="3.4.3"><span class="header-section-number">3.4.3</span>
+Numeric Mode 10bit</h3>
 <p><video src="qr_codes/16_Numeric_10bit.mp4" controls preload="none"><a href="qr_codes/16_Numeric_10bit.mp4">Video</a></video></p>
 <p>To make better use of the available space, numeric mode actually sets
 aside 10 modules for encoding, not just 4. This allows for:</p>
@@ -514,11 +548,10 @@ characters. By using this approach, we’re making the most out of the
 space provided by the QR code, ensuring efficient and compact
 encoding.</p>
 </section>
-<section id="bit-vs-10-bit-numeric-encoding-efficiency" class="level4"
-data-number="0.3.4.4">
-<h4 data-number="0.3.4.4"><span
-class="header-section-number">0.3.4.4</span> 4-bit vs 10-bit Numeric
-Encoding Efficiency</h4>
+<section id="bit-vs-10-bit-numeric-encoding-efficiency" class="level3"
+data-number="3.4.4">
+<h3 data-number="3.4.4"><span class="header-section-number">3.4.4</span>
+4-bit vs 10-bit Numeric Encoding Efficiency</h3>
 <p><img src="qr_codes/17_4bit_10bit_length_comparation.png" /></p>
 <p>By using the encoding method where we group three digits together and
 represent each group with 10 modules, we can achieve impressive
@@ -526,28 +559,26 @@ efficiency. This method allows us to encode a message that’s 41
 characters long, provided the message is made up entirely of digits.</p>
 </section>
 </section>
-<section id="alphanumeric-mode" class="level3" data-number="0.3.5">
-<h3 data-number="0.3.5"><span class="header-section-number">0.3.5</span>
-Alphanumeric Mode</h3>
+<section id="alphanumeric-mode" class="level2" data-number="3.5">
+<h2 data-number="3.5"><span class="header-section-number">3.5</span>
+Alphanumeric Mode</h2>
 <p><video src="qr_codes/18_Alphanumeric_mode.mp4" controls preload="none"><a href="qr_codes/18_Alphanumeric_mode.mp4">Video</a></video></p>
 <p>The <strong>alphanumeric mode</strong> allows to encode the above
 digits, A to Z upper-characters, and some symbols, which makes it the
 best option for encoding the links to web-sites.</p>
-<section id="alphanumeric-efficiency-with-6-bit-encoding" class="level4"
-data-number="0.3.5.1">
-<h4 data-number="0.3.5.1"><span
-class="header-section-number">0.3.5.1</span> Alphanumeric Efficiency
-with 6-bit Encoding</h4>
+<section id="alphanumeric-efficiency-with-6-bit-encoding" class="level3"
+data-number="3.5.1">
+<h3 data-number="3.5.1"><span class="header-section-number">3.5.1</span>
+Alphanumeric Efficiency with 6-bit Encoding</h3>
 <p><img src="qr_codes/19_Alphanumeric_wasteful.png" /></p>
 <p>With 45 symbols in the alphanumeric set, direct encoding (one symbol
 at a time) would need at least 6 modules. However, this method would
 only use about 70% of the available space.</p>
 </section>
 <section id="alphanumeric-efficiency-with-11-bit-encoding"
-class="level4" data-number="0.3.5.2">
-<h4 data-number="0.3.5.2"><span
-class="header-section-number">0.3.5.2</span> Alphanumeric Efficiency
-with 11-bit Encoding</h4>
+class="level3" data-number="3.5.2">
+<h3 data-number="3.5.2"><span class="header-section-number">3.5.2</span>
+Alphanumeric Efficiency with 11-bit Encoding</h3>
 <p><video src="qr_codes/20_Alphanumeric_11bit.mp4" controls preload="none"><a href="qr_codes/20_Alphanumeric_11bit.mp4">Video</a></video></p>
 <p>To improve efficiency, a similar approach to the one used in numeric
 mode is employed. Instead of encoding each character individually, the
@@ -565,9 +596,9 @@ nearly 99%!</p>
 <p><span class="math display">\[\frac{2025}{2048} ≈ 98.8\%\]</span></p>
 </section>
 </section>
-<section id="kanji-mode" class="level3" data-number="0.3.6">
-<h3 data-number="0.3.6"><span class="header-section-number">0.3.6</span>
-Kanji Mode</h3>
+<section id="kanji-mode" class="level2" data-number="3.6">
+<h2 data-number="3.6"><span class="header-section-number">3.6</span>
+Kanji Mode</h2>
 <p><img src="qr_codes/21_Kanji.png" /></p>
 <p>The Kanji mode is designed to encode the vast array of characters in
 the Kanji alphabet, which consists of 6090 characters. To represent each
@@ -577,12 +608,12 @@ characters can fit. No tricks are used here to achieve better
 utilization.</p>
 </section>
 </section>
-<section id="error-correction" class="level2" data-number="0.4">
-<h2 data-number="0.4"><span class="header-section-number">0.4</span>
-Error Correction</h2>
-<section id="error-correction-level" class="level3" data-number="0.4.1">
-<h3 data-number="0.4.1"><span class="header-section-number">0.4.1</span>
-Error Correction Level</h3>
+<section id="error-correction" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Error
+Correction</h1>
+<section id="error-correction-level" class="level2" data-number="4.1">
+<h2 data-number="4.1"><span class="header-section-number">4.1</span>
+Error Correction Level</h2>
 <p><video src="qr_codes/22_Error_correction_level.mp4" controls preload="none"><a href="qr_codes/22_Error_correction_level.mp4">Video</a></video></p>
 <p>One remarkable feature of QR codes is their robustness. Whether
 they’re partially obscured, damaged, or even if a logo covers part of
@@ -601,17 +632,17 @@ remains for the actual message. For our QR code size, we can encode:</p>
 <li>17 characters at Low level</li>
 </ul>
 </section>
-<section id="error-correction-bits" class="level3" data-number="0.4.2">
-<h3 data-number="0.4.2"><span class="header-section-number">0.4.2</span>
-Error Correction Bits</h3>
+<section id="error-correction-bits" class="level2" data-number="4.2">
+<h2 data-number="4.2"><span class="header-section-number">4.2</span>
+Error Correction Bits</h2>
 <p><video src="qr_codes/23_Error_correction_bits.mp4" controls preload="none"><a href="qr_codes/23_Error_correction_bits.mp4">Video</a></video></p>
 <p>To indicate the chosen error correction level, only 2 modules are
 needed, as there are just four levels. They are placed in additional
 information.</p>
 </section>
-<section id="pad-blocks" class="level3" data-number="0.4.3">
-<h3 data-number="0.4.3"><span class="header-section-number">0.4.3</span>
-Pad Blocks</h3>
+<section id="pad-blocks" class="level2" data-number="4.3">
+<h2 data-number="4.3"><span class="header-section-number">4.3</span> Pad
+Blocks</h2>
 <p><video src="qr_codes/24_Pad_blocks.mp4" controls preload="none"><a href="qr_codes/24_Pad_blocks.mp4">Video</a></video></p>
 <p>Let’s get back to our message “HELLOWORLD” and we’ll use the Low
 level of error correction, which allows for a message up to 17
@@ -630,10 +661,10 @@ and the necessary modules are colored to represent the character.</p>
 correction blocks, ensuring our QR code is both informative and
 resilient.</p>
 </section>
-<section id="understanding-reed-solomon-error-correction" class="level3"
-data-number="0.4.4">
-<h3 data-number="0.4.4"><span class="header-section-number">0.4.4</span>
-Understanding Reed-Solomon Error Correction</h3>
+<section id="understanding-reed-solomon-error-correction" class="level2"
+data-number="4.4">
+<h2 data-number="4.4"><span class="header-section-number">4.4</span>
+Understanding Reed-Solomon Error Correction</h2>
 <p><video src="qr_codes/25_Reed_Solomon.mp4" controls preload="none"><a href="qr_codes/25_Reed_Solomon.mp4">Video</a></video></p>
 <p>The Systematic Reed-Solomon Error correction in Galois Fields is a
 daunting task. Let’s start with just Reed-Solomon and look at Galois
@@ -675,9 +706,9 @@ generator polynomial. The remainder serves as the codewords.</p>
 68x^2 - 1822x + 1604 \]</span></p>
 </section>
 <section id="reed-solomon-error-correction-verification-and-restoration"
-class="level3" data-number="0.4.5">
-<h3 data-number="0.4.5"><span class="header-section-number">0.4.5</span>
-Reed-Solomon Error Correction: Verification and Restoration</h3>
+class="level2" data-number="4.5">
+<h2 data-number="4.5"><span class="header-section-number">4.5</span>
+Reed-Solomon Error Correction: Verification and Restoration</h2>
 <p><video src="qr_codes/26_Reed_Solomon_correction.mp4" controls preload="none"><a href="qr_codes/26_Reed_Solomon_correction.mp4">Video</a></video></p>
 <p>When we receive a QR code message, we can verify its integrity by
 substituting values into the polynomial. For instance, using values 1
@@ -733,10 +764,10 @@ Reed-Solomon Codes by vcubingx</a></li>
 </ul>
 </blockquote>
 </section>
-<section id="galois-fields-in-qr-code-error-correction" class="level3"
-data-number="0.4.6">
-<h3 data-number="0.4.6"><span class="header-section-number">0.4.6</span>
-Galois Fields in QR Code Error Correction</h3>
+<section id="galois-fields-in-qr-code-error-correction" class="level2"
+data-number="4.6">
+<h2 data-number="4.6"><span class="header-section-number">4.6</span>
+Galois Fields in QR Code Error Correction</h2>
 <p><video src="qr_codes/27_Galois_field.mp4" controls preload="none"><a href="qr_codes/27_Galois_field.mp4">Video</a></video></p>
 <p>While the Reed-Solomon error correction method seems promising,
 applying it directly to QR codes presents challenges. With 8 modules per
@@ -773,9 +804,9 @@ href="https://sortofschool.org/tools/qr/qr">https://sortofschool.org/tools/qr/qr
 </blockquote>
 </section>
 <section id="error-correction-modules-placement-in-qr-code"
-class="level3" data-number="0.4.7">
-<h3 data-number="0.4.7"><span class="header-section-number">0.4.7</span>
-Error Correction Modules Placement in QR Code</h3>
+class="level2" data-number="4.7">
+<h2 data-number="4.7"><span class="header-section-number">4.7</span>
+Error Correction Modules Placement in QR Code</h2>
 <p><video src="qr_codes/28_EC_module_placement.mp4" controls preload="none"><a href="qr_codes/28_EC_module_placement.mp4">Video</a></video></p>
 <p>Using the above methods, we’re able to determine the 7 error
 correction blocks required for encoding the message
@@ -788,12 +819,12 @@ complete, we’ve successfully finished the Error Correction component of
 the QR code.</p>
 </section>
 </section>
-<section id="masking" class="level2" data-number="0.5">
-<h2 data-number="0.5"><span class="header-section-number">0.5</span>
-Masking</h2>
-<section id="mask-problem" class="level3" data-number="0.5.1">
-<h3 data-number="0.5.1"><span class="header-section-number">0.5.1</span>
-Mask Problem</h3>
+<section id="masking" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span>
+Masking</h1>
+<section id="mask-problem" class="level2" data-number="5.1">
+<h2 data-number="5.1"><span class="header-section-number">5.1</span>
+Mask Problem</h2>
 <figure>
 <img src="qr_codes/29_Mask_problem.png"
 alt="Mask Problem in QR Codes" />
@@ -818,9 +849,9 @@ between individual modules. Masks help by introducing variability into
 the design, ensuring that no large uniform areas exist. This variability
 aids in the accurate scanning of the QR code.</p>
 </section>
-<section id="types-of-masks" class="level3" data-number="0.5.2">
-<h3 data-number="0.5.2"><span class="header-section-number">0.5.2</span>
-Types of Masks</h3>
+<section id="types-of-masks" class="level2" data-number="5.2">
+<h2 data-number="5.2"><span class="header-section-number">5.2</span>
+Types of Masks</h2>
 <p><img src="qr_codes/30_Mask_types.png" /></p>
 <p>There are eight standard masks used in QR code generation. Each mask
 has a unique pattern, and the best one is chosen based on specific
@@ -828,10 +859,9 @@ criteria, such as which results in the least number of uniform areas.
 The selected mask is then applied to the QR code, ensuring a more varied
 and scannable design.</p>
 </section>
-<section id="mask-application-process" class="level3"
-data-number="0.5.3">
-<h3 data-number="0.5.3"><span class="header-section-number">0.5.3</span>
-Mask Application Process</h3>
+<section id="mask-application-process" class="level2" data-number="5.3">
+<h2 data-number="5.3"><span class="header-section-number">5.3</span>
+Mask Application Process</h2>
 <p><video src="qr_codes/31_Mask_application.mp4" controls preload="none"><a href="qr_codes/31_Mask_application.mp4">Video</a></video></p>
 <p>The process of masking involves XORing (“exclusive or” operation) the
 chosen mask with the data and error correction blocks of the QR code.
@@ -848,10 +878,9 @@ additional information remain unchanged by the mask.</p>
 straightforward. By performing the same XOR operation with the mask, the
 QR code reverts to its original state, making it readable.</p>
 </section>
-<section id="mask-evaluation-process" class="level3"
-data-number="0.5.4">
-<h3 data-number="0.5.4"><span class="header-section-number">0.5.4</span>
-Mask Evaluation Process</h3>
+<section id="mask-evaluation-process" class="level2" data-number="5.4">
+<h2 data-number="5.4"><span class="header-section-number">5.4</span>
+Mask Evaluation Process</h2>
 <p><video src="qr_codes/32_Mask_evaluation.mp4" controls preload="none"><a href="qr_codes/32_Mask_evaluation.mp4">Video</a></video></p>
 <p>While you can manually select any of the eight masks using my
 program, real-world algorithms take a more sophisticated approach. They
@@ -874,9 +903,9 @@ and light modules.</li>
 <p>After evaluating each mask based on these rules, the one with the
 lowest penalty score is chosen and applied to the QR code.</p>
 </section>
-<section id="mask-bits-allocation" class="level3" data-number="0.5.5">
-<h3 data-number="0.5.5"><span class="header-section-number">0.5.5</span>
-Mask Bits Allocation</h3>
+<section id="mask-bits-allocation" class="level2" data-number="5.5">
+<h2 data-number="5.5"><span class="header-section-number">5.5</span>
+Mask Bits Allocation</h2>
 <p><video src="qr_codes/33_Mask_bits.mp4" controls preload="none"><a href="qr_codes/33_Mask_bits.mp4">Video</a></video></p>
 <p>Once we’ve encoded our message, <strong>HELLOWORLD</strong>, and
 chosen our mask (in this case, mask number 3), we need to indicate
@@ -891,9 +920,9 @@ the modules corresponding to numbers 1 and 2.</p>
 </section>
 </section>
 <section id="error-correction-and-mask-for-additional-information"
-class="level2" data-number="0.6">
-<h2 data-number="0.6"><span class="header-section-number">0.6</span>
-Error Correction and Mask for Additional Information</h2>
+class="level1" data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span> Error
+Correction and Mask for Additional Information</h1>
 <p><video src="qr_codes/34_Additional_Info_EC.mp4" controls preload="none"><a href="qr_codes/34_Additional_Info_EC.mp4">Video</a></video></p>
 <p>Just as our main data needs error correction, so does our additional
 information.</p>
@@ -911,10 +940,10 @@ and Version Information by Thonky</strong></a></p>
 <p>Then, we apply a mask to the 15 bits of additional information. This
 process is similar to what we did for the main data, but the mask used
 for this step is always the same.</p>
-<section id="redundancy-in-additional-information" class="level3"
-data-number="0.6.1">
-<h3 data-number="0.6.1"><span class="header-section-number">0.6.1</span>
-Redundancy in Additional Information</h3>
+<section id="redundancy-in-additional-information" class="level2"
+data-number="6.1">
+<h2 data-number="6.1"><span class="header-section-number">6.1</span>
+Redundancy in Additional Information</h2>
 <p><video src="qr_codes/35_Additional_Info_redundancy.mp4" controls preload="none"><a href="qr_codes/35_Additional_Info_redundancy.mp4">Video</a></video></p>
 <p>To further enhance the reliability of our QR code, we copy the
 additional information into the two remaining corners. This redundancy
@@ -926,9 +955,9 @@ remains readable.</p>
 
 </section>
 <section id="brute-force-and-the-importance-of-additional-information"
-class="level3" data-number="0.6.2">
-<h3 data-number="0.6.2"><span class="header-section-number">0.6.2</span>
-Brute Force and the Importance of Additional Information</h3>
+class="level2" data-number="6.2">
+<h2 data-number="6.2"><span class="header-section-number">6.2</span>
+Brute Force and the Importance of Additional Information</h2>
 <p><video src="qr_codes/36_Additional_Info_brute_force.mp4" controls preload="none"><a href="qr_codes/36_Additional_Info_brute_force.mp4">Video</a></video></p>
 <p>In theory, one could read a QR code without having the additional
 information intact. Each QR code could be generated using one of 4
@@ -944,9 +973,9 @@ additional information in our QR codes.</p>
 </section>
 </section>
 <section id="additional-links-acknowledgements-and-attributions"
-class="level2" data-number="0.7">
-<h2 data-number="0.7"><span class="header-section-number">0.7</span>
-Additional links, acknowledgements, and attributions</h2>
+class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span>
+Additional links, acknowledgements, and attributions</h1>
 <ul>
 <li><a
 href="https://zavier-henry.medium.com/an-introductory-walkthrough-for-encoding-qr-codes-5a33e1e882b5">“An
