@@ -1,6 +1,7 @@
 function Image(el)
     if string.find(el.src, "%.mp4$") then
-        return pandoc.RawInline("html", '<video src="' .. el.src .. '" controls preload="none"><a href="' .. el.src .. '">Video</a></video>')
+        local poster = string.gsub(el.src, "%.mp4$", ".png") -- Replace .mp4 with .png
+        return pandoc.RawInline("html", '<video src="' .. el.src .. '" controls preload="none" poster="' .. poster .. '"><a href="' .. el.src .. '">Video</a></video>')
     end
 end
 
