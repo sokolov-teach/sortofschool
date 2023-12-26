@@ -396,7 +396,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.5em; /* Size of the main headers */
+/*    font-size: 4em; /* Size of the main headers */*/
+    font-size: clamp(1.2rem, 2.5vw, 2.5em);
     font-weight: 700; /* Bold font weight for more emphasis */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
     border-bottom: 3px solid #ddd; /* A thicker line below the main header */
