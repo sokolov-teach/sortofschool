@@ -1,0 +1,494 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"ali",
+				"vertical-align"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"tex",
+				"text-indent"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"padding-",
+				"padding-top"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"eq",
+				"equation"
+			],
+			[
+				"ta",
+				"takeaway"
+			],
+			[
+				"fil",
+				"filesize"
+			],
+			[
+				"spi",
+				"spirograph"
+			],
+			[
+				"pad",
+				"padding"
+			],
+			[
+				"u",
+				"ul"
+			],
+			[
+				"font-",
+				"font-style"
+			],
+			[
+				"marg",
+				"margin"
+			],
+			[
+				"he",
+				"header"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "Packages/Makefile/Make.sublime-build",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/petr/Documents/GitHub/sortofschool",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons",
+		"/C/Users/petr/Documents/GitHub/sortofschool/tools"
+	],
+	"file_history":
+	[
+		"/C/Users/petr/Documents/_PROJECTS/College Storage Group/StripeAPI.bat",
+		"/C/Users/petr/Documents/GitHub/sortofschool/style.css",
+		"/C/Users/petr/Documents/GitHub/sortofschool/index.html",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/spirograph.md",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/spirograph.html",
+		"/C/Users/petr/Documents/GitHub/sortofschool/tools/tex_to_svg.html",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/filter.lua",
+		"/C/Users/petr/Documents/GitHub/sortofschool/README.md",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/qr_codes.html",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/template.html",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/qr_codes.md",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/s01e01.html",
+		"/C/Users/petr/Documents/GitHub/sortofschool/about.html",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/s01e01.md",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/qr_codes1.md",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/_old/spirograph.html",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/spirograph1.md",
+		"/C/Users/petr/AppData/Roaming/Sublime Text/Packages/User/md_to_html.sublime-build",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/md_to_html.sublime-build",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/untitled.sublime-build",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/intermediate-template.html",
+		"/C/Users/petr/Documents/GitHub/sortofschool/lessons/3_levels_of_Physics/s01e01.html",
+		"/C/Users/petr/Documents/GitHub/qr/README.md",
+		"/C/Users/petr/Documents/GitHub/sortofschool/tools/qr/qr.html",
+		"/C/Users/petr/_PROGRAMMS/stable_diffusion/stable-diffusion-webui/modules/shared.py",
+		"/C/Users/petr/Documents/_PROJECTS/College Storage Group/java_new_checkout_page.js",
+		"/C/Users/petr/Documents/_PROJECTS/College Storage Group/code.js",
+		"/C/Users/petr/_PROGRAMMS/stable_diffusion/stable-diffusion-webui/outputs/prompt.txt",
+		"/C/Users/petr/_PROGRAMMS/stable_diffusion/stable-diffusion-webui/outputs/_N/not_sorted.txt",
+		"/C/Users/petr/_PROGRAMMS/stable_diffusion/stable-diffusion-webui/outputs/_N/Новый текстовый документ.txt",
+		"/C/Users/petr/Documents/_PROJECTS/Вступительные Физика и Информатика/passwords_generator.cpp",
+		"/C/Users/petr/Documents/_PROJECTS/College Storage Group/Login button/form.js",
+		"/C/Users/petr/Documents/_PROJECTS/College Storage Group/Login button/custom_.css",
+		"/C/Users/petr/Downloads/top_secret_verstka/tests/.hintrc",
+		"/C/Users/petr/Downloads/top_secret_verstka/tests/js/lib/accordion.js",
+		"/C/Users/petr/Downloads/top_secret_verstka/tests/scss/_accordion.scss",
+		"/C/Users/petr/Documents/_PROJECTS/divine_gates_multiplayer/_old/Tileset/Tileset 3x3_32px/crop/crop.cpp",
+		"/C/Users/petr/Documents/_PROJECTS/C++ lessons/lesson0/main.cpp",
+		"/C/Users/petr/AppData/Roaming/Sublime Text/Packages/User/cpp_terminal.sublime-build",
+		"/C/Users/petr/Documents/_PROJECTS/C++ lessons/lesson0/output.txt",
+		"/C/Users/petr/Documents/_PROJECTS/C++ lessons/lesson0/input.txt",
+		"/C/Users/petr/Documents/_PROJECTS/College Storage Group/Login button/buttons.js",
+		"/C/Users/petr/Documents/_PROJECTS/College Storage Group/Login button/test.css",
+		"/C/Users/petr/Desktop/test.css",
+		"/C/Users/petr/Desktop/buttons.js",
+		"/C/Users/petr/Documents/_PROJECTS/College Storage Group/java_new_checkout_page",
+		"/C/Users/petr/Desktop/test.html",
+		"/C/Users/petr/Documents/GitHub/sortofschool/tools/tex_to_svg.js",
+		"/C/Users/petr/Documents/GitHub/sortofschool/footer.js",
+		"/C/Users/petr/Documents/GitHub/sortofschool/header.js",
+		"/C/Users/petr/Documents/GitHub/sortofschool/donate.html",
+		"/C/Users/petr/Documents/GitHub/sortofschool/server.py",
+		"/C/Users/petr/Documents/GitHub/sortofschool/spirograph.html",
+		"/C/Users/petr/Documents/GitHub/faviconit/browserconfig.xml",
+		"/C/Users/petr/Downloads/Lesson 2.py",
+		"/C/Users/petr/Documents/GitHub/sortofschool/.htaccess",
+		"/C/Users/petr/Documents/GitHub/sortofschool/.nojekyll",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/main/style.css",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/main/index.html",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/main/footer.js",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/main/header.js",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/main/spirograph.html",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/main/donate.html",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/main/about.html",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/main/support.html",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/main/lessons/spirograph/spirograph.html",
+		"/C/Users/petr/Videos/2023-03-10_Spirograph loops/_web/compress.bat",
+		"/C/Users/petr/Videos/2023-03-10_Spirograph loops/compress.bat",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/main/header.html",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/main/spirograph/spirograph.html",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/index.html",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/style.css",
+		"/C/Users/petr/Documents/_PROJECTS/Sort of School website/styles.css"
+	],
+	"find":
+	{
+		"height": 28.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"мшвущ",
+			"preload",
+			"video",
+			"justify",
+			"page",
+			"body",
+			"220",
+			"note",
+			"align",
+			"page",
+			"characterTableBody",
+			"text-align:",
+			"page",
+			"span",
+			"width",
+			"ul",
+			"}\n",
+			"\\(",
+			"\\)",
+			"video",
+			"font-size",
+			"1 module: 2 combinations (black or white) which can represent numbers 0 and 1 or letters A and B.",
+			"#toc ul {\n    list-style-type: none; /* Removes default bullets */\n}",
+			"table",
+			"characterTableBody",
+			"*H*",
+			"'H'",
+			"\\)",
+			"\\(",
+			".png",
+			"figure",
+			"html",
+			"#mjx-eqn:eq:deltax",
+			"takeaway",
+			"margin",
+			"Error Correction Coding in Galois",
+			"The fewer characters in our chosen alphabet, the more information we can pack into the same QR code space. ",
+			"stylish-quote",
+			"Epi-epitrochoid",
+			"<video width=\"100%\" loop autoplay muted>",
+			"video width=\"100%\"",
+			"autoplay",
+			"footer",
+			"blockquote",
+			"equation",
+			"DEBUG",
+			" ",
+			"\n",
+			" ",
+			"unpickle",
+			"disable-safe-unpickle",
+			"--disable-safe-unpickle",
+			"default",
+			"custom-text",
+			">",
+			"\n",
+			", ",
+			"\n",
+			"low",
+			"\n",
+			"(",
+			",",
+			", ",
+			" ",
+			",",
+			"(",
+			", ",
+			"\n",
+			",",
+			", ",
+			":",
+			")",
+			"(",
+			",",
+			", ",
+			",",
+			", ",
+			",",
+			")",
+			"(",
+			", ",
+			",",
+			", ",
+			",",
+			"  cout << 'filesize';\n  cout << filesize;\n",
+			"  \n",
+			"lessons/",
+			"lessons",
+			"less",
+			"\t<",
+			"link",
+			"current",
+			"weight",
+			">\n",
+			"\t\t\t<",
+			"\t\t<"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			", ",
+			"\n",
+			", ",
+			"\n",
+			", ",
+			", \n",
+			"\n",
+			"",
+			"\n"
+		],
+		"reverse": false,
+		"scrollbar_highlights": true,
+		"show_context": true,
+		"use_buffer2": true,
+		"use_gitignore": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"folders":
+	[
+		{
+			"path": "C:\\Users\\petr\\Documents\\GitHub\\sortofschool"
+		}
+	],
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 28.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 242.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/md_to_html.sublime-build",
+	"project": "",
+	"replace":
+	{
+		"height": 52.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"last_automatic_layout":
+		[
+			[
+				0,
+				0,
+				1,
+				2
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		]
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 229.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}
