@@ -406,23 +406,28 @@ h1 {
 }
 
 h2 {
-    font-size: 2em; /* Size of the secondary headers */
+    font-size: clamp(1.1rem, 2.2vw, 2em);
+/*    font-size: 2em; /* Size of the secondary headers */*/
     border-bottom: 1px solid #ddd; /* A subtle line below the secondary header */
     padding-bottom: 0.2em; /* Space between the text and the line */
 }
 
 h3 {
-    font-size: 1.75em; /* Size of the tertiary headers */
+    font-size: clamp(1rem, 1.95vw, 1.75em);
+/*    font-size: 1.75em; /* Size of the tertiary headers */*/
 }
 
 h4 {
-    font-size: 1.5em; /* And so on... */
+    font-size: clamp(0.9rem, 1.7vw, 1.5em);
+/*    font-size: 1.5em; /* And so on... */*/
 }
 
 h5 {
-    font-size: 1.25em;
+    font-size: clamp(0.8rem, 1.45vw, 1.25em);
+/*    font-size: 1.25em;*/
 }
 
 h6 {
-    font-size: 1em;
+    font-size: clamp(0.7rem, 1.2vw, 1em);
+/*    font-size: 1em;*/
 }
