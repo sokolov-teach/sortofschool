@@ -150,7 +150,6 @@ Now we are ready to encode characters themselves. How can we use modules to do t
 - 4 modules: We have 16 combinations, which can represent numbers 0 to 15 or letters A to P.
 
 Moreover, if the number of modules that are used to encode one character equals $N$, the number of possible characters equals $2^N$.
-
 $$ \text{possible combinations} = 2^N $$
 
 ## Byte Mode Encoding
@@ -186,7 +185,6 @@ Each module within a block is assigned a value based on powers of two, but this 
 Let's take the letter **H** as an example:
 
 The letter **H** might be the seventy-second character in the list. To represent the number 72, we break it down into its power of two components: 64 and 8. Thus, in the block representing **H**, the modules corresponding to the values 64 and 8 are painted black.
-
 $$ (H) 72 = 64 + 8 $$
 
 This method ensures that each character in the message is uniquely represented by a combination of black and white modules in its corresponding block. Once we've encoded our entire message, we need a way to show that the message is complete. This is done using a **terminator**, which is simply four white modules in a row.
@@ -206,7 +204,6 @@ You might wonder, with byte mode's ability to represent so many characters, why 
 Numeric mode is designed specifically for encoding numbers. It's perfect for things like prices, phone numbers, book indexes, or tracking inventory items. In this mode, only the digits 0 through 9 are used.
 
 If we follow the logic we've learned, encoding 10 different symbols (the numbers 0-9) would require at least 4 modules. Why? Because 3 modules can only represent 8 different combinations $2^3 = 8$, which isn't enough for 10 numbers.
-
 $2^4=16$ which is greater than 10. So, 4 modules can represent all 10 numbers with some combinations to spare.
 
 When we divide our modules into blocks of four, we can fit 34 digits using Numeric mode.
@@ -226,7 +223,6 @@ The fewer characters in our chosen alphabet, the more information we can pack in
 ![](qr_codes/15_Numeric_4bit.mp4)
 
 But this approach is not very effective. By choosing to use only 10 out of all 16 combinations, we actually use only 62.5% of the available space!
-
 $$ \frac{2^4}{10} = \frac{10}{16} = 62.5\% $$
 
 ### Numeric Mode 10bit
@@ -234,21 +230,16 @@ $$ \frac{2^4}{10} = \frac{10}{16} = 62.5\% $$
 ![](qr_codes/16_Numeric_10bit.mp4)
 
 To make better use of the available space, numeric mode actually sets aside 10 modules for encoding, not just 4. This allows for:
-
 $$ 2^{10} = 1024 $$
-
 possible characters or combinations.
 
 Consider encoding a date:
-
 $$18082023$$
 
 Before encoding, we can split the date into groups of three digits:
-
 $$180/ 820/ 23$$
 
 Each group is then encoded as a 10-bit number. Given that there are only 1000 possible numbers ranging from 0 to 999, this method achieves nearly 98% utilization of the available space.
-
 $$ \frac{1000}{2^{10}} = \frac{1000}{1024} \approx 98\% $$
 
 Think of this encoding method as translating our message into a unique language. In this language, the alphabet consists of 1000 characters. By using this approach, we're making the most out of the space provided by the QR code, ensuring efficient and compact encoding.
@@ -278,15 +269,11 @@ With 45 symbols in the alphanumeric set, direct encoding (one symbol at a time) 
 To improve efficiency, a similar approach to the one used in numeric mode is employed. Instead of encoding each character individually, the string is divided into pairs of characters. Essentially, every two-symbol combination becomes a new, unique character.
 
 How many unique pairs can be formed? By pairing each symbol with every other symbol (including itself), we create a 45 by 45 grid of combinations. This results in:
-
 $$45^2 = 2025$$
-
 unique pairs. To represent all 2025 combinations, we'd need combinations from 11 modules, which can represent:
-
 $$2^{11} = 2048$$
-
-combinations. This method achieves an impressive utilization of nearly 99%!
-
+combinations. 
+This method achieves an impressive utilization of nearly 99%!
 $$\frac{2025}{2048} ≈ 98.8\%$$
 
 ## Kanji Mode
@@ -339,30 +326,24 @@ The Systematic Reed-Solomon Error correction in Galois Fields is a daunting task
 Due to difficulty of calculations, we’ll take a shorter message, for example **GOD**. Using the byte-mode alphabet, the characters G, O, and D are assigned the numbers 71, 79, and 68, respectively. Our goal is to create codewords – error correction numbers that can help restore the original numbers if they get corrupted. The Reed-Solomon error correction is designed such that only half the number of codewords can be recovered. For instance, to recover 1 corrupted symbol, 2 codewords are needed.
 
 The generator polynomial is created with known roots, equal to the number of codewords. For our example, the roots are 1 and 2, resulting in the polynomial:
-
 $$ g(x) = x^2 - 3x + 2 $$
 
 This polynomial equals zero when $x$ is 1 or 2.
-
 $$
 \begin{cases}
 g(1) = 0 \\
 g(2) = 0
 \end{cases}
 $$
-
 The message polynomial is derived from the original message numbers and is multiplied by $x$ raised to the power of the number of codewords:
-
 $$ m(x) = (71x^2 + 79x + 68) x^2 = 71x^4 + 79x^3 + 68x^2 $$
 
 To obtain the codewords, polynomial division is performed between the message polynomial and the generator polynomial. The result is a quotient and a remainder. The difference between the message polynomial and the remainder polynomial equals the quotient multiplied by the generator polynomial. The remainder serves as the codewords.
 
 For our example, the remainder polynomial is:
-
 $$ r(x) = 1822x - 1604 $$
 
 And the polynomial to be transmitted:
-
 $$ s(x) = m(x) - r(x) = 71x^4 + 79x^3 + 68x^2 - 1822x + 1604 $$
 
 ## Reed-Solomon Error Correction: Verification and Restoration
@@ -372,7 +353,6 @@ $$ s(x) = m(x) - r(x) = 71x^4 + 79x^3 + 68x^2 - 1822x + 1604 $$
 When we receive a QR code message, we can verify its integrity by substituting values into the polynomial. For instance, using values 1 and 2:
 
 $$ s(x) = 71x^4 + 79x^3 + 68x^2 - 1822x + 1604 $$
-
 $$
 \begin{cases}
 s(1) = 0 \\
@@ -383,15 +363,12 @@ $$
 If the result is zero, it indicates that the message has not been corrupted.
 
 However, let's imagine a scenario where the first coefficient is tampered with, changing it to 77. This would alter the message, potentially changing its meaning:
-
 $$ [77, 79, 68, -1822, 1604] $$
 
 To detect and correct this error, we can employ a method that involves replacing the suspected incorrect coefficient with a variable, say $P$:
-
 $$ s(x) = Px^4 + 79x^3 + 68x^2 - 1822x + 1604 $$
 
 Given that this polynomial should equate to zero when $x$ is either 1 or 2, we can substitute these values in:
-
 $$
 \begin{cases}
 s(1) = P + 79 + 68 - 1822 + 1604 = 0 \\
@@ -400,7 +377,6 @@ s(2) = 16P + 632 + 272 - 3644 + 1604 = 0
 $$
 
 Solving these equations, we find that in both cases, $P$ equals 71.
-
 $$
 \begin{cases}
 P = 71 \\

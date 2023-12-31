@@ -402,8 +402,8 @@ letters A to D.</li>
 </ul>
 <p>Moreover, if the number of modules that are used to encode one
 character equals <span class="math inline">\(N\)</span>, the number of
-possible characters equals <span class="math inline">\(2^N\)</span>.</p>
-<p><span class="math display">\[ \text{possible combinations} = 2^N
+possible characters equals <span class="math inline">\(2^N\)</span>.
+<span class="math display">\[ \text{possible combinations} = 2^N
 \]</span></p>
 </section>
 <section id="byte-mode-encoding" class="level2" data-number="3.3">
@@ -459,8 +459,8 @@ Encoding Letters in QR Codes</h3>
 in the list. To represent the number 72, we break it down into its power
 of two components: 64 and 8. Thus, in the block representing
 <strong>H</strong>, the modules corresponding to the values 64 and 8 are
-painted black.</p>
-<p><span class="math display">\[ (H) 72 = 64 + 8 \]</span></p>
+painted black. <span class="math display">\[ (H) 72 = 64 + 8
+\]</span></p>
 <p>This method ensures that each character in the message is uniquely
 represented by a combination of black and white modules in its
 corresponding block. Once we’ve encoded our entire message, we need a
@@ -496,10 +496,9 @@ inventory items. In this mode, only the digits 0 through 9 are used.</p>
 (the numbers 0-9) would require at least 4 modules. Why? Because 3
 modules can only represent 8 different combinations <span
 class="math inline">\(2^3 = 8\)</span>, which isn’t enough for 10
-numbers.</p>
-<p><span class="math inline">\(2^4=16\)</span> which is greater than 10.
-So, 4 modules can represent all 10 numbers with some combinations to
-spare.</p>
+numbers. <span class="math inline">\(2^4=16\)</span> which is greater
+than 10. So, 4 modules can represent all 10 numbers with some
+combinations to spare.</p>
 <p>When we divide our modules into blocks of four, we can fit 34 digits
 using Numeric mode.</p>
 <section id="numeric-vs.-byte-mode" class="level3" data-number="3.4.1">
@@ -520,28 +519,26 @@ Numeric Mode 4bit</h3>
 <p><video src="qr_codes/15_Numeric_4bit.mp4" controls preload="none" poster="qr_codes/15_Numeric_4bit.png"><a href="qr_codes/15_Numeric_4bit.mp4">Video</a></video></p>
 <p>But this approach is not very effective. By choosing to use only 10
 out of all 16 combinations, we actually use only 62.5% of the available
-space!</p>
-<p><span class="math display">\[ \frac{2^4}{10} = \frac{10}{16} = 62.5\%
-\]</span></p>
+space! <span class="math display">\[ \frac{2^4}{10} = \frac{10}{16} =
+62.5\% \]</span></p>
 </section>
 <section id="numeric-mode-10bit" class="level3" data-number="3.4.3">
 <h3 data-number="3.4.3"><span class="header-section-number">3.4.3</span>
 Numeric Mode 10bit</h3>
 <p><video src="qr_codes/16_Numeric_10bit.mp4" controls preload="none" poster="qr_codes/16_Numeric_10bit.png"><a href="qr_codes/16_Numeric_10bit.mp4">Video</a></video></p>
 <p>To make better use of the available space, numeric mode actually sets
-aside 10 modules for encoding, not just 4. This allows for:</p>
-<p><span class="math display">\[ 2^{10} = 1024 \]</span></p>
-<p>possible characters or combinations.</p>
-<p>Consider encoding a date:</p>
-<p><span class="math display">\[18082023\]</span></p>
-<p>Before encoding, we can split the date into groups of three
-digits:</p>
-<p><span class="math display">\[180/ 820/ 23\]</span></p>
+aside 10 modules for encoding, not just 4. This allows for: <span
+class="math display">\[ 2^{10} = 1024 \]</span> possible characters or
+combinations.</p>
+<p>Consider encoding a date: <span
+class="math display">\[18082023\]</span></p>
+<p>Before encoding, we can split the date into groups of three digits:
+<span class="math display">\[180/ 820/ 23\]</span></p>
 <p>Each group is then encoded as a 10-bit number. Given that there are
 only 1000 possible numbers ranging from 0 to 999, this method achieves
-nearly 98% utilization of the available space.</p>
-<p><span class="math display">\[ \frac{1000}{2^{10}} = \frac{1000}{1024}
-\approx 98\% \]</span></p>
+nearly 98% utilization of the available space. <span
+class="math display">\[ \frac{1000}{2^{10}} = \frac{1000}{1024} \approx
+98\% \]</span></p>
 <p>Think of this encoding method as translating our message into a
 unique language. In this language, the alphabet consists of 1000
 characters. By using this approach, we’re making the most out of the
@@ -586,14 +583,12 @@ string is divided into pairs of characters. Essentially, every
 two-symbol combination becomes a new, unique character.</p>
 <p>How many unique pairs can be formed? By pairing each symbol with
 every other symbol (including itself), we create a 45 by 45 grid of
-combinations. This results in:</p>
-<p><span class="math display">\[45^2 = 2025\]</span></p>
-<p>unique pairs. To represent all 2025 combinations, we’d need
-combinations from 11 modules, which can represent:</p>
-<p><span class="math display">\[2^{11} = 2048\]</span></p>
-<p>combinations. This method achieves an impressive utilization of
-nearly 99%!</p>
-<p><span class="math display">\[\frac{2025}{2048} ≈ 98.8\%\]</span></p>
+combinations. This results in: <span class="math display">\[45^2 =
+2025\]</span> unique pairs. To represent all 2025 combinations, we’d
+need combinations from 11 modules, which can represent: <span
+class="math display">\[2^{11} = 2048\]</span> combinations. This method
+achieves an impressive utilization of nearly 99%! <span
+class="math display">\[\frac{2025}{2048} ≈ 98.8\%\]</span></p>
 </section>
 </section>
 <section id="kanji-mode" class="level2" data-number="3.6">
@@ -679,31 +674,29 @@ of codewords can be recovered. For instance, to recover 1 corrupted
 symbol, 2 codewords are needed.</p>
 <p>The generator polynomial is created with known roots, equal to the
 number of codewords. For our example, the roots are 1 and 2, resulting
-in the polynomial:</p>
-<p><span class="math display">\[ g(x) = x^2 - 3x + 2 \]</span></p>
+in the polynomial: <span class="math display">\[ g(x) = x^2 - 3x + 2
+\]</span></p>
 <p>This polynomial equals zero when <span
-class="math inline">\(x\)</span> is 1 or 2.</p>
-<p><span class="math display">\[
+class="math inline">\(x\)</span> is 1 or 2. <span
+class="math display">\[
 \begin{cases}
 g(1) = 0 \\
 g(2) = 0
 \end{cases}
-\]</span></p>
-<p>The message polynomial is derived from the original message numbers
-and is multiplied by <span class="math inline">\(x\)</span> raised to
-the power of the number of codewords:</p>
-<p><span class="math display">\[ m(x) = (71x^2 + 79x + 68) x^2 = 71x^4 +
-79x^3 + 68x^2 \]</span></p>
+\]</span> The message polynomial is derived from the original message
+numbers and is multiplied by <span class="math inline">\(x\)</span>
+raised to the power of the number of codewords: <span
+class="math display">\[ m(x) = (71x^2 + 79x + 68) x^2 = 71x^4 + 79x^3 +
+68x^2 \]</span></p>
 <p>To obtain the codewords, polynomial division is performed between the
 message polynomial and the generator polynomial. The result is a
 quotient and a remainder. The difference between the message polynomial
 and the remainder polynomial equals the quotient multiplied by the
 generator polynomial. The remainder serves as the codewords.</p>
-<p>For our example, the remainder polynomial is:</p>
-<p><span class="math display">\[ r(x) = 1822x - 1604 \]</span></p>
-<p>And the polynomial to be transmitted:</p>
-<p><span class="math display">\[ s(x) = m(x) - r(x) = 71x^4 + 79x^3 +
-68x^2 - 1822x + 1604 \]</span></p>
+<p>For our example, the remainder polynomial is: <span
+class="math display">\[ r(x) = 1822x - 1604 \]</span></p>
+<p>And the polynomial to be transmitted: <span class="math display">\[
+s(x) = m(x) - r(x) = 71x^4 + 79x^3 + 68x^2 - 1822x + 1604 \]</span></p>
 </section>
 <section id="reed-solomon-error-correction-verification-and-restoration"
 class="level2" data-number="4.5">
@@ -714,8 +707,7 @@ Reed-Solomon Error Correction: Verification and Restoration</h2>
 substituting values into the polynomial. For instance, using values 1
 and 2:</p>
 <p><span class="math display">\[ s(x) = 71x^4 + 79x^3 + 68x^2 - 1822x +
-1604 \]</span></p>
-<p><span class="math display">\[
+1604 \]</span> <span class="math display">\[
 \begin{cases}
 s(1) = 0 \\
 s(2) = 0
@@ -725,25 +717,24 @@ s(2) = 0
 corrupted.</p>
 <p>However, let’s imagine a scenario where the first coefficient is
 tampered with, changing it to 77. This would alter the message,
-potentially changing its meaning:</p>
-<p><span class="math display">\[ [77, 79, 68, -1822, 1604] \]</span></p>
+potentially changing its meaning: <span class="math display">\[ [77, 79,
+68, -1822, 1604] \]</span></p>
 <p>To detect and correct this error, we can employ a method that
 involves replacing the suspected incorrect coefficient with a variable,
-say <span class="math inline">\(P\)</span>:</p>
-<p><span class="math display">\[ s(x) = Px^4 + 79x^3 + 68x^2 - 1822x +
-1604 \]</span></p>
+say <span class="math inline">\(P\)</span>: <span
+class="math display">\[ s(x) = Px^4 + 79x^3 + 68x^2 - 1822x + 1604
+\]</span></p>
 <p>Given that this polynomial should equate to zero when <span
 class="math inline">\(x\)</span> is either 1 or 2, we can substitute
-these values in:</p>
-<p><span class="math display">\[
+these values in: <span class="math display">\[
 \begin{cases}
 s(1) = P + 79 + 68 - 1822 + 1604 = 0 \\
 s(2) = 16P + 632 + 272 - 3644 + 1604 = 0
 \end{cases}
 \]</span></p>
 <p>Solving these equations, we find that in both cases, <span
-class="math inline">\(P\)</span> equals 71.</p>
-<p><span class="math display">\[
+class="math inline">\(P\)</span> equals 71. <span
+class="math display">\[
 \begin{cases}
 P = 71 \\
 P = 71
