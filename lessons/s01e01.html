@@ -99,6 +99,14 @@
     id="toc-vector-and-scalar-quantities"><span
     class="toc-section-number">2.1</span> Vector and Scalar
     quantities</a></li>
+    <li><a href="#position-vector" id="toc-position-vector"><span
+    class="toc-section-number">2.2</span> Position vector</a></li>
+    <li><a href="#frame-of-reference-in-2d"
+    id="toc-frame-of-reference-in-2d"><span
+    class="toc-section-number">2.3</span> Frame of Reference in
+    2D</a></li>
+    <li><a href="#vector-components" id="toc-vector-components"><span
+    class="toc-section-number">2.4</span> Vector Components</a></li>
     </ul></li>
     <li><a href="#advanced" id="toc-advanced"><span
     class="toc-section-number">3</span> Advanced</a>
@@ -118,7 +126,33 @@
 
 		<div class="page">
 			<h1>Position, Displacement and Vectors</h1>
-			<p>How can we tell if someone truly understands Physics? Let’s answer
+			<style>
+    table, th, td {
+        font-size: 0.9em !important; /* Reset the font size to the browser's default for tables */
+    }
+
+    table {
+      width: 80%;
+      border-collapse: collapse;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    th, td {
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    td:nth-child(odd){
+      background-color: #f2f2f2;
+    }
+
+    tr:hover {
+      background-color: #ddd;
+    }
+  </style>
+<p>How can we tell if someone truly understands Physics? Let’s answer
 this question with another. How do we determine that a person knows a
 language? It is easy; if a person can maintain a dialogue — written or
 verbal — and at the same time we understand him, and he understands us,
@@ -130,7 +164,7 @@ language.</p>
 <p>We start learning any language with its basic part — letters. In
 order for you to understand what I will be talking about in future
 lectures, we need to learn the basic concepts of Physics.</p>
-<p>The first Part of this series will be about
+<p>The first part of this series will be about
 <strong>Kinematics</strong>. Kinematics is derived from the Greek word
 for <em>“to move”</em>. Kinematics is a branch of Physics. It is not
 interested in WHY bodies move and WHAT sets them in motion. This section
@@ -257,7 +291,7 @@ This triangle symbol literally means <em>“change in”</em>. </br> So,
 <span class="math inline">\(\Delta x\)</span> signifies the change in
 position. This symbol can be used to describe the change in any value.
 For example, <span class="math inline">\(\Delta m\)</span> is a change
-of mass, <span class="math inline">\(\Delta m\)</span> represents a
+of mass, <span class="math inline">\(\Delta t\)</span> represents a
 change in time, etc.</p>
 </div>
 <p>The <strong>magnitude of displacement</strong> is the absolute value
@@ -286,6 +320,230 @@ Intermediate</h1>
 data-number="2.1">
 <h2 data-number="2.1"><span class="header-section-number">2.1</span>
 Vector and Scalar quantities</h2>
+<p>There are a lot of different quantities that are used in physics. All
+of them fall in one of two brackets: either <strong>scalar</strong> or
+<strong>vector</strong>.</p>
+<p><strong>Scalar</strong> quantities are represented only by their
+values. You can perform standard arithmetic operations with them, as you
+would in algebra. Some examples of such values are mass, temperature,
+time.</p>
+<p><strong>Vector</strong> quantities, unlike scalars, in addition to
+their numerical value, have a direction. Examples of such values are
+velocity, acceleration, force, and many more.</p>
+<p>When working with such values we need to remember that they have a
+direction, and subsequently, familiar mathematical operations such as
+addition, subtraction, multiplication, need to be changed or redefined
+to take direction of these values into account.</p>
+</section>
+<section id="position-vector" class="level2" data-number="2.2">
+<h2 data-number="2.2"><span class="header-section-number">2.2</span>
+Position vector</h2>
+<p>Let’s learn the language of vectors using a <strong>position
+vector</strong> as an example. The <strong>position</strong> that we’ve
+talked about previously, is actually a vector quantity. It is often
+necessary to specify not only how far from the origin point the object
+is located, but also in which direction.</p>
+<div class="definition">
+<p>The <strong>position vector</strong>, or <strong>radius
+vector</strong>, represents the direction and distance of a point
+relative to the origin of the frame of reference. It is denoted as <span
+class="math inline">\(\bar{r}\)</span>.</p>
+</div>
+<p>In physics it is important to differentiate between vector and scalar
+quantities, that’s why they are denoted differently. The main ways to
+denote a vector are to use the dash or arrow above the symbol that
+represents a vector. Some books or articles prefer to use bold text
+instead. <span class="math display">\[\bar{r}, \vec{r},
+\textbf{r}\]</span> I prefer to use dashes, because it is quicker to
+draw by hand than the arrows, and bold text is not bold enough by my
+liking in most of the fonts, to really differentiate it on a first
+glance.</p>
+<p>In diagrams vector quantities are drawn as arrows, where the
+direction of an arrow shows direction of the quantity, and its length is
+proportional to magnitude of the vector, i.e. the longer the arrow, the
+larger the absolute value of this vector quantity.</p>
+<p>The size or the <strong>magnitude</strong> or the <strong>absolute
+value</strong> of the vector is essentially its length. It is always
+positive. In math we use two vertical dashes to represent modulus of
+scalar value. With vector values it becomes very tedious to do so — we
+need to draw 3 dashes — two vertical and one horizontal. So, instead we
+ditch them all! If you see a vector quantity without any dashes, this
+implies that you are seeing the magnitude of this vector.</p>
+<p><span class="math inline">\(\bar{r}\)</span> — position vector</p>
+<p><span class="math inline">\(|\bar{r}| \equiv r\)</span> — magnitude
+of position vector</p>
+<div class="note">
+<p><strong>Remember:</strong> a vector isn’t just a number. It has
+magnitude and direction. Its magnitude can be a number, but a vector is
+more than that. <strong>So avoid writing:</strong> <span
+class="math display">\[\bar{r} = 5 km\]</span></p>
+</div>
+</section>
+<section id="frame-of-reference-in-2d" class="level2" data-number="2.3">
+<h2 data-number="2.3"><span class="header-section-number">2.3</span>
+Frame of Reference in 2D</h2>
+<p>So far, we have discussed only movement along a straight line. The
+implementation of vectors allows us to describe the position of a point
+(and, consequently, its movement) in a <strong>2D plane</strong> using
+the <strong>Cartesian</strong> (or <strong>rectangular</strong>)
+<strong>coordinate system</strong>.</p>
+<p>In this system, we expand our <strong>frame of reference</strong> by
+adding a second axis, the <strong>y-axis</strong> (vertical),
+perpendicular to the <strong>x-axis</strong> (horizontal). These two
+axes intersect at the <strong>origin</strong> point of the <strong>frame
+of reference</strong>.</p>
+<p>Every point in this 2D plane can be described by a combination of two
+values — x and y, where x is the distance from a point to the y-axis,
+and y is the distance from a point to the x-axis.</p>
+</section>
+<section id="vector-components" class="level2" data-number="2.4">
+<h2 data-number="2.4"><span class="header-section-number">2.4</span>
+Vector Components</h2>
+<p>Now, let’s imagine a lamp that shines directly onto position vector
+<span class="math inline">\(\bar{r}\)</span> and casts a shadow onto the
+x-axis. The length of this shadow represents the
+<strong>x-component</strong> of the position vector. We denote this as
+<span class="math inline">\(r_x\)</span>, to show it’s the x-component
+of the vector <span class="math inline">\(\bar{r}\)</span>.</p>
+<div class="note">
+<p>When we discussed <strong>position</strong> (<span
+class="math inline">\(x\)</span>) in Level 1, we were actually referring
+to the <span class="math inline">\(r_x\)</span> component of the
+position vector <span class="math inline">\(\bar{r}\)</span>.</p>
+</div>
+<p>The direction of this shadow dictates its sign. If the shadow tip
+looks in the same direction as an axis, then it is positive. If the
+shadow and an axis look in different directions, then the component of
+the vector is negative.</p>
+<p>Casting the shadow of our vector onto the x-axis forms a right
+triangle. This triangle has the position vector <span
+class="math inline">\(\bar{r}\)</span> as its hypotenuse and its shadow
+as one of its legs (or catheti).</p>
+<p>Using trigonometry, we can find the length of this x-axis projection.
+The length of the x component, rx, is equal to: <span
+class="math display">\[r_x=r \cos(\alpha)\]</span> where r is the
+magnitude of the position vector, and α is the angle between it and the
+x-axis.</p>
+<p><strong>Vector is aligned with the axis.</strong> In this case, the
+angle between the vector and the axis is equal to zero. Consequently,
+the cosine of this angle is equal to one, so the component of the vector
+is equal to its magnitude. <span
+class="math display">\[r_x=r\cos(0^\circ)=r\]</span> This conclusion
+matches our visual image — the shadow has the same length as the vector
+itself.</p>
+<p><strong>Vector is perpendicular to the axis.</strong> This way, the
+vector does not cast any shadow to the axis, so its component should be
+equal to zero — the same way as the pole does not cast any shadow when
+the sun is at its highest (at zenith/directly overhead). Let’s check if
+this conclusion matches our equation. In this case vector and axis form
+a right angle (90 degrees) <span
+class="math display">\[r_x=r\cos(90^\circ)=0\]</span></p>
+<p><strong>Vector direction is opposite to the axis.</strong> When the
+vector is directed opposite to the axis, the length of the shadow is
+equal to the magnitude of the vector, but its sign is negative. The
+angle between them is equal to 180 degrees, so the cosine of the angle
+is equal to the negative one. <span
+class="math display">\[r_x=r\cos(180^\circ)=-r\]</span></p>
+<div class="definition">
+<p>The <strong>x-component</strong> of the vector <span
+class="math inline">\(\bar{r}\)</span> is denoted as <span
+class="math inline">\(r_x\)</span>. It varies in the range of <span
+class="math inline">\([-r;r]\)</span> and is equal to: <span
+class="math display">\[r_x=r\cos(\alpha)\]</span> where <span
+class="math inline">\(r\)</span> is the magnitude of vector <span
+class="math inline">\(\bar{r}\)</span>, and <span
+class="math inline">\(\alpha\)</span> is the angle between the vector
+and the axis.</p>
+</div>
+<p>In the similar fashion we can describe the y-component of the vector.
+In this case we also should be looking at the angle between the vector
+and the y-axis. The visual representation stays the same — we are
+imagining the shadow that the vector casts to the y-axis. <span
+class="math display">\[r_y=r\cos(\beta)\]</span></p>
+<p>However, in most cases it is easier to describe both components of
+the vector in relation to one angle (usually angle between vector and
+the x-axis is taken). So, if we take into account the fact that angles
+alpha and beta make the right angle: <span class="math display">\[ \beta
+= 90^\circ-\alpha\]</span> <span
+class="math display">\[r_y=r\cos(90^\circ-\alpha)\]</span> And using
+conversion formula we get: <span
+class="math display">\[r_y=r\sin(\alpha)\]</span></p>
+<div class="note">
+<p>It is important to note that there is no inherent connection between
+x-axis and cosine and y-axis and sine. The only reason why we got these
+equations was the way we chose our axis and angles through which we
+express components. If we decide to choose angle beta as our main angle
+(or swap x-axis and y-axis), we will get: <span class="math display">\[
+\begin{cases}
+r_x=r\sin(\alpha) \\
+r_y=r\cos(\alpha)
+\end{cases}
+\]</span></p>
+</div>
+<p>Positions of x and y axes (as horizontal and vertical) and angles
+that we choose are merely conventions and standard practices. We can
+(and would in the future) change them, if we see it convenient.</p>
+<div class="definition">
+<p>Regardless of the specific axis or orientation, <strong>any</strong>
+component of <strong>any</strong> vector can be expressed as the
+magnitude of that vector multiplied by the cosine of the angle it makes
+with the axis. <span
+class="math display">\[\text{component}=|\text{vector}| \cdot
+\cos(\theta)\]</span> where <span class="math inline">\(\alpha\)</span>
+is the angle between the vector and the chosen axis. And its
+perpendicular component is expressed by: <span
+class="math display">\[\text{component}_\bot=|\text{vector}| \cdot
+\sin(\theta)\]</span></p>
+</div>
+<div class="definition">
+<p><strong>Resolving a vector</strong> is the process of calculating all
+of its components. This helps to see the vector’s influence in the
+directions of our axes. <span class="math display">\[
+\begin{cases}
+r_x=r\cos(\alpha) \\
+r_y=r\sin(\alpha)
+\end{cases}
+\]</span></p>
+</div>
+<p>If we know both components of the vector we can find its
+<strong>magnitude</strong> by using the Pythagorean theorem, because the
+components of the vector form a catheti of right angle triangle with the
+vector itself representing its hypotenuse. <span
+class="math display">\[r^2 = r_x^2+r_y^2\]</span></p>
+<p>The trigonometric formulas that apply to a right triangle also can be
+applied for a vector and its components.</p>
+<table>
+<colgroup>
+<col style="width: 56%" />
+<col style="width: 44%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Function</th>
+<th>Angle (Inverce function)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math display">\[\cos(\alpha) =
+\frac{r_x}{r}\]</span></td>
+<td><span class="math display">\[\alpha =
+\arccos{\frac{r_x}{r}}\]</span></td>
+</tr>
+<tr class="even">
+<td><span class="math display">\[\sin(\alpha) =
+\frac{r_y}{r}\]</span></td>
+<td><span class="math display">\[\alpha =
+\arcsin{\frac{r_y}{r}}\]</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math display">\[\tan(\alpha) =
+\frac{r_y}{r_x}\]</span></td>
+<td><span class="math display">\[\alpha =
+\arctan{\frac{r_y}{r_x}}\]</span></td>
+</tr>
+</tbody>
+</table>
 </section>
 </section>
 <section id="advanced" class="level1" data-number="3">
