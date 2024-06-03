@@ -107,12 +107,33 @@
     2D</a></li>
     <li><a href="#vector-components" id="toc-vector-components"><span
     class="toc-section-number">2.4</span> Vector Components</a></li>
+    <li><a href="#addition-of-vectors"
+    id="toc-addition-of-vectors"><span
+    class="toc-section-number">2.5</span> Addition of vectors</a></li>
+    <li><a href="#multiplication-of-a-vector-by-a-scalar"
+    id="toc-multiplication-of-a-vector-by-a-scalar"><span
+    class="toc-section-number">2.6</span> Multiplication of a Vector by
+    a Scalar</a></li>
+    <li><a href="#vector-subtraction" id="toc-vector-subtraction"><span
+    class="toc-section-number">2.7</span> Vector Subtraction</a></li>
+    <li><a href="#displacement-vector"
+    id="toc-displacement-vector"><span
+    class="toc-section-number">2.8</span> Displacement vector</a></li>
     </ul></li>
     <li><a href="#advanced" id="toc-advanced"><span
     class="toc-section-number">3</span> Advanced</a>
     <ul>
     <li><a href="#unit-vectors" id="toc-unit-vectors"><span
     class="toc-section-number">3.1</span> Unit vectors</a></li>
+    <li><a href="#plane-polar-coordinates"
+    id="toc-plane-polar-coordinates"><span
+    class="toc-section-number">3.2</span> Plane Polar
+    Coordinates</a></li>
+    <li><a
+    href="#vector-representation-with-its-directional-unit-vector"
+    id="toc-vector-representation-with-its-directional-unit-vector"><span
+    class="toc-section-number">3.3</span> Vector Representation with its
+    Directional Unit Vector</a></li>
     </ul></li>
     <li><a href="#additional-links-acknowledgements-and-attributions"
     id="toc-additional-links-acknowledgements-and-attributions"><span
@@ -167,9 +188,10 @@ lectures, we need to learn the basic concepts of Physics.</p>
 <p>The first part of this series will be about
 <strong>Kinematics</strong>. Kinematics is derived from the Greek word
 for <em>“to move”</em>. Kinematics is a branch of Physics. It is not
-interested in WHY bodies move and WHAT sets them in motion. This section
-of physics only studies HOW they move and the ways that we can describe
-their motion.</p>
+interested in <strong>WHY</strong> bodies move and <strong>WHAT</strong>
+sets them in motion. This section of physics only studies
+<strong>HOW</strong> they move and the ways that we can describe their
+motion.</p>
 <p>In kinematics we study the motion of idealized bodies. The first
 concept of such a body is a <strong>particle</strong>.</p>
 <section id="elementary" class="level1" data-number="1">
@@ -246,20 +268,20 @@ elements represent our <strong>frame of reference</strong>.</p>
 a <strong>coordinate system</strong> and provides a way to describe an
 object’s position.</p>
 <p>This brings me to one of my favorite things in physics: you can
-choose ANY point as your origin, ANY direction for orientation and ANY
-scale. Why? Because these axes are just mathematical representations of
-reality. They help us to describe the movement of objects, but do not
-influence it. Some frames of reference make solving the problem easier,
-but if we are not concerned with the complexity of calculations, the
-final result will be exactly the same, no matter what frame of reference
-we choose.</p>
+choose <strong>ANY</strong> point as your origin, <strong>ANY</strong>
+direction for orientation and <strong>ANY</strong> scale. Why? Because
+these axes are just mathematical representations of reality. They help
+us to describe the movement of objects, but do not influence it. Some
+frames of reference make solving the problem easier, but if we are not
+concerned with the complexity of calculations, the final result will be
+exactly the same, no matter what frame of reference we choose.</p>
 <blockquote>
 <p>Apart from the term <strong>frame of reference</strong>, we also have
 the <strong>observational frame of reference</strong>. They are a little
 bit different. The first one sets the mathematical stage for describing
 the motion, and the second one sets the viewpoint from which we observe
-the motion. We’ll discuss observational frames later when we talk about
-inertial and non-inertial frames.</p>
+the motion. We will discuss observational frames later when we talk
+about inertial and non-inertial frames.</p>
 </blockquote>
 </section>
 <section id="position" class="level2" data-number="1.4">
@@ -277,7 +299,7 @@ Displacement</h2>
 <div class="definition">
 <p><strong>Displacement</strong> refers to the change in position and is
 denoted as: <span class="math display">\[
-\Delta x = x - x_0 \tag{1.1} \label{eq:deltax}
+\Delta x = x - x_0
 \]</span> where <span class="math inline">\(x\)</span> represents the
 current position, and <span class="math inline">\(x_0\)</span> the
 initial position.</p>
@@ -294,16 +316,16 @@ For example, <span class="math inline">\(\Delta m\)</span> is a change
 of mass, <span class="math inline">\(\Delta t\)</span> represents a
 change in time, etc.</p>
 </div>
-<p>The <strong>magnitude of displacement</strong> is the absolute value
-of displacement and is denoted as <span class="math inline">\(|\Delta
-x|\)</span>. It shows how much the object has moved without concern for
-direction.</p>
+<p>The <strong>magnitude of displacement</strong> is the
+<strong>absolute value</strong> of displacement and is denoted as <span
+class="math inline">\(|\Delta x|\)</span>. It shows how much the object
+has moved without concern for direction.</p>
 <div class="note">
 <p><strong>Total Distance</strong> vs. <strong>Displacement</strong>
 vs. <strong>Magnitude of Displacement</strong> <br> Let’s say that the
 car moved 7 kilometers in the positive direction of the x-axis and then
 10 kilometers in the opposite direction. In this case, total distance,
-displacement and it’s magnitude will be equal to: <span
+displacement and its magnitude will be equal to: <span
 class="math display">\[\begin{cases}
 d = 17 km \\
 \Delta x = -3 km \\
@@ -545,6 +567,216 @@ applied for a vector and its components.</p>
 </tbody>
 </table>
 </section>
+<section id="addition-of-vectors" class="level2" data-number="2.5">
+<h2 data-number="2.5"><span class="header-section-number">2.5</span>
+Addition of vectors</h2>
+<p>We are familiar with operations such as addition, subtraction,
+multiplication, and division in algebra. However, for vectors, these
+operations need to be redefined. This is because a vector has two
+things: its magnitude and direction.</p>
+<p>What do we get when we add two vectors? A new vector? What is the
+magnitude and direction of this new vector? Similar questions could be
+asked about the subtraction, multiplication, and division of two
+vectors. In this lesson, we address only addition and subtraction and
+will discuss multiplication later in this course.</p>
+<p>When we add two vectors, we get a vector called the <strong>vector
+sum</strong> (also known as the <strong>resultant</strong> or the
+<strong>net</strong> of two vectors). <span
+class="math display">\[\bar{c}=\bar{a}+\bar{b}\]</span></p>
+<p>To determine the <strong>resultant</strong> graphically, we can use
+the <strong>parallelogram method</strong>.</p>
+<p>To use this method we place both vectors in such a way, so their
+starting point is the same. Then, we draw two lines, parallel to each
+vector, so they form a parallelogram. Then, we draw two lines parallel
+to each vector, forming a parallelogram.</p>
+<p>Another way to find the <strong>net</strong> of two vectors is to use
+the <strong>tail-to-tip</strong> method. With this approach, we draw two
+vectors such that the endpoint of the first vector coincides with the
+starting point of the second vector. The sum vector begins at the
+starting point of the first vector and ends at the endpoint of the
+second vector.</p>
+<p>This method is useful when performing the addition of multiple
+vectors. We place them one by one consecutively. The resultant will be
+drawn from the starting point of the first vector and end at the
+endpoint of the last vector. <span
+class="math display">\[\bar{d}=\bar{a}+\bar{b}+\bar{c}\]</span></p>
+<p>Let’s look at some specific cases. Let’s take two vectors with
+magnitudes of 4 and 3 for experimentation.</p>
+<p>If these two vectors point in the same direction, the magnitude of
+the resultant vector will be equal to the sum of their magnitudes, which
+is 7. <span class="math display">\[\bar{c}=\bar{a}+\bar{b}\]</span>
+<span class="math display">\[c=a+b=4+3=7\]</span></p>
+<p>If these two vectors point in opposite directions, the magnitude of
+their sum will be equal to the absolute value of the difference between
+their magnitudes. <span
+class="math display">\[\bar{c}=\bar{a}+\bar{b}\]</span> <span
+class="math display">\[c=|a+b|=|4-3|=1\]</span></p>
+<p class="takeaway">
+This is still a vector addition process, even though we subtract their
+magnitudes!
+</p>
+<p>When two vectors are perpendicular to each other, they form a right
+triangle, with the vectors as the legs of this triangle. Therefore, the
+magnitude of the resultant vector, which is the hypotenuse, can be found
+using the Pythagorean theorem. <span class="math display">\[
+\begin{align*}
+&amp;\bar{c}=\bar{a}+\bar{b} \\
+&amp;c^2 = a^2 + b^2 \\
+&amp;c = \sqrt{a^2 + b^2} = \sqrt{3^2 + 4^2} = 5
+\end{align*}
+\]</span></p>
+<p>When two vectors are at some angle to each other (denoted as <span
+class="math inline">\(\alpha\)</span>), neither parallel nor
+perpendicular, they form a triangle. The magnitude of their resultant
+can be determined using the Law of Cosines, which I like to think of as
+an extended form of the Pythagorean theorem. <span
+class="math display">\[
+\begin{matrix}
+\bar{c}=\bar{a}+\bar{b} \\
+c^2 = a^2 + b^2 -2ab\cos{(180^\circ - \alpha)} \\
+\end{matrix}
+\]</span></p>
+<p>Using the trigonometric identity <span
+class="math inline">\(cos(180^\circ-\alpha)=-cos(\alpha)\)</span>, this
+becomes: <span class="math display">\[c^2 = a^2 + b^2
++2ab\cos{(\alpha)}\]</span></p>
+<p>If we want to find an angle between two vectors, we can solve this
+equation with respect to <span class="math inline">\(\alpha\)</span>:
+<span class="math display">\[
+\begin{matrix}
+\cos(\alpha)=\frac{c^2-a^2-b^2}{2ab} \\
+\alpha=\arccos{(\frac{c^2-a^2-b^2}{2ab})}
+\end{matrix}
+\]</span></p>
+<div class="note">
+<p>Even if it seems like we perform different operations based on vector
+orientation, at its core, we are still dealing with vector addition.</p>
+</div>
+<p>When adding vectors using their components, think of combining the
+shadows they cast on the x and y axes. Let’s demonstrate this with two
+vectors, <span class="math inline">\(\bar{a}\)</span> and <span
+class="math inline">\(\bar{b}\)</span>, to find their resultant <span
+class="math inline">\(\bar{c}\)</span>.</p>
+<p><span class="math display">\[\bar{c}=\bar{a}+\bar{b}\]</span></p>
+<p>First, we resolve vectors <span
+class="math inline">\(\bar{a}\)</span> and <span
+class="math inline">\(\bar{b}\)</span>. If <span
+class="math inline">\(\bar{a}\)</span> makes an angle <span
+class="math inline">\(\alpha\)</span> with the x-axis, its components
+are:</p>
+<p><span class="math display">\[
+\begin{align*}
+a_x&amp;=a\cos(\alpha) \\
+a_y&amp;=a\sin(\alpha)
+\end{align*}
+\]</span></p>
+<p>For vector <span class="math inline">\(\bar{b}\)</span>, which forms
+an angle <span class="math inline">\(\beta\)</span> with the x-axis it
+resolves like this:</p>
+<p><span class="math display">\[
+\begin{align*}
+b_x&amp;=b\cos(\alpha) \\
+b_y&amp;=b\sin(\alpha)
+\end{align*}
+\]</span></p>
+<p>To get the x and y components of the resultant vector <span
+class="math inline">\(\bar{c}\)</span>, we add their respective
+components together: <span class="math display">\[
+\begin{align*}
+c_x&amp;=a_x+b_x \\
+c_y&amp;=a_y+b_y
+\end{align*}
+\]</span></p>
+<p>Finally, to determine the magnitude and direction of the resultant
+vector c, we use the following equations: <span class="math display">\[
+\begin{align*}
+c &amp;= \sqrt{c_x^2+c_y^2} \\
+\theta &amp;= \arctan(\frac{c_y}{c_x})
+\end{align*}
+\]</span></p>
+</section>
+<section id="multiplication-of-a-vector-by-a-scalar" class="level2"
+data-number="2.6">
+<h2 data-number="2.6"><span class="header-section-number">2.6</span>
+Multiplication of a Vector by a Scalar</h2>
+<p>Imagine a vector <span class="math inline">\(\bar{a}\)</span>. When
+we multiply it by a scalar, say 2, the result is a new vector <span
+class="math inline">\(\bar{c}\)</span>. Let’s explore what this means
+for the magnitude and direction of <span
+class="math inline">\(\bar{c}\)</span>. <span
+class="math display">\[\bar{c}=2\cdot\bar{a}\]</span></p>
+<p>The magnitude of c will be double that of a. Thus, c will have twice
+the length of a: <span class="math display">\[c=2\cdot a\]</span></p>
+<p>Moreover, the new vector will point in the same direction as a
+starting vector <span class="math inline">\(\bar{a}\)</span>. But if we
+multiply <span class="math inline">\(\bar{a}\)</span> by a negative
+value, like <span class="math inline">\(-2\)</span>, the resulting
+vector will have the same magnitude but will point in the opposite
+direction. <span class="math display">\[
+\begin{matrix}
+\bar{c} = -2\cdot \bar{a} \\
+c = 2 \cdot a
+\end{matrix}
+\]</span></p>
+<p>To summarize, scalar multiplication changes the length of a vector.
+If the scalar is negative, the direction of the vector reverses.</p>
+<p>Specifically, if <span class="math inline">\(\bar{a}\)</span> is
+multiplied by <span class="math inline">\(-1\)</span>, the result is
+<span class="math inline">\(-\bar{a}\)</span>, known as the negative
+vector. This new vector has the same magnitude but points in the reverse
+direction.</p>
+</section>
+<section id="vector-subtraction" class="level2" data-number="2.7">
+<h2 data-number="2.7"><span class="header-section-number">2.7</span>
+Vector Subtraction</h2>
+<p>To subtract two vectors, we can use the same rules as we did for
+addition, with a slight twist. Essentially, subtracting vector <span
+class="math inline">\(\bar{b}\)</span> from vector <span
+class="math inline">\(\bar{a}\)</span> is the same thing as adding
+vectors <span class="math inline">\(\bar{a}\)</span> and <span
+class="math inline">\(-\bar{b}\)</span>. <span class="math display">\[
+\begin{matrix}
+\bar{c} = \bar{a}-\bar{b} \\
+\bar{c} = \bar{a}+(-\bar{b})
+\end{matrix}
+\]</span></p>
+<p>Visually, this is equivalent to joining the starting point of the
+vector <span class="math inline">\(-\bar{b}\)</span> to the end point of
+vector <span class="math inline">\(\bar{a}\)</span>. If you want to
+approach this task using their individual components, vector <span
+class="math inline">\(\bar{c}\)</span> can be constructed by subtracting
+the components of vector <span class="math inline">\(\bar{a}\)</span>
+and <span class="math inline">\(\bar{b}\)</span>: <span
+class="math display">\[
+\begin{align*}
+c_x&amp;=a_x-b_x \\
+c_y&amp;=a_y-b_y
+\end{align*}
+\]</span></p>
+</section>
+<section id="displacement-vector" class="level2" data-number="2.8">
+<h2 data-number="2.8"><span class="header-section-number">2.8</span>
+Displacement vector</h2>
+<p>With our knowledge of vectors, we can redefine the
+<strong>displacement vector</strong> in a 2D plane. The displacement
+vector <span class="math inline">\(\Delta\bar{r}\)</span> is the
+difference between the final position vector <span
+class="math inline">\(\bar{r}\)</span> and the initial position vector
+<span class="math inline">\(\overline{r_0}\)</span>. <span
+class="math display">\[\Delta\bar{r} =
+\bar{r}-\overline{r_0}\]</span></p>
+<div class="note">
+<p>Our earlier discussion on <strong>displacement</strong> (<span
+class="math inline">\(\Delta x\)</span>) in Level 1 was actually about
+the x-component of the <strong>displacement vector</strong>. <span
+class="math display">\[\Delta x = \Delta r_x\]</span></p>
+</div>
+<p>Another way to understand displacement is through vector addition. By
+adding the <strong>initial position vector</strong> and
+<strong>displacement vector</strong>, we get the <strong>final position
+vector</strong>: <span class="math display">\[\overline{r_0} +
+\Delta\bar{r} = \bar{r}\]</span></p>
+</section>
 </section>
 <section id="advanced" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span>
@@ -552,19 +784,147 @@ Advanced</h1>
 <section id="unit-vectors" class="level2" data-number="3.1">
 <h2 data-number="3.1"><span class="header-section-number">3.1</span>
 Unit vectors</h2>
+<p>Unit vectors address the issue of representing a vector solely by its
+magnitude, as shown here: <span class="math display">\[\bar{r} =
+5\]</span></p>
+<p>This kind of notation is incorrect because it lacks the vector’s
+directional information.</p>
+<p>A <strong>unit vector</strong> helps to solve this problem. A unit
+vector is unitless, has a magnitude of 1, and indicates only direction.
+In a 3D Cartesian system, the three main unit vectors are:</p>
+<ol type="1">
+<li><span class="math inline">\(\hat{i}\)</span> — points in the
+direction of the x-axis.</li>
+<li><span class="math inline">\(\hat{j}\)</span> — points in the
+direction of the y-axis.</li>
+<li><span class="math inline">\(\hat{k}\)</span> — points in the
+direction of the z-axis.</li>
+</ol>
+<p>These three vectors form the <strong>basis</strong> for the system.
+Any vector <span class="math inline">\(\bar{r}\)</span> in this system
+can be expressed as a linear combination of them: <span
+class="math display">\[\bar{r}=r_x\hat{i}+r_y\hat{j}+r_z\hat{k}\]</span>
+where <span class="math inline">\(r_x\)</span>, <span
+class="math inline">\(r_y\)</span> and <span
+class="math inline">\(r_z\)</span> are the components of the vector
+<span class="math inline">\(\bar{r}\)</span> in the x, y, and z axes,
+respectively.</p>
+<p>The unit vectors <span class="math inline">\(\hat{i}\)</span>, <span
+class="math inline">\(\hat{j}\)</span>, and <span
+class="math inline">\(\hat{k}\)</span> define the system’s orientation.
+In a right-handed system, curling your fingers from <span
+class="math inline">\(\hat{i}\)</span> (x-axis) to <span
+class="math inline">\(\hat{j}\)</span> (y-axis) makes your thumb point
+towards <span class="math inline">\(\hat{k}\)</span> (z-axis).</p>
+<blockquote>
+<p>There is also a left-handed system, but the right-handed one is more
+common in physics. Maintaining the right orientation is vital,
+especially for the operation of vector multiplication that we will
+discuss in a future.</p>
+</blockquote>
+<p>The beauty of unit vector notation lies in its ability to simplify
+vector operations. Here’s how:</p>
+<p><strong>For addition:</strong> <span
+class="math display">\[\bar{a}+\bar{b}=(a_x+b_x)\hat{i}+(a_y+b_y)\hat{j}+(a_z+b_z)\hat{k}\]</span></p>
+<p><strong>For subtraction:</strong> <span
+class="math display">\[\bar{a}-\bar{b}=(a_x-b_x)\hat{i}+(a_y-b_y)\hat{j}+(a_z-b_z)\hat{k}\]</span></p>
+<p><strong>For multiplication by a scalar:</strong> <span
+class="math display">\[C\cdot\bar{a}=C a_x \hat{i}+C a_y \hat{j}+C a_z
+\hat{k}\]</span></p>
+</section>
+<section id="plane-polar-coordinates" class="level2" data-number="3.2">
+<h2 data-number="3.2"><span class="header-section-number">3.2</span>
+Plane Polar Coordinates</h2>
+<p>Cartesian coordinates <span class="math inline">\((r_x,r_y)\)</span>
+describe a point in a plane by its horizontal and vertical positions. In
+contrast, <strong>plane polar coordinates</strong> <span
+class="math inline">\((r,\alpha)\)</span> represent the same point by
+its distance <span class="math inline">\(r\)</span> from the origin and
+the angle <span class="math inline">\(\alpha\)</span> it forms with the
+positive x-axis.</p>
+<p>Converting between the two coordinate systems:</p>
+<p>From Cartesian to Polar: <span class="math display">\[
+\begin{align*}
+r &amp;= \sqrt{r_x^2+r_y^2} \\
+\alpha &amp;= \arctan(\frac{r_y}{r_x})
+\end{align*}
+\]</span></p>
+<p>From Polar to Cartesian: <span class="math display">\[
+\begin{align*}
+r_x&amp;=r\cos(\alpha) \\
+r_y&amp;=r\sin(\alpha)
+\end{align*}
+\]</span></p>
+<p>Some problems, especially those related to circular motion, are more
+easily tackled using polar coordinates.</p>
+</section>
+<section id="vector-representation-with-its-directional-unit-vector"
+class="level2" data-number="3.3">
+<h2 data-number="3.3"><span class="header-section-number">3.3</span>
+Vector Representation with its Directional Unit Vector</h2>
+<p>When describing vectors, especially in polar coordinate systems, it
+is beneficial to express them in terms of their magnitude and direction.
+The direction is typically represented by a <strong>directional unit
+vector</strong>, which has a magnitude of 1 and points in the specified
+direction.</p>
+<p>For instance, the positional vector <span
+class="math inline">\(\bar{r}\)</span> can be expressed as: <span
+class="math display">\[\bar{r} = r \overline{e_r}\]</span> Here, <span
+class="math inline">\(r\)</span> is the magnitude of the positional
+vector we’re describing, and <span
+class="math inline">\(\overline{e_r}\)</span> is its unit vector,
+pointing in the direction of <span
+class="math inline">\(\bar{r}\)</span></p>
+<p>Similarly, a displacement vector <span class="math inline">\(\Delta
+\bar{r}\)</span> can be represented as: <span
+class="math display">\[\Delta \bar{r} = |\Delta \bar{r}| \cdot
+\overline{e_{\Delta r}}\]</span></p>
+<p>It’s essential to note a distinction here: unlike in our earlier
+discussions where the magnitude of a vector was represented without
+vertical bars, they are crucial in this context. The bars around <span
+class="math inline">\(|\Delta \bar{r}|\)</span> emphasize
+<strong>magnitude of change in position</strong>, while <span
+class="math inline">\(\Delta r\)</span> indicates the <strong>change in
+magnitude of position</strong>, which does not consider direction of a
+vector.</p>
+<p>To understand this difference:</p>
+<ol type="1">
+<li><p>If there is only a change in the direction of position, the
+displacement magnitude is non-zero, i.e., <span
+class="math inline">\(|\Delta \bar{r}|&gt;0\)</span>, but the change in
+magnitude is zero, <span class="math inline">\(\Delta r =
+0\)</span>.</p></li>
+<li><p>If the change is solely in the magnitude of position, both values
+are the same: <span class="math inline">\(|\Delta \bar{r}| = \Delta
+r\)</span>.</p></li>
+</ol>
 </section>
 </section>
 <section id="additional-links-acknowledgements-and-attributions"
 class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span>
 Additional links, acknowledgements, and attributions</h1>
+<ul>
+<li><strong>“Physics: A General Course”</strong> by I.V. Savelyev</li>
+<li><strong>“Physics”</strong> by G.Y. Myakishev</li>
+<li><strong>“General physics course”</strong> by D.V. Sivukhin</li>
+<li><strong>“Conceptual Physics”</strong> by Paul G. Hewitt</li>
+<li><strong>“Physics: Principles with Applications”</strong> by Douglas
+C. Giancoli</li>
+<li><strong>“Physics for Scientists and Engineers”</strong> by Raymond
+A. Serway and John W. Jewett</li>
+<li><strong>“Physics”</strong> by Alan Giambattista, Betty Richardson,
+and Robert C. Richardson</li>
+<li><strong>“Fundamentals of Physics”</strong> by David Halliday, Robert
+Resnick, and Jearl Walker</li>
+</ul>
 </section>
 <section id="test-of-elements" class="level1" data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span> Test of
 elements</h1>
-<p class="takeaway">
-This is a takaway
-</p>
+<p><span class="math display">\[
+\Delta x = x - x_0 \tag{1.1} \label{eq:deltax}
+\]</span></p>
 <p>See equation <a href="#mjx-eqn:eq:deltax">(1.1)</a></p>
 <figure>
 <img src="qr_codes/8_Byte_mode_block.png" alt="test" />
