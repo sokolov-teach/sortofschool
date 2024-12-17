@@ -1,6 +1,6 @@
 ---
 title: QR codes
-date: 2023-09-17
+date: 2023-08-17
 draft: false
 weight: 2
 author: Sviatoslav Sokolov
