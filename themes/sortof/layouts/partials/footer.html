@@ -1,0 +1,15 @@
+<nav class="social">
+  <!-- Existing navigation or header content -->
+  <ul>
+    {{ range .Site.Params.social }}
+      <li>
+        <a href="{{ .url }}" target="_blank" rel="noopener">
+          {{ if .icon }}
+            <img src="{{ .icon }}" alt="{{ .name }}" />
+          {{ end }}
+          {{ .name }}
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+</nav>

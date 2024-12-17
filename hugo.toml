@@ -1,0 +1,61 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Sort of School'
+theme = 'sortof'
+
+[params]
+  math = true
+  favicon="favicon.png"
+  [[params.header_link]]
+  	name = "Donate"
+  	url = "/donate"
+  [[params.social]]
+    name = "YouTube"
+    url = "https://www.youtube.com/@sortofschool"
+    icon = "/youtube_logo.png"
+  [[params.social]]
+    name = "Patreon"
+    url = "https://patreon.com/sortofschool"
+    icon = "/pt_logo.png"
+  [[params.social]]
+    name = "GitHub"
+    url = "https://github.com/sokolov-teach"
+    icon = "/git_logo.png"
+  [[params.social]]
+    name = "Instagram"
+    url = "https://www.instagram.com/sortofschool/"
+    icon = "/ig_logo.png"
+  [[params.social]]
+    name = "Twitter"
+    url = "https://twitter.com/sortofschool"
+    icon = "/tw_logo.png"
+  [[params.social]]
+    name = "E-mail"
+    url = "mailto:sokolov.teach@gmail.com"
+    icon = "/email.png"
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = true
+    startLevel = 2
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      [markup.goldmark.extensions.passthrough]
+      enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          # block = [['$$', '$$']]
+          inline = [['$', '$']]
+  [markup.goldmark.renderer]
+    unsafe = true
+  # [minify]
+  #   disableHTML = false
+  #   [minify.tdewolff]
+  #     [minify.tdewolff.html]
+  #       keepAttr = ["display"]
+
+
+
+
+
+

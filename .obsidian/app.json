@@ -1,0 +1,9 @@
+{
+  "newFileLocation": "current",
+  "userIgnoreFilters": [],
+  "promptDelete": false,
+  "attachmentFolderPath": "./",
+  "newLinkFormat": "absolute",
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": true
+}

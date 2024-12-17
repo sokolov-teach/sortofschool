@@ -1,0 +1,55 @@
+{{ define "main" }}
+
+<article>
+  <!-- Check if 'header_img' is set in front matter -->
+  {{ with .Params.header_img }}
+    {{ if strings.HasSuffix . ".mp4" }}
+      <!-- Render a video if 'header_img' is a .mp4 file -->
+      <video src="{{ . }}" width="100%" autoplay muted loop>
+        Your browser does not support the video tag.
+      </video>
+    {{ else }}
+      <!-- Render an image if 'header_img' is not a .mp4 file -->
+      <img src="{{ . }}" alt="Header image" class="header-img" width="100%">
+    {{ end }}
+  {{ end }}
+  <h1 class="title">{{ .Title}}</h1>
+  {{ .Content }}
+  <ul>
+    {{ $allItems := slice }}
+
+  <div class="chapters">
+    <!-- Add sections to the list -->
+    {{ range .Site.Sections }}
+      {{ $allItems = $allItems | append . }}
+    {{ end }}
+
+    <!-- Add top-level pages to the list -->
+    {{ range where .Site.RegularPages "Section" "" }}
+      {{ $allItems = $allItems | append . }}
+    {{ end }}
+
+    <!-- Sort combined items by weight -->
+    {{ range sort $allItems "Weight" }}
+      {{ if .IsSection }}
+        <!-- Render a section -->
+        <li>{{ .Title }}</li>
+        <ul>
+          {{ range sort .RegularPages "Weight" }}
+            <li>
+              <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </li>
+          {{ end }}
+        </ul>
+      {{ else }}
+        <!-- Render a top-level page -->
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+    {{ end }}
+  </ul>
+  </div>
+</article>
+
+{{ end }}

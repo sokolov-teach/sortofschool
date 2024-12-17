@@ -1,0 +1,17 @@
+{{- $size := "" -}}
+{{- $src := .Destination -}}
+
+{{- if strings.Contains .Destination "#" -}}
+  {{- $parts := split .Destination "#" -}}
+  {{- $src = index $parts 0 -}} <!-- The actual file path -->
+  {{- $size = index $parts 1 -}} <!-- The size ID: small, medium, or large -->
+{{- end -}}
+
+<figure {{ with $size }}id="{{ . }}"{{ end }}>
+  {{- if strings.HasSuffix $src ".mp4" -}}
+    <video src="{{ $src }}" width="100%" loop muted controls></video>
+  {{- else -}}
+    <img src="{{ $src }}" alt="{{ .Text }}" width="100%"/>
+  {{- end -}}
+  <figcaption>{{ .Text }}</figcaption>
+</figure>

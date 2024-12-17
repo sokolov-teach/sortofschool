@@ -1,0 +1,216 @@
+{
+  "main": {
+    "id": "26a8e1b0ff793864",
+    "type": "split",
+    "children": [
+      {
+        "id": "98624cda9e1e2c6d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "027d138932f359fd",
+            "type": "leaf",
+            "state": {
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "b2be919f99d83cc6",
+    "type": "split",
+    "children": [
+      {
+        "id": "2b040ea5cd4d9a5c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "081f289d969c7210",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "b60bc811e5472ed6",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "52e7d16bd01ea4bf",
+    "type": "split",
+    "children": [
+      {
+        "id": "cb9b06a6f77aaca9",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "41d79ec2d1720099",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {},
+              "icon": "lucide-list",
+              "title": "Outline"
+            }
+          },
+          {
+            "id": "03bc23caf2d8e55e",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "6b50720a697f8a62",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          },
+          {
+            "id": "797c870150744c61",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/videos/spirograph/index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for index"
+            }
+          },
+          {
+            "id": "c7f65a36fe9f3a9e",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/videos/spirograph/index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from index"
+            }
+          },
+          {
+            "id": "0ff42176754b8e5f",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "Plugin no longer active"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 411.5
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "zk-prefixer:Create new unique note": false,
+      "obsidian-git:Open Git source control": false,
+      "table-editor-obsidian:Advanced Tables Toolbar": false
+    }
+  },
+  "active": "027d138932f359fd",
+  "lastOpenFiles": [
+    "content/lessons/_index.md",
+    "public/index.xml",
+    "public/categories/index.xml",
+    "public/categories/index.html",
+    "public/categories",
+    "public/tags/red/index.xml",
+    "public/tags/green/index.xml",
+    "public/tags/green/index.html",
+    "public/tags/red/index.html",
+    "public/tags/blue/index.xml",
+    "public/tags/blue/index.html",
+    "public/videos/qr_codes/revelation.png",
+    "public/videos/qr_codes/9_Letters_placement.png",
+    "public/videos/qr_codes/8_Byte_mode_block.png",
+    "public/videos/qr_codes/7_Possible_combinations.png",
+    "public/videos/qr_codes/6_Message_length.png",
+    "public/videos/qr_codes/5_Modes_of_encoding.png",
+    "public/videos/qr_codes/4_Additional_info.png",
+    "public/videos/qr_codes/3_Timing_patterns.png",
+    "public/videos/qr_codes/36_Additional_Info_brute_force.png",
+    "public/videos/qr_codes/35_Additional_Info_redundancy.png",
+    "content/donate.md",
+    "content/videos/spirograph/index.md",
+    "content/about.md",
+    "content/policy.md",
+    "content/videos/qr_codes/index.md",
+    "content/tools/qr/index.md",
+    "content/tools/tex_to_svg/index.md",
+    "content/tools/_index.md",
+    "content/lessons/s01e01/index.md",
+    "content/lessons/FAQ/index.md",
+    "content/lessons/post-2/index.md",
+    "content/lessons/post-4/index.md",
+    "obsidian_templates/Template.md",
+    "content/videos/_index.md",
+    "content/_index.md",
+    "content/videos/spirograph/8_Epicycloid.md",
+    "content/lessons/post-3/index.md",
+    "content/lessons/post-3/post-3.md",
+    "archetypes/default.md",
+    "content/lessons/Untitled.md",
+    "content/lessons/post 1734028037.md",
+    "content/videos/Spirograph/index.md",
+    "content/videos/Spirograph — копия/index.md",
+    "content/lessons/post 1734028038.md"
+  ]
+}

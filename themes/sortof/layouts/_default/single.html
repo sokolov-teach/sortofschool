@@ -1,0 +1,56 @@
+{{ define "main" }}
+  <!-- Check if 'header_img' is set in front matter -->
+{{ with .Params.header_img }}
+  <figure>
+    {{ if strings.HasSuffix . ".mp4" }}
+      <!-- Render a video if 'header_img' is a .mp4 file -->
+      <video src="{{ . }}" class="header-media" autoplay loop muted controls>
+        Your browser does not support the video tag.
+      </video>
+    {{ with $.Params.header_img_descript }}
+      <!-- Render the description below the media -->
+      <figcaption>{{ . }}</figcaption>
+    {{ end }}
+    {{ else }}
+      <!-- Render an image if 'header_img' is not a .mp4 file -->
+      <img src="{{ . }}" alt="{{ $.Params.header_img_descript }}" class="header-media" width="100%">
+    {{ end }}
+    {{ with $.Params.header_img_descript }}
+      <!-- Render the description below the media -->
+      <figcaption>{{ . }}</figcaption>
+    {{ end }}
+  </figure>
+{{ end }}
+
+
+  {{ if .Params.toc }}
+  <section>
+    <input type="checkbox" id="toggle-toc" />
+    <aside>
+        <!-- Label acts as the button -->
+        <label for="toggle-toc" class="toc-toggle-label"><h1>Table of Contents</h1></label>
+        {{ .TableOfContents }}
+    </aside>
+  {{ end }}
+
+      <article {{ if .Param "autonumbering" }}autonumbering{{ end }}>
+      <h1>{{.Title}}</h1><hr>
+      <div class="meta">
+        {{ with .Date }}
+        <!-- Date -->
+        {{ $dateMachine := . | time.Format "2006-01-02T15:04:05-07:00" }}
+        {{ $dateHuman := . | time.Format ":date_long" }}
+        <time class="meta-date" datetime="{{ $dateMachine }}">{{ $dateHuman }}</time>
+        {{ end }}
+
+        <!-- Author -->
+        {{ with .Params.author }}
+        <span class="meta-author">{{ . }}</span>
+        {{ end }}
+      </div>
+
+      {{ .Content }}
+    </article>
+
+  </section>
+{{ end }}

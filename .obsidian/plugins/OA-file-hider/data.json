@@ -1,0 +1,12 @@
+{
+  "hidden": true,
+  "hiddenList": [
+    "archetypes",
+    "assets",
+    "data",
+    "i18n",
+    "layouts",
+    "public",
+    "themes"
+  ]
+}

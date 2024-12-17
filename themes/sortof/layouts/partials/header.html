@@ -1,0 +1,23 @@
+<nav class="header">
+<h1><a href="/">{{ .Site.Title }}</a></h1>
+{{ range .Site.Params.header_link }}
+<h1><a href="{{ .url }}">{{ .name }}</a></h1>
+{{ end }}
+</nav>
+<!-- {{ partial "menu.html" (dict "menuID" "main" "page" .) }} -->
+
+<nav class="social">
+  <!-- Existing navigation or header content -->
+  <ul>
+    {{ range .Site.Params.social }}
+      <li>
+        <a href="{{ .url }}" target="_blank" rel="noopener">
+          {{ if .icon }}
+            <img src="{{ .icon }}" alt="{{ .name }}" />
+          {{ end }}
+          {{ .name }}
+        </a>
+      </li>
+    {{ end }}
+  </ul>
+</nav>

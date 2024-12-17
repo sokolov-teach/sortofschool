@@ -1,0 +1,48 @@
+{{ $emojis := dict
+  "success" "✔"
+  "tip" "❕"
+  "abstract" "★"
+  "note" "ℹ︎"
+  "info" "ℹ"
+  "todo" "ℹ"
+  "example" "⊗"
+  "warning" "⚠︎"
+  "question" "❔"
+  "danger" "✖︎"
+  "quote" "❝"
+}}
+
+{{ $emojis := dict
+  "info" ":information_source:"
+  "tip" ":bulb:"
+  "faq" ":question:"
+  "question" ":grey_question:"
+  "todo" ":clipboard:"
+  "example" ":books:"
+  "note" ":memo:"
+  "abstract" ":page_with_curl:"
+  "success" ":white_check_mark:"
+  "warning" ":warning:"
+  "failure" ":x:"
+  "danger" ":fire:"
+  "bug" ":bug:"
+  "quote" ":speech_balloon:"
+}}
+
+{{ if eq .Type "alert" }}
+  <!-- Regular Blockquote -->
+  <blockquote class="callout callout-{{ lower .AlertType }}">
+    <p class="callout-heading">
+      {{ transform.Emojify (index $emojis .AlertType) }} 
+      {{ .AlertTitle | default (title .AlertType) }}
+    </p>
+    <div class="callout-content">
+      {{ .Text }}
+    </div>
+  </blockquote>
+{{ else }}
+  <!-- Fallback for non-alert blockquotes -->
+  <blockquote>
+    {{ .Text }}
+  </blockquote>
+{{ end }}

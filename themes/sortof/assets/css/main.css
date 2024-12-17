@@ -1,0 +1,478 @@
+/*@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/serif.css");*/
+/*@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/sans.css");*/
+@import url("https://cdn.jsdelivr.net/gh/vsalvino/computer-modern@main/fonts/bright.css");
+* {
+/*  font-family: "Computer Modern Serif", serif;  */
+/*  font-family: "Computer Modern Sans", sans-serif;*/
+  font-family: "Computer Modern Bright", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 1.2em;
+}
+
+body {
+/*  font-family: sans-serif;*/
+  margin: auto;
+  max-width: 80em;
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-bottom: 4em;
+}
+
+a, a:visited, a:active {
+  text-decoration: underline;
+  color: black;
+}
+
+a:hover{
+  text-decoration: none;
+  color: gray;
+}
+
+/*Header components*/
+
+header {
+  border-bottom: 2px solid #222;
+  margin-bottom: 0.5em;
+  margin-top: 1em;
+}
+
+nav.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav.header > h1 {
+  font-weight: normal;
+  font-size: 1.8em;
+  margin: 0;
+}
+
+nav.social ul {
+  display: flex;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  flex-wrap: wrap;
+  font-size: 0.8em;
+  margin-bottom: 0.5em;
+}
+
+nav.social li {
+  padding-top: 1em;
+  width: 5.5em;
+/*  zoom:1;
+  border:1px solid red;
+  display:inline-block;*/
+}
+
+nav.social a{
+  justify-content: center;
+  display: flex;
+  align-items: center;
+}
+
+nav.social img{
+  height: 0.8em;
+  padding-right: 0.3em;
+}
+
+
+/*Page components*/
+main {
+/*  max-width: 55em;
+  margin: auto;
+  padding-bottom: 3em;
+  flex-grow: 1;*/
+}
+
+section {
+  display: flex;
+  align-items: flex-start; /* Align items to the top */
+}
+
+/* Style for the ToC */
+aside {
+  scroll-behavior: smooth;
+  position: sticky;
+  top: 1em; /* Ensure it stays at the top when scrolling */
+/*  padding-left: 1em;
+  padding-right: 1em;*/
+  margin-right: 1em;
+  margin-top: 3em;
+  margin-bottom: 10em;
+  background-color: #f9f9f9; 
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  max-height: 80vh; /* Limit height to viewport */
+  overflow-y: auto; /* Enable vertical scrolling */
+  overflow-x: hidden; /* Prevent horizontal overflow */
+  max-width: 20em; /* Ensure a consistent width */
+  min-width: 12em;
+  scrollbar-width: none;
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+aside::before, aside::after {
+  content: "";
+  position: sticky;
+  left: 0;
+  right: 0;
+  height: 1em;
+  z-index: 2;
+  pointer-events: none;
+}
+
+aside::before {
+  top: 0;
+  display: block;
+  background: linear-gradient(to bottom, rgba(249, 249, 249, 1), rgba(249, 249, 249, 0));
+}
+
+aside::after {
+  bottom: 0;
+  display: block;
+  background: linear-gradient(to top, rgba(249, 249, 249, 1), rgba(249, 249, 249, 0));
+}
+
+aside h1{
+  margin: 0;
+  margin-bottom: 0.5em;
+  border-bottom: 3px solid #ddd;
+  text-align: left;
+  white-space: nowrap;
+}
+
+/* Hide the checkbox itself */
+#toggle-toc {
+    display: none;
+}
+
+.toc-toggle-label{
+  display: block;
+  margin-right: 1em;
+  margin-left: 1em;
+}
+
+.toc-toggle-label>h1{
+  margin-bottom: 0;
+}
+
+@media (max-width: 65em) {
+  section {
+    display: block;
+    flex-direction: column; /* Stack elements vertically */
+  }
+
+  /* Styles for the toggle button inside the aside */
+  .toc-toggle-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .toc-toggle-label::before {
+      content: ""; /* Empty content for the pseudo-element */
+      position: relative;
+      margin-right: 0.2em;
+      top: 50%;
+      right: 0; /* Align to the right of the label */
+      transform: translateY(-20%); /* Center the triangle vertically */
+      border-width: 6px; /* Triangle size */
+      border-style: solid;
+      border-color: transparent transparent transparent #000; /* Right-pointing triangle */
+      transform-origin: 50% 50%; /* Set the transform origin to the visual center */
+      transition: transform 0.3s ease;
+  }
+
+  #toggle-toc:checked ~ aside .toc-toggle-label::before {
+      transform: translateY(0%) translateX(-20%) rotate(90deg); /* Rotate to point right */
+  }
+
+
+  aside #TableOfContents {
+    display: block;
+    max-height: 0; /* Collapsed state */
+    padding-bottom: 0;
+    transition: max-height 0.2s ease-out; /* Smooth transition for max-height */
+  }
+
+  /* Initially collapse the aside (only show the button) */
+  aside {
+    position: relative;
+    width: 100%; /* Full width on mobile */
+    top: 0;
+    max-width: none;
+    margin: 0; /* Reset margins */
+    margin-bottom: 1em;
+    overflow: hidden; /* Prevent content overflow when collapsed */
+  }
+
+  /* Expand aside when checkbox is checked */
+  #toggle-toc:checked ~ aside #TableOfContents {
+    max-height: 1000em;
+    transition: max-height 0.2s ease-in;
+  }
+
+  #toggle-toc:checked ~ aside {
+    overflow: hidden;
+    max-height: none;
+  }
+}
+
+#TableOfContents {
+  padding-bottom: 4em;
+  position: relative;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+#TableOfContents ol {
+  margin: 0;
+  padding: 0;
+  padding-left: 1em;
+}
+
+#TableOfContents ol>li {
+  padding-top: 0.5em;
+  font-weight: bold;
+}
+
+#TableOfContents ol>li>ol>li {
+  padding-top: 0;
+  font-weight: normal;
+}
+
+/*META information*/
+.meta {
+  font-size: 0.8em;
+  color: #555;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+
+/* Style for the article */
+article {
+  max-width: 50em;
+  min-width: 10em;
+  margin: auto;
+  padding-bottom: 2em;
+}
+
+
+article h1 {
+  margin: 0;
+  font-size: 2em;
+  font-weight: 700; /* Bold font weight for more emphasis */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  text-align: center;
+}
+
+article h2 {
+  text-align: center;
+}
+
+/* Reset counters for headers at each level */
+body {
+  counter-reset: h2; /* Reset the top-level counter for the document */
+}
+
+h2 {
+  counter-reset: h3; /* Reset h3 counter when a new h2 appears */
+}
+
+h3 {
+  counter-reset: h4; /* Reset h4 counter when a new h3 appears */
+}
+
+h4 {
+  counter-reset: h5; /* Reset h5 counter when a new h4 appears */
+}
+
+/* Add autonumbering to articles with the autonumbering attribute */
+article[autonumbering] h2:before {
+  counter-increment: h2; /* Increment h2 counter */
+  content: counter(h2) ". "; /* Display h2 number */
+}
+
+article[autonumbering] h3:before {
+  counter-increment: h3; /* Increment h3 counter */
+  content: counter(h2) "." counter(h3) ". "; /* Display h3 number as h2.h3 */
+}
+
+article[autonumbering] h4:before {
+  counter-increment: h4; /* Increment h4 counter */
+  content: counter(h2) "." counter(h3) "." counter(h4) ". "; /* Display h4 number as h2.h3.h4 */
+}
+
+code {
+      font-family: "Courier New", Courier, monospace;
+}
+
+table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  white-space: nowrap;
+}
+
+/*mjx-container[jax="SVG"][display="true"] {
+  margin: 0 !important; 
+}
+*/
+
+th,
+td {
+  padding-right: 1em;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(odd){
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+p {
+  text-indent: 20px;
+  text-align: justify;
+}
+
+p > video {
+  text-indent: 0;
+  margin: 0;
+  display: block;
+}
+
+/* Reset margins and padding for figure and its children */
+figure, figure video, figure img, figure figcaption {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack media and caption vertically */
+    justify-content: space-between;
+    font-style: italic;
+    font-size: 0.8em;
+}
+
+figure {
+  margin-bottom: 1em;
+}
+
+/* Style the figcaption */
+figure figcaption {
+    text-align: right; /* Align the caption text to the right */
+    color: rgba(0, 0, 0, 0.7); /* Optional: A softer color for the caption */
+}
+
+/* Size Classes */
+figure#small {
+    max-width: 25%; /* Small size */
+    margin: 0 auto;
+}
+
+figure#medium {
+    max-width: 50%; /* Medium size */
+    margin: 0 auto;
+}
+
+figure#large {
+    max-width: 80%; /* Large size */
+    margin: 0 auto;
+}
+
+/* Icon Figure Style */
+figure#icon {
+    display: inline-block; /* Allows the figure to behave like inline text */
+    margin: 0; /* Remove margins to align properly with text */
+    padding: 0;
+    width: 1em;
+    line-height: 1; /* Aligns with text height */
+    vertical-align: middle; /* Aligns the figure vertically with text */
+}
+
+/* Images inside #icon */
+figure#icon img {
+    height: 1em; /* Match the height of the text */
+    width: auto; /* Maintain the aspect ratio */
+    display: inline; /* Ensures it stays inline with text */
+}
+
+/* Base callout styling */
+.callout {
+  margin-left: 0;
+  margin-right: 0;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+  border-left: 5px solid;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  position: relative;
+}
+
+.callout-heading {
+  text-align: left;
+  text-indent: 0;
+  margin: 0;
+  display: block;
+  align-items: center;
+}
+
+.callout-content>p{
+  margin: 0;
+  margin-top: 0.5em;
+  color: black;
+  text-indent: 0em;
+}
+
+
+/* Callout Colors */
+.callout-success { border-color: #4caf50; background-color: #e8f5e9; } /* Success: Green */
+.callout-tip, .callout-abstract { border-color: #388e3c; background-color: #d0f0d0; } /* Tip/Abstract: Darker Green */
+.callout-note, .callout-info, .callout-todo { border-color: #2196f3; background-color: #e3f2fd; } /* Note/Info/Todo: Blue */
+.callout-example { border-color: #9c27b0; background-color: #f3e5f5; } /* Example: Violet */
+.callout-warning, .callout-question { border-color: #ff9800; background-color: #fff3e0; } /* Warning/Question: Yellow */
+.callout-failure, .callout-danger, .callout-bug { border-color: #f44336; background-color: #ffebee; } /* Failure/Danger/Bug: Red */
+
+mjx-container {
+  text-indent: 0;
+  overflow-x: auto;
+  max-width: 200%;
+}
+
+hr {
+  border: 0;
+  border-bottom: 3px solid #ddd;
+
+}
+
+iframe{
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+  border: none;
+}
+
+
+footer {
+  border-top: 2px solid #222;
+  margin-top: 1rem;
+}
+
+
+
