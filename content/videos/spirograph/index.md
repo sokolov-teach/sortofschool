@@ -1,6 +1,6 @@
 ---
 title: Spirograph
-date: 2024-12-16
+date: 2021-09-21
 author: Sviatoslav Sokolov
 draft: false
 tags:

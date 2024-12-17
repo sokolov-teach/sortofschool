@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/lessons/_index.md",
+                "file": "content/videos/qr_codes/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "_index"
+              "title": "index"
             }
           }
         ]
@@ -84,10 +84,10 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/lessons/_index.md"
+                "file": "content/videos/qr_codes/index.md"
               },
               "icon": "lucide-list",
-              "title": "Outline of _index"
+              "title": "Outline of index"
             }
           },
           {
@@ -109,8 +109,8 @@
             "state": {
               "type": "git-view",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "git-pull-request",
+              "title": "Source Control"
             }
           },
           {
@@ -152,11 +152,12 @@
             "state": {
               "type": "advanced-tables-toolbar",
               "state": {},
-              "icon": "lucide-file",
-              "title": "Plugin no longer active"
+              "icon": "spreadsheet",
+              "title": "Advanced Tables"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "horizontal",
@@ -173,6 +174,10 @@
   },
   "active": "027d138932f359fd",
   "lastOpenFiles": [
+    "content/videos/spirograph/index.md",
+    "content/videos/_index.md",
+    "content/_index.md",
+    "content/about.md",
     "content/lessons/_index.md",
     "public/index.xml",
     "public/categories/index.xml",
@@ -195,8 +200,6 @@
     "public/videos/qr_codes/36_Additional_Info_brute_force.png",
     "public/videos/qr_codes/35_Additional_Info_redundancy.png",
     "content/donate.md",
-    "content/videos/spirograph/index.md",
-    "content/about.md",
     "content/policy.md",
     "content/videos/qr_codes/index.md",
     "content/tools/qr/index.md",
@@ -207,8 +210,6 @@
     "content/lessons/post-2/index.md",
     "content/lessons/post-4/index.md",
     "obsidian_templates/Template.md",
-    "content/videos/_index.md",
-    "content/_index.md",
     "content/videos/spirograph/8_Epicycloid.md",
     "content/lessons/post-3/index.md",
     "content/lessons/post-3/post-3.md",
