@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/donate.md",
+                "file": "content/about.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "donate"
+              "title": "about"
             }
           }
         ],
@@ -189,6 +189,7 @@
   },
   "active": "5d2fb8c85e38d716",
   "lastOpenFiles": [
+    "content/donate.md",
     "content/_index.md",
     "content/videos/qr_codes/index.md",
     "content/videos/spirograph/index.md",
@@ -215,7 +216,6 @@
     "public/videos/qr_codes/3_Timing_patterns.png",
     "public/videos/qr_codes/36_Additional_Info_brute_force.png",
     "public/videos/qr_codes/35_Additional_Info_redundancy.png",
-    "content/donate.md",
     "content/policy.md",
     "content/tools/qr/index.md",
     "content/tools/tex_to_svg/index.md",

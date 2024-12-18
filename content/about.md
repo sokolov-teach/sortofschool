@@ -57,7 +57,7 @@ If you have any questions about this privacy policy, please feel free to contact
 - **Email**: [sokolov.teach@gmail.com](mailto:sokolov.teach@gmail.com)
 
 ## Terms and Conditions
-
+---
 The content provided on this website is for informational purposes only. While every effort is made to ensure that the information provided is accurate and up-to-date, we make no guarantees regarding the completeness, accuracy, reliability, suitability, or availability of the content on this site. Any reliance you place on such information is strictly at your own risk.
 
 We are not liable for any losses or damages, including but not limited to, indirect or consequential losses or damages, arising from the use of this website. This includes, but is not limited to, any information, products, services, or related graphics contained on the website.
