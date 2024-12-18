@@ -457,6 +457,7 @@ figure#icon img {
 .callout {
   margin-left: 0;
   margin-right: 0;
+  margin-top: 1em;
   padding-top: 1em;
   padding-bottom: 1em;
   padding-left: 1em;
@@ -471,8 +472,11 @@ figure#icon img {
   text-align: left;
   text-indent: 0;
   margin: 0;
-  display: block;
   align-items: center;
+}
+
+details>.callout-heading{
+  cursor: pointer;
 }
 
 .callout-content>p{

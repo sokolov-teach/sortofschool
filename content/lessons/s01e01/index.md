@@ -29,7 +29,7 @@ Imagine an airplane. Up close, this is a very complex object. Yet, when it's fly
 
 Alternatively, we can think of a point-like particle as a tiny dot we draw on a large object with a marker and we track this dot's movement instead of the entire airplane.
 
-> [!NOTE] **Point-like particle** 
+> [!NOTE] **Point-like particle**.
 > Is an object that is small enough relative to the distance it travels.
 
 In physics, such simplifications are often resorted to. The reason is that, otherwise, we would never solve any problem. The world around us is much more complex than the mathematical models into which we try to put it. Despite this fact, the accuracy of the answers we get by simplifying the world in this way is quite sufficient to solve the problems we encounter.

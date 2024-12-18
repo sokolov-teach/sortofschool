@@ -13,13 +13,13 @@ autonumbering: false
 ---
 ### Backquotes
 
-> [!SUCCESS]+ **SUCCESS!** You’ve solved the problem correctly.
-> The final velocity is $v_f = 20 \, \text{m/s}$.
+> [!SUCCESS]+ **SUCCESS!**
+> The final velocity is 20 m/s.
 
 > [!TIP]+ **TIP:** Always check your units when solving physics problems.
 > For example, $1 \text{ km} = 1000 \text{ m}$.
 
-> [!ABSTRACT]+ **ABSTRACT**:
+> [!ABSTRACT] **ABSTRACT**:
 > Newton's laws of motion provide the basis for classical mechanics.
 
 > [!NOTE]+ **NOTE** have both magnitude and direction.

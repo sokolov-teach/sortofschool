@@ -8,12 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "027d138932f359fd",
+            "id": "5d2fb8c85e38d716",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/videos/qr_codes/index.md",
+                "file": "content/lessons/s01e01/index.md",
                 "mode": "source",
                 "source": false
               },
@@ -22,17 +22,17 @@
             }
           },
           {
-            "id": "5d2fb8c85e38d716",
+            "id": "e2fbe25e8a31d4c8",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/about.md",
+                "file": "content/lessons/FAQ/index.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "about"
+              "title": "index"
             }
           }
         ],
@@ -187,41 +187,42 @@
       "table-editor-obsidian:Advanced Tables Toolbar": false
     }
   },
-  "active": "5d2fb8c85e38d716",
+  "active": "e2fbe25e8a31d4c8",
   "lastOpenFiles": [
+    "themes/sortof/assets/css/fonts.css",
+    "public/icons/triangle-exclamation-solid.svg",
+    "public/icons/quote-right-solid.svg",
+    "public/icons/person-chalkboard-solid.svg",
+    "public/icons/list-check-solid.svg",
+    "public/icons/lightbulb-solid.svg",
+    "public/icons/flask-solid.svg",
+    "public/icons/file-pen-solid.svg",
+    "public/icons/file-lines-solid.svg",
+    "public/icons/file-circle-check-solid.svg",
+    "public/icons/code-solid.svg",
+    "public/icons",
+    "themes/sortof/static/icons",
+    "content/lessons/s01e01/index.md",
+    "content/lessons/FAQ/index.md",
     "content/videos/qr_codes/index.md",
+    "content/lessons/_index.md",
     "content/about.md",
     "content/donate.md",
+    "public/qr/qr.pck",
+    "public/qr/qr.png.import",
+    "public/qr/qr.wasm",
+    "public/qr/qr.js",
+    "public/qr/qr.icon.png.import",
+    "public/qr/qr.html",
+    "public/qr/qr.apple-touch-icon.png.import",
+    "public/qr/qr.audio.worklet.js",
     "content/_index.md",
     "content/videos/spirograph/index.md",
     "content/videos/_index.md",
-    "content/lessons/_index.md",
-    "public/index.xml",
-    "public/categories/index.xml",
-    "public/categories/index.html",
-    "public/categories",
-    "public/tags/red/index.xml",
-    "public/tags/green/index.xml",
-    "public/tags/green/index.html",
-    "public/tags/red/index.html",
-    "public/tags/blue/index.xml",
-    "public/tags/blue/index.html",
-    "public/videos/qr_codes/revelation.png",
-    "public/videos/qr_codes/9_Letters_placement.png",
-    "public/videos/qr_codes/8_Byte_mode_block.png",
-    "public/videos/qr_codes/7_Possible_combinations.png",
-    "public/videos/qr_codes/6_Message_length.png",
-    "public/videos/qr_codes/5_Modes_of_encoding.png",
-    "public/videos/qr_codes/4_Additional_info.png",
-    "public/videos/qr_codes/3_Timing_patterns.png",
-    "public/videos/qr_codes/36_Additional_Info_brute_force.png",
-    "public/videos/qr_codes/35_Additional_Info_redundancy.png",
     "content/policy.md",
     "content/tools/qr/index.md",
     "content/tools/tex_to_svg/index.md",
     "content/tools/_index.md",
-    "content/lessons/s01e01/index.md",
-    "content/lessons/FAQ/index.md",
     "content/lessons/post-2/index.md",
     "content/lessons/post-4/index.md",
     "obsidian_templates/Template.md",

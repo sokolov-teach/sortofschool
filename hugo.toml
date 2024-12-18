@@ -48,11 +48,9 @@ theme = 'sortof'
           inline = [['$', '$']]
   [markup.goldmark.renderer]
     unsafe = true
-  # [minify]
-  #   disableHTML = false
-  #   [minify.tdewolff]
-  #     [minify.tdewolff.html]
-  #       keepAttr = ["display"]
+    
+
+
 
 [privacy]
   [privacy.disqus]

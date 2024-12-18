@@ -1,5 +1,5 @@
 ---
-date: 2024-12-17
+date: 2024-12-18
 draft: false
 title: About
 tags: 
@@ -54,7 +54,7 @@ You can disable cookies through your browser settings, but this may affect some 
 ### Links to Other Websites
 This website may contain links to external sites. Please note that this privacy policy applies only to this website, and if you click on a link to another website, you should read their privacy policy.
 ### Changes to This Privacy Policy
-This privacy policy is kept under regular review and any updates will be posted on this page. This privacy policy was last updated on 2024-12-17.
+This privacy policy is kept under regular review and any updates will be posted on this page. This privacy policy was last updated on 2024-12-18.
 ### Contact Us
 If you have any questions about this privacy policy, please feel free to contact us at:
 - **Email**: [sokolov.teach@gmail.com](mailto:sokolov.teach@gmail.com)

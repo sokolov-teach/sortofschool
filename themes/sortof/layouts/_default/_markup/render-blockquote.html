@@ -1,4 +1,4 @@
-{{ $emojis := dict
+{{ $icons := dict
   "info" ":information_source:"
   "tip" ":bulb:"
   "faq" ":question:"
@@ -16,19 +16,44 @@
 }}
 
 {{ if eq .Type "alert" }}
-  <!-- Regular Blockquote -->
-  <blockquote class="callout callout-{{ lower .AlertType }}">
-    <p class="callout-heading">
-      {{ transform.Emojify (index $emojis .AlertType) }} 
-      {{ .AlertTitle | default (title .AlertType) }}
-    </p>
-    <div class="callout-content">
-      {{ .Text }}
-    </div>
-  </blockquote>
+  {{ if eq .AlertSign "-" }}
+    <!-- Collapsible Blockquote -->
+    <details class="callout callout-{{ lower .AlertType }}">
+      <summary class="callout-heading">
+        {{ transform.Emojify (index $icons .AlertType) }} 
+        {{ .AlertTitle | default (title .AlertType) }}
+      </summary>
+      <div class="callout-content">
+        {{ .Text }}
+      </div>
+    </details>
+  {{ else if eq .AlertSign "+" }}
+    <!-- Expandable Blockquote -->
+    <details open class="callout callout-{{ lower .AlertType }}">
+      <summary class="callout-heading" open="">
+        {{ transform.Emojify (index $icons .AlertType) }} 
+        {{ .AlertTitle | default (title .AlertType) }}
+      </summary>
+      <div class="callout-content">
+        {{ .Text }}
+      </div>
+    </details>
+  {{ else }}
+    <!-- Regular Blockquote -->
+    <blockquote class="callout callout-{{ lower .AlertType }}">
+      <p class="callout-heading">
+        {{ transform.Emojify (index $icons .AlertType) }} 
+        {{ .AlertTitle | default (title .AlertType) }}
+      </p>
+      <div class="callout-content">
+        {{ .Text }}
+      </div>
+    </blockquote>
+  {{ end }}
 {{ else }}
   <!-- Fallback for non-alert blockquotes -->
   <blockquote>
     {{ .Text }}
   </blockquote>
 {{ end }}
+
