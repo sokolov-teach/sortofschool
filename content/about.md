@@ -33,10 +33,11 @@ Right now, there are over 50 lectures produced, but with all the experience that
 ---
 ### What Data Do We Collect?
 This website is static and hosted on **GitHub Pages**, meaning no personal data is stored directly by us. However, third-party services may collect data:
+
 - **E-mail:** If you send us an email, your email address and message content may be stored for correspondence.  
 - **GitHub Pages:** IP addresses, browser details, and usage logs may be collected. See [GitHub Privacy Statement](https://docs.github.com/en/site-policy/privacy-policies/github-privacy-statement).  
-- **YouTube Embeds:** Embedded YouTube videos may collect IP addresses, device details, or cookies. See [Google Privacy Policy](https://policies.google.com/privacy).  
-- **Fonts and MathJax:** Loaded via **jsDelivr CDN**, which may log your IP address. See [jsDelivr Privacy Policy](https://www.jsdelivr.com/terms/privacy-policy).  
+- **YouTube Embeds:** Embedded YouTube videos (using the `youtube-nocookie.com` domain) may still send IP addresses and device details to YouTube. See [Google Privacy Policy](https://policies.google.com/privacy).  
+- **Fonts and MathJax:** Fonts and MathJax are now stored locally, meaning no data is sent to external CDNs when using these resources.  
 ### How Do We Collect Your Data?
 - **E-mail Communication:** If you send us an email, your email information is stored with Google Mail (Gmail).
 ### How Will We Use Your Data?
@@ -45,8 +46,10 @@ This site collects your data to:
 ### How Do We Store Your Data?
 - **Email Storage:** Your email information is securely stored in our email account with Google Mail (Gmail), which follows standard security protocols.
 ### Cookies
-Cookies are small text files placed on your device to help analyze web traffic or keep track of website visits. This website does not store cookies directly. 
-However, **YouTube embeddings** may place cookies on your device. 
+Cookies are small text files placed on your device to help analyze web traffic or keep track of website visits. This website does not store cookies directly.  
+
+However, **YouTube embeddings** (even those using `youtube-nocookie.com`) may still send IP addresses and device details to YouTube.
+
 You can disable cookies through your browser settings, but this may affect some website functionality.
 ### Links to Other Websites
 This website may contain links to external sites. Please note that this privacy policy applies only to this website, and if you click on a link to another website, you should read their privacy policy.
