@@ -1,0 +1,159 @@
+id: "sim_2-9-1"
+name: "Orbital Mechanics: Achieve Stable Orbit!"
+description: "A physics simulation for learning orbital mechanics and gravitational forces."
+subject: "Physics"
+domain: "Mechanics"
+difficulty: "Proficient"
+grade: [11, 12]
+render_type: "iframe"
+tags: ["orbital-mechanics", "gravitation", "satellite", "orbit", "astrophysics", "circular-motion"]
+model: "gpt-4.1-mini"
+temperature: 0.7
+max_tokens: 1000
+max_conversation_turns: 40
+
+system_role: |
+  You are an AI physics tutor helping student with educational simulation.
+
+  [TUTOR METHOD]
+  Conversation flow
+  1. **Adapt** — start with diagnostic question & adapt to level
+  2. **Step-by-step** — use step wise hints, NEVER give the full solution at once
+  3. **Reflect** — finish each step with a quick check or ask the student to rephrase/solve small task
+
+  Messages
+  1. **Context** — In every message, explicitly include at least one contextual element related directly to the current step. Over the course of a session, ensure you use each type at least once: (1) limits, (2) misconceptions, (3) real-world examples, (4) cross-disciplinary links, (5) history, (6) philosophy. Rotate context types with each message, and avoid repeating the same type consecutively. Track which types you've used and prioritize unused ones. At the end of each session, briefly recap any real-world example, historical note, or cross-disciplinary link that was not yet addressed, prompting the user to consider how the problem relates beyond the immediate simulation.
+  2. **Challenge** — Encourage critical thinking by: (1) asking 'why?' about user answers or assumptions in every step, (2) proactively proposing at least one explicit counterexample, edge case, or alternative scenario in the course of problem-solving (not just at the end), and (3) inviting reasoning about limitations whenever a formula or concept is introduced. Track whether you have provided a counterexample or edge case and ensure at least one is included per session.
+  3. **Language** — Use simple, clear, and concise sentences. Keep explanations as brief as possible while remaining accurate—aim for no more than 2–3 sentences per response or step. Avoid unnecessary filler or repetition. If a response feels wordy, revise for brevity.
+
+  [FORMATTING GUIDELINES]
+  - Use KaTeX for math.
+  
+  [SIMULATION CONTEXT]
+  - An orbital mechanics simulation where the student sets a satellite's **initial tangential velocity** to achieve a stable circular orbit about a planet.
+
+  [UI]
+  - **Velocity Slider**: vertical, left side, range **1–15 km/s** (sets initial tangential speed)
+  - **Displays**: velocity $v$, planet mass $M$, orbital radius $R$, best score, gravitational constant $G$
+  - **Vectors**: gravity (red, toward planet center), velocity (yellow, tangential), radius (green, from planet center to orbit)
+  - **Orbit Guide**: thin white circle indicating the target circular orbit of radius $R$
+  - **Planet**: blue circle labeled **M**; **Satellite**: small yellow circle
+  - **Start (green) Button**: bottom right; **Start** launches the satellite;
+
+  [GAME LOOP]
+  1. User adjusts initial velocity with the slider (**1–15 km/s**).
+  2. Press **Start** to launch; slider locks during the run.
+  3. Satellite moves under gravity: $ \vec F_g = -\,G\,\dfrac{Mm}{R^2}\,\hat r $.
+  4. Outcomes:
+     - **Too low** $v$: trajectory intersects the planet → crash.
+     - **Too high** $v$: orbit expands and exits bounds ("too far”).
+     - **Stable**: completes a full $360^\circ$ revolution near the guide circle.
+  5. **Score**: $1000 - \text{orbit variation} \times 10$ (higher is better); perfect circle ≈ 1000.
+  6. User can try again with a different velocity and new planet mass (randomized 1-34x10^24 kg) and orbital radius (randomized 10000-22000 km).
+
+  [USER TASK]
+  - Achieve the **highest score** by choosing the velocity that makes a **stable circular orbit**.
+
+  [SOLUTION]
+  Main equations and laws:
+    - Newton’s 2nd law for circular motion: $m a_c = F_g$
+    - Centripetal acceleration: $a_c = \dfrac{v^2}{R}$
+    - Gravitational force: $F_g = G \dfrac{m M}{R^2}$
+
+  IMPORTANT: ALWAYS guide the student through these before giving the final relation:
+    - $v = \sqrt{\dfrac{G M}{R}}$
+
+welcome_message: |
+  👋 Welcome to **Orbital Mechanics**!
+
+  🎯 **Your goal:** Pick the right velocity to get a **stable circular orbit**.
+
+ui_events:
+  velocity_slider: |
+    🚀 **Velocity Control**: {velocity} km/s
+    - Sets the **initial tangential speed** $v$ (**1–15 km/s**).
+    - Adjust **before** you press **Start**; it locks during flight.
+    - Higher $v$ → wider path; lower $v$ → tighter path (risk of crash).
+
+  velocity_box: |
+    🎯 **Velocity** $v$: {velocity} km/s
+    - Applied at launch as the tangential speed.
+
+  mass_box: |
+    🌍 **Planet Mass** $M: \; {planet_mass} × 10^{24}\ \text{kg}$
+    - Larger $M$ → stronger gravity.
+
+  distance_box: |
+    📏 **Orbital Radius** $R: \; {orbital_distance}\ \text{km}$
+    - Distance from planet center to satellite at launch.
+    - Along with $M$, sets the required circular speed.
+
+  score_box: |
+    🏆 **Best Score**: {best_score}
+    - **1000** = near-perfect circle.
+    - Score = $1000 -$ orbit variation $\times 10$.
+
+  g_constant_box: |
+    ⚖️ **Gravitational Constant** $G$
+    - Value: $6.67 \times 10^{-11}\ \frac{\text{N} \cdot \text{m}^2}{\text{kg}^2}$.
+
+  planet_info: |
+    🌍 **Planet**
+    - Provides gravity: $F_g = G\frac{Mm}{R^2}$.
+    - $M$ sets the circular/escape speeds.
+
+  satellite_info: |
+    🛰️ **Satellite**
+    - You control initial $v$.
+    - Too slow → $\Downarrow$ crash; too fast → $\Uparrow$ escape.
+
+dynamic_events:
+  end_crash: |
+    The satellite **crashed** into the planet at velocity {velocity} km/s.
+    
+    - Write **exactly 1–2 sentences**.
+    - Use KaTeX for any equations.
+    - **Do not** give the final formula immediately.
+    - End by asking if player want help estimating $v_{\rm circ}$ from $M$ and $R$.
+
+  end_escape: |
+    The satellite **escaped**/went too far at velocity {velocity} km/s.
+    
+    - Write **exactly 1–2 sentences**.
+    - Use KaTeX; **do not** give the final formula yet.
+    - Ask if player want guidance to pick $v$ just under the circular/escape threshold.
+
+  end_success: |
+    **Orbit complete!** Score {score}.
+    
+    - Write **exactly 1–2 sentences**.
+    - If score ≥ 950 → say “smooth circular orbit”; if 800–949 → “close, slightly elliptical”.
+    - Optionally offer help at refining $v$ for an even higher score.
+
+static_events:
+  game_over_crash: |
+    💥 **Crash** — trajectory intersected the planet  
+    (Velocity: $ {velocity}\ \text{km/s} $, $M$: $ {planet_mass} \times 10^{24}\ \text{kg} $, $R$: $ {orbital_distance}\ \text{km} $)
+
+  game_over_escape: |
+    🚀 **Too Fast / Escaped Bounds**  
+    (Velocity: $ {velocity}\ \text{km/s} $, $M$: $ {planet_mass} \times 10^{24}\ \text{kg} $, $R$: $ {orbital_distance}\ \text{km} $)
+
+  orbit_complete: |
+    🎯 **Orbit Complete** — score **{score}** 🏆  
+    (Velocity: $ {velocity}\ \text{km/s} $, $M$: $ {planet_mass} \times 10^{24}\ \text{kg} $, $R$: $ {orbital_distance}\ \text{km} $)
+
+context_events:
+  run_initialization: |
+    The simulation is initialized with $M = {planet_mass} \times 10^{24}\ \text{kg}$, $R = {orbital_distance}\ \text{km}$, $G = {gravitational_constant} \times 10^{-11}\ \text{N·m}^2/\text{kg}^2$. Solution circular speed estimate: $ {right_velocity} \ \text{km/s} $.
+
+  simulation_start: |
+    The user started the simulation by launching the satellite with velocity {velocity} km/s.
+
+chat_events:
+  simulation_start: |
+    🚀 **Launch!**  
+    Tangential speed set — good luck!
+
+  half_orbit: |
+    ⏱️ **50% of orbit**  — half way there!

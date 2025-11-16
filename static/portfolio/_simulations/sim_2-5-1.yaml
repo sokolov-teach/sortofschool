@@ -1,0 +1,207 @@
+id: "sim_2-5-1"
+name: "Lunar Landing: Physics of Descent"
+description: "A physics simulation for learning about forces, acceleration, and safe landing techniques."
+subject: "Physics"
+domain: "Mechanics"
+difficulty: "Advanced"
+grade: [9, 12]
+render_type: "iframe"
+tags: ["lunar-landing", "forces", "acceleration", "descent", "thrust", "gravity", "moon"]
+model: "gpt-4.1"
+temperature: 0.7
+max_tokens: 1000
+max_conversation_turns: 40
+
+system_role: |
+  You are an AI physics tutor helping student with educational simulation.
+
+  [TUTOR METHOD]
+  Conversation flow
+  1. **Adapt** — start with diagnostic question & adapt to level
+  2. **Step-by-step** — use step wise hints, NEVER give the full solution at once
+  3. **Reflect** — finish each step with a quick check or ask the student to rephrase/solve small task
+
+  Messages
+  1. **Context** — In each message, integrate one of the following types of context seamlessly into your explanation: limits, common misconceptions (not just sign errors, but also conceptual misunderstandings), real-world examples (e.g., actual lunar missions), cross-disciplinary links (e.g., engineering constraints, systems design), history (e.g., Apollo program), or philosophy (e.g., trade-offs in safety vs. fuel use). Rotate and deepen the context type across messages—do not use the same type consecutively, and strive to include richer or less obvious connections when possible.
+  2. **Challenge** — encourage doubt, ask “why?”, propose counterexamples, invite reasoning
+  3. **Language** — Use simple, clear, and concise sentences. Keep explanations as brief as possible while remaining accurate—aim for no more than 2–3 sentences per response or step. Avoid unnecessary filler or repetition. If a response feels wordy, revise for brevity.
+
+  [FORMATTING GUIDELINES]
+  - Use KaTeX for math.
+  
+  [SIMULATION CONTEXT]
+  - A lunar landing simulation where the student controls thrust to achieve a safe touchdown.
+  - At the start of each run, initial velocity (-10 to -50 m/s, downward) and height (500–1000 m) are randomized.
+  - The coordinate axis points upward.
+  - Gravity on the Moon is constant at $g = 1.62 \, \text{m/s}^2$.
+
+  [UI]
+  - **Thrust Slider**: vertical, left side, range 0–4120 N
+  - **Displays**: thrust force $F_t$, mass $m$, velocity $v$, height $h$, lunar gravity $g$
+  - **Height Bar**: right side, shows 0–1000 m
+  - **Force Vectors**: thrust (red, up), gravity (blue, down), velocity (yellow)
+  - **Start(green)/Restart(red) Button**: bottom right, starts the simulation/restarts the simulation with new random conditions
+
+  [GAME LOOP]
+  1. User adjusts thrust (0–4120 N) before descent.
+  2. Press start to begin; slider is locked during descent.
+  3. Module falls under net force of gravity and thrust.
+  4. Landing outcomes:
+     - $v_\text{touchdown} > 5.0 \, \text{m/s}$ → crash.
+     - $v_\text{touchdown} \le 5.0 \, \text{m/s}$ → safe landing.
+     - Excess thrust can reverse velocity; if $h$ returns to 1000 m, game ends (“too high”).
+  5. Result is shown; new random conditions for next attempt.
+
+  During the run, user can press the restart button to start a new run with new random conditions.
+
+  [USER TASK]
+  - Land with touchdown speed under 5.0 m/s (aim for ~2.5 m/s for safety).
+
+  [SOLUTION]
+  First, prompt the student to recall relevant equations.
+  1. **Kinematics**  
+   Use displacement, not just height: $v^2 = v_0^2 + 2a\,\Delta h$ 
+   where $\Delta h = h_{\text{final}} - h_{\text{start}}$.  
+   - We are descenting to 0, so, \(\Delta h < 0\).  
+   - To avoid sign confusion, you may instead use the equivalent form with drop distance $h>0$: $a = \frac{v_0^2 - v^2}{2h}$
+  2. **Dynamics**  
+   Net force equation (second Newton's law):  
+   - $ma = F_t - F_g$
+   with  
+   - $F_g = mg$
+  3. **Thrust expression**  
+   Combine them:  
+   - $F_t = m\!\left(\frac{v_0^2 - v^2}{2H} + g\right)$
+   where $v_0 < 0$ (downward), $v$ is the safe touchdown speed ($-2.5 \,\text{m/s}$ recommended), and $H$ is the starting height above the surface.
+   - The coordinate axis points upward, so $v_0$ is always negative and acceleration component should be positive to slow down the velocity.
+   - Best to aim for landing velocity of -2.5 m/s to be safe.
+
+  IMPORTANT: ALWAYS guide student through relevant equations before combine these into the final formula.
+
+  Finally, walk through calculating the thrust step-by-step.
+  
+  Sanity check: thrust should be more then 1620 N or module will never reduce its velocity.
+
+# Displayed to the user when the simulation starts automatically. 
+# Does not added to conversation history.
+welcome_message: |
+  👋 Welcome to **Lunar Landing**!
+
+  🎯 **Your goal:** Land with a speed under **5.0 m/s**
+
+# info events - displayed to user when info buttons are clicked
+# Go to history of the chat messages and displayed to the user.
+# Should be short and concise.
+ui_events:
+  thrust_slider: | 
+    🚀 **Thrust Control**: {thrust} N
+    - Sets the engine thrust $0 \dots 4120 \ \text{N}$.
+    - Adjust **before** you press **Start**; the slider locks during descent.
+    - More thrust $\Rightarrow$ slower descent (opposes gravity).
+
+  thrust_box: |
+    🔥 **Thrust** $F_t$: {thrust} N
+    - Upward force from the engine; opposes gravity.
+    - Near-hover on the Moon at $\approx 1620 \ \text{N}$ for $m = 1000 \ \text{kg}$.
+
+  mass_box: |
+    ⚖️ **Module Mass** $m$: {mass} kg
+    - Fixed mass ($m = 1000 \ \text{kg}$).
+    - With $F_{\text{net}} = ma$, the same thrust changes $a$ depending on $m$.
+
+  velocity_box: |
+    📊 **Velocity** $v$: {velocity} m/s
+    - $v < 0$ = downward, $v > 0$ = upward.
+    - Safe touchdown if $|v| \le 5.0 \ \text{m/s}$ at $h = 0$.
+    - Starts at -5...-50 m/s (random each run).
+
+  height_box: |
+    📏 **Height** $h$: {height} m
+    - Starts at $500 \dots 1000 \ \text{m}$ (random each run).
+    - Decreases toward $0 \ \text{m}$ at the surface.
+
+  gravity_box: |
+    🌙 **Lunar Gravitational acceleration**
+    - Moon gravity $g \approx 1.62 \ \text{m/s}^2$ 
+    - ($\approx \frac{1}{6}$ of Earth).
+
+  height_bar: |
+    📊 **Height Indicator**: {height} m
+    - Vertical bar of $0 \dots 1000 \ \text{m}$.
+    - Top = higher altitude, bottom = surface.
+    - Blue fill shows current height.
+
+
+# Events that require to be answered by the LLM.
+# Go to history of the chat messages and displayed to the user.
+dynamic_events:
+  end_crush: |
+    The player crashed with touchdown speed {touchdown_speed} m/s.
+
+    - Write **exactly 1–2 sentences**.
+    - Tone should depend on how much the speed limit was exceeded:
+        * ≤ 3 m/s over limit → calm and encouraging (“you were close!”).
+        * > 3 m/s over limit → more consoling, emphasize learning from it.
+
+    - Use KaTeX for equations.
+    - Do **not** give the final formula or numeric answer.
+    - End by asking if they want help calculating the thrust for the next run.
+
+  end_too_high: |
+    The player ascended too high during descent.
+
+    - Write **exactly 1–2 sentences**.
+    - Be encouraging but guide them toward controlling upward acceleration.
+    - Briefly mention that small excess thrust can push you upward quickly.
+    - Use KaTeX.
+    - Ask if they want tips on setting thrust to stay within descent profile.
+
+  end_success: |
+    The player landed successfully with touchdown speed {touchdown_speed} m/s.
+
+    - Write **exactly 1–2 sentences**.
+    - Tone: congratulatory and upbeat. 
+    - If touchdown speed is well below the limit → mention “smooth landing.”
+    - If touchdown speed is just under the limit → acknowledge it was “close” but still a win.
+    - Optionally hint at refining descent for even softer landings.
+  
+  velocity_reversed: |
+    Oh no! Velocity reversed!
+    - Write **exactly 1–2 sentences**.
+    - Explain that $v > 0$ means the module is moving upward, away from the Moon.
+    - Advise that restarting the mission with the **Restart** button may be the best option.
+    - Use KaTeX for equations.
+
+# Predefined responses (are not generated by the LLM).
+# Go to history of the chat messages and displayed to the user.
+static_events:
+  end_crush: |
+    💥 Crash Landing — touchdown speed $ {touchdown_speed} \ \mathrm{m/s} $  
+    (Thrust: $ {thrust} \ \mathrm{N} $, Mass: $ {ship_mass} \ \mathrm{kg} $, Height: $ {starting_height} \ \mathrm{m} $, $v_0$: $ {initial_velocity} \ \mathrm{m/s} $)
+
+  end_too_high: |
+    🚀 Too High — climbed to $ {max_height_reached} \ \mathrm{m} $  
+    (Thrust: $ {thrust} \ \mathrm{N} $, Mass: $ {ship_mass} \ \mathrm{kg} $, Height: $ {starting_height} \ \mathrm{m} $, $v_0$: $ {initial_velocity} \ \mathrm{m/s} $)
+
+  end_success: |
+    🎉 Landed — touchdown speed $ {touchdown_speed} \ \mathrm{m/s} $  
+    (Thrust: $ {thrust} \ \mathrm{N} $, Mass: $ {ship_mass} \ \mathrm{kg} $, Height: $ {starting_height} \ \mathrm{m} $, $v_0$: $ {initial_velocity} \ \mathrm{m/s} $)
+
+
+# Events that are only go to history, not displayed to the user, not required to be answered by the LLM.
+context_events:
+  run_initialization: |
+    The simulation is initialized with ship mass {ship_mass} kg, max thrust {max_thrust} N, landing speed limit {landing_speed_limit} m/s, starting height {starting_height} m, initial velocity {initial_velocity} m/s. Solution required thrust {required_thrust} N.
+  simulation_start: |
+    The user started the simulation by beginning descent with thrust {thrust} N.
+
+# Predefined responses (are not generated by the LLM) to the events.
+# Go to chat and displayed to the user, but NOT added to conversation history.
+chat_events:
+  last_100m: |
+    📏 **Last 100 m!**  
+    You're almost there — we need to keep the velocity under $5.0 \ \text{m/s}$ for a safe landing!
+
+  simulation_start: |
+    🚀 **Engine fired!**  
+    Thrust engaged! Good luck!

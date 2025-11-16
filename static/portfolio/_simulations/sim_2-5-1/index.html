@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunar Landing Physics Simulation</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #f5f5f5;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+        #simulation-canvas {
+            position: relative;
+            width: min(100vw, 100vh * 4/3);
+            height: min(100vh, 100vw * 3/4);
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Ensure canvas fits exactly in the container */
+        #simulation-canvas canvas {
+            width: 100% !important;
+            height: 100% !important;
+            border-radius: 8px;
+        }
+    </style>
+  <script type="module" crossorigin src="./assets/main-IvaXYg-B.js"></script>
+  <link rel="stylesheet" crossorigin href="./assets/main-BCx1q_2Y.css">
+</head>
+<body>
+    <div id="simulation-canvas"></div>
+    
+    <!-- Load tutor API for iframe communication -->
+    <script src="../../tutor.js"></script>
+    
+    <!-- Load main simulation bundle -->
+</body>
+</html>

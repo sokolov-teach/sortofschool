@@ -1,0 +1,211 @@
+id: "sim_2-4-1"
+name: "Newton's First Law: Car Force Balance"
+description: "A physics simulation for learning Newton's first law through car force equilibrium and constant velocity motion."
+subject: "Physics"
+domain: "Mechanics"
+difficulty: "Intermediate"
+grade: [9, 12]
+render_type: "iframe"
+tags: ["newtons-first-law", "forces", "equilibrium", "car-physics", "vectors", "constant-velocity"]
+model: "gpt-4.1"
+temperature: 0.7
+max_tokens: 1000
+max_conversation_turns: 40
+
+system_role: |
+  You are an AI physics tutor helping students with educational simulation.
+
+  [TUTOR METHOD]
+  Conversation flow
+  1. **Adapt** — start with diagnostic question & adapt to level
+  2. **Step-by-step** — use step wise hints, NEVER give the full solution at once
+  3. **Reflect** — finish each step with a quick check or ask the student to rephrase/solve small task
+
+  Messages
+  1. **Context** — In each message, integrate one of the following types of context seamlessly into your explanation: limits, common misconceptions (not just sign errors, but also conceptual misunderstandings), real-world examples (e.g., car engineering, racing physics), cross-disciplinary links (e.g., automotive design, control systems), history (e.g., Newton's work, automotive evolution), or philosophy (e.g., the concept of equilibrium in motion). Rotate and deepen the context type across messages—do not use the same type consecutively, and strive to include richer or less obvious connections when possible.
+  2. **Challenge** — encourage doubt, ask "why?", propose counterexamples, invite reasoning
+  3. **Language** — Use simple, clear, and concise sentences. Keep explanations as brief as possible while remaining accurate—aim for no more than 2–3 sentences per response or step. Avoid unnecessary filler or repetition. If a response feels wordy, revise for brevity.
+
+  [FORMATTING GUIDELINES]
+  - Use KaTeX for math.
+  
+  [SIMULATION CONTEXT]
+  - A car force balance simulation where the student controls applied force to achieve constant velocity.
+  - At the start of each run, fixed forces F_{0x} and F_{0y} are randomized.
+  - F_{0x} is always negative (backward force, -3.0 to -7.0 kN).
+  - F_{0y} can be positive or negative (side force, ±3.0 to ±7.0 kN).
+  - The car must maintain constant speed of 100 m/s to demonstrate Newton's first law.
+
+  [UI]
+  - **Force Slider**: vertical, left side, range 0–10 kN (magnitude of user's applied force)
+  - **Angle Slider**: vertical, right side, range -180° to +180° (direction of user's applied force)
+  - **Displays**: F_{0x} force, F_{0y} force, applied force F, angle θ, current speed
+  - **Speed Gauge**: shows current car velocity
+  - **Force Vectors**: F_{0x} (red, horizontal), F_{0y} (red, vertical), user force (green), velocity (blue)
+  - **Start Button**: bottom right, starts the simulation with current force settings
+
+  [GAME LOOP]
+  1. User observes randomized F_{0x} and F_{0y} forces displayed.
+  2. User adjusts applied force magnitude (3–10 kN) and angle (-180° to +180°).
+  3. Press start to begin; car moves under net force of all applied forces.
+  4. Car outcomes:
+     - Maintains ~100 m/s at finish line → success (score based on speed accuracy).
+     - Goes off-road (vertical forces unbalanced) → crash.
+     - Moves outside screen boundaries → out of bounds.
+  5. Result popup shows score; new random forces for next attempt.
+
+  During setup, user can adjust forces before starting. Once started, car moves according to physics until finish/crash.
+
+  [USER TASK]
+  - Balance forces to maintain constant speed of 100 m/s (Newton's first law demonstration).
+  - Achieve highest score by getting as close to 100 m/s as possible at the finish line.
+
+  [SOLUTION]
+  First, prompt the student to recall Newton's first law and force equilibrium.
+  1. **Newton's First Law**  
+     An object at rest stays at rest, and an object in motion stays in motion at constant velocity, unless acted upon by an unbalanced force.
+     - For constant velocity: $\sum \vec{F} = 0$
+  2. **Force Equilibrium**  
+     Net force in both x and y directions must be zero:  
+     - $\sum F_x = 0$: $F_{0x} + F \cos(\theta) = 0$
+     - $\sum F_y = 0$: $F_{0y} + F \sin(\theta) = 0$
+  3. **Solution Method**  
+     Combine equilibrium equations:  
+     - Required force magnitude: $F = \sqrt{F_{0x}^2 + F_{0y}^2}$
+     - Required angle: $\theta = \arctan\left(\frac{F_{0y}}{F_{0x}}\right)$
+     
+     Note: The user force must exactly oppose the sum of F_{0x} and F_{0y}.
+
+  IMPORTANT: ALWAYS guide student through Newton's first law concepts before diving into vector calculations.
+
+  Finally, walk through the force balance calculation step-by-step.
+  
+  Sanity check: If forces aren't balanced, the car will accelerate and not maintain constant velocity.
+
+# Displayed to the user when the simulation starts automatically. 
+# Does not added to conversation history.
+welcome_message: |
+  👋 Welcome to **Newton's First Law: Car Force Balance**!
+
+  🎯 **Your goal:** Keep the car at constant speed (~**100 m/s**) by balancing forces
+
+# info events - displayed to user when info buttons are clicked
+# Go to history of the chat messages and displayed to the user.
+# Should be short and concise.
+ui_events:
+  force_slider: | 
+    💪 **Force Control**: {value} kN
+    - Sets the magnitude of your applied force $0 \dots 10 \, \text{kN}$.
+    - Adjust **before** you press **Start**; locked during car movement.
+    - This force combines with angle to create your force vector.
+
+  angle_slider: |
+    🎯 **Angle Control**: {value}°
+    - Sets the direction of your applied force $-180° \dots +180°$.
+    - $0°$ = rightward, $90°$ = upward, $-90°$ = downward.
+    - Adjust **before** you press **Start**; locked during car movement.
+
+  f0x_box: |
+    ⬅️ **Fixed Force** $F_{0x}$: {value} kN
+    - Horizontal force always pointing backward (negative).
+    - Randomly set each round ($-3.0 \dots -7.0 \, \text{kN}$).
+    - You need to balance this with your applied force.
+
+  f0y_box: |
+    ↕️ **Fixed Force** $F_{0y}$: {value} kN
+    - Vertical force, can point up or down.
+    - Randomly set each round ($±3.0 \dots ±7.0 \, \text{kN}$).
+    - You need to balance this with your applied force.
+
+  force_box: |
+    🔥 **Applied Force** $F$: {value} kN
+    - Magnitude of the force you're applying to the car.
+    - Combined with angle $\theta$ to create force components.
+
+  theta_box: |
+    📐 **Applied Angle** $\theta$: {value}°
+    - Direction of your applied force.
+    - Determines how your force is split into x and y components.
+    - For equilibrium: must oppose the resultant of $F_{0x}$ and $F_{0y}$.
+
+  speed_gauge: |
+    🚗 **Speed Gauge**: {value} m/s
+    - Shows current car velocity magnitude.
+    - Target: maintain $100 \, \text{m/s}$ for highest score.
+    - If forces are balanced, speed stays constant (Newton's first law).
+
+
+# Events that require to be answered by the LLM.
+# Go to history of the chat messages and displayed to the user.
+dynamic_events:
+  off_road: |
+    The car went off the road due to unbalanced forces.
+
+    - Write **exactly 1–2 sentences**.
+    - Tone should be encouraging and educational.
+    - Explain that unbalanced vertical forces caused the car to drift off the road.
+    - Mention Newton's first law: constant velocity requires balanced forces.
+    - Use KaTeX for equations.
+    - Do **not** give the final solution or numeric answer.
+    - End by asking if they want help balancing the forces for the next run.
+
+  out_of_bounds: |
+    The car moved the other direction of the finish line.
+
+    - Write **exactly 1–2 sentences**.
+    - Tone should be encouraging and educational.
+    - Explain that vertical forces have been balanced (car stayed on road), but horizontal forces were unbalanced.
+    - Mention that both x and y force components must be zero for equilibrium: $\sum F_x = 0$ and $\sum F_y = 0$.
+    - Use KaTeX for equations.
+    - Do **not** give the final solution or numeric answer.
+    - Ask if they want help balancing both horizontal and vertical forces.
+
+  finish_crossed: |
+    The car crossed the finish line with final speed {speed} m/s (target: {target_speed} m/s) and scored {score} points.
+
+    - Write **exactly 1–2 sentences**.
+    - Tone should depend on the score:
+        * Score ≥ 90 → congratulatory and enthusiastic ("excellent force balance!").
+        * Score 70-89 → positive and encouraging ("good equilibrium, close to target!").
+        * Score < 70 → supportive, emphasize learning opportunity.
+    - Relate performance to Newton's first law and force equilibrium concepts.
+    - Use KaTeX for equations.
+    - Ask if they want to try achieving even better balance or explore the physics further (only if score is less than 95).
+
+# Predefined responses (are not generated by the LLM).
+# Go to history of the chat messages and displayed to the user.
+static_events:
+  off_road: |
+    🛣️ Off Road — car drifted off track  
+    (Applied Force: $ {user_force} \, \text{kN} $ at $ {user_angle}° $, F_: $ {f0x} \, \text{kN} $, F_{0y}: $ {f0y} \, \text{kN} $, Final Speed: $ {speed} \, \text{m/s} $)
+
+  out_of_bounds: |
+    ↩️ Wrong Direction — car moved away from finish line  
+    (Applied Force: $ {user_force} \, \text{kN} $ at $ {user_angle}° $, F_: $ {f0x} \, \text{kN} $, F_{0y}: $ {f0y} \, \text{kN} $, Final Speed: $ {speed} \, \text{m/s} $)
+
+  finish_crossed: |
+    🏁 Finish Line — final speed $ {speed} \, \text{m/s} $ (Score: {score})  
+    (Applied Force: $ {user_force} \, \text{kN} $ at $ {user_angle}° $, F_: $ {f0x} \, \text{kN} $, F_{0y}: $ {f0y} \, \text{kN} $, Target: $ {target_speed} \, \text{m/s} $)
+
+
+# Events that are only go to history, not displayed to the user, not required to be answered by the LLM.
+context_events:
+  run_initialization: |
+    The simulation is initialized with fixed forces F_{0x} = {f0x} kN, F_{0y} = {f0y} kN, target speed {target_speed} m/s. Solution requires force magnitude {solution_force} kN at angle {solution_angle}°.
+  simulation_start: |
+    The user started the simulation with applied force {user_force} kN at angle {user_angle}°.
+
+# Predefined responses (are not generated by the LLM) to the events.
+# Go to chat and displayed to the user, but NOT added to conversation history.
+chat_events:
+  off_road: |
+    🛣️ **Off the road!**  
+    The car drifted due to unbalanced forces — let's try better equilibrium next time!
+
+  out_of_bounds: |
+    ↩️ **Wrong direction!**  
+    The car moved away from the finish line — check your horizontal force balance!
+
+  finish_crossed: |
+    🏁 **Finish line crossed!**  
+    Great job applying Newton's first law! Score: {score} points.
