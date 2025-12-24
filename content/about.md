@@ -18,16 +18,11 @@ Right now, there are over 50 lectures produced, but with all the experience that
 
 ## License
 ---
-- The code of the website itself and all of the programs are distributed under the [GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
-	- Anyone can copy, modify, and distribute this software, and use it privately or for commercial purposes
-	- You have to include the license and copyright notice with every distribution.
-	- If you modify it, you have to indicate changes made to the code.
-	- Any modifications to this code base MUST be distributed with the same license, GPL v3.
-- All images, videos, and texts are distributed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
+- All content of this website, including code, programs, images, videos, and texts are distributed under the [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
 	- Credit must be given to the creator.
 	- Only noncommercial uses of the work are permitted.
 	- Adaptations must be shared under the same terms.
-- If you want to use images, videos and texts in commercial purposes, please contact me at sokolov.teach@gmail.com
+- If you want to use any content (code, images, videos, texts, etc.) for commercial purposes, please contact me at sokolov.teach@gmail.com
 
 ## Privacy Policy
 ---
