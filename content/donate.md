@@ -19,8 +19,8 @@ There are several ways you can support us:
 	- Exclusive and behind-the-scenes content.
 	- Early acces.
 	- Convenience of downloading.
-- ![](/paypal_logo.png#icon)[Paypal](http://paypal.me/sokolovteach): Make a one-time donation to our project through PayPal. Every dollar helps us create new resources and support teachers in their work.
-- ![](/tether_logo.png#icon)![](/bitcoin_logo.png#icon)Crypto: You can also support us by donating cryptocurrency. Please send your Bitcoin (BTC) or Tether (USDT TRC20) donations to our wallet address.
+- ![](/paypal_logo.png#icon)[Paypal](http://paypal.me/sokolovde): Make a one-time donation to our project through PayPal. Every dollar helps us create new resources and support teachers in their work.
+<!-- - ![](/tether_logo.png#icon)![](/bitcoin_logo.png#icon)Crypto: You can also support us by donating cryptocurrency. Please send your Bitcoin (BTC) or Tether (USDT TRC20) donations to our wallet address.
 
 ![BTC:  16ZvEvsRdFCuWVSLqFLvpvT9pEHhrp18bG](/bitcoin_qr.png#medium)
-![USDT TRC20:  TQefjSc8rEAZ99x9cZGkT6xUJKAYGsMNaw](/usdt_qr.png#medium)
+![USDT TRC20:  TQefjSc8rEAZ99x9cZGkT6xUJKAYGsMNaw](/usdt_qr.png#medium) -->
